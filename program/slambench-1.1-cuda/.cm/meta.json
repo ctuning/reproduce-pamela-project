@@ -8,15 +8,27 @@
       "sort": 10, 
       "tags": "compiler,lang-cpp"
     }, 
-    "lib_opencl": {
+    "lib.toon": {
       "local": "yes", 
       "sort": 20, 
-      "tags": "lib,opencl"
+      "tags": "lib,toon"
     }
   }, 
-  "compiler_env": "CK_CC", 
+  "compiler_add_include_as_env": [
+    "CK_ENV_LIB_STDCPP_INCLUDE", 
+    "CK_ENV_LIB_STDCPP_INCLUDE_EXTRA"
+  ], 
+  "compiler_env": "CK_CXX", 
   "data_name": "slambench-1.1-cuda", 
   "extra_ld_vars": "$<<CK_EXTRA_LIB_M>>$", 
+  "linker_add_lib_as_env": [
+    "CK_CXX_EXTRA",
+    "CK_ENV_LIB_STDCPP_STATIC"
+  ], 
+  "local_include_dirs": [
+    "include", 
+    "thirdparty"
+  ], 
   "main_language": "cpp", 
   "process_in_tmp": "yes", 
   "program": "yes", 

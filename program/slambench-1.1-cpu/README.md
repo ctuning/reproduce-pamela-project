@@ -6,6 +6,11 @@ and machine learning.
 Unfortunately, we had problems porting this code to Windows
 due to many Unix deps...
 
+On some machines, like Samsung Chromebook, you need to set up environment
+variable CK_CXX_EXTRA=-lrt
+
+***************************************************************************
+
 # ORIGINAL README #
 
 SLAMBench Release Candidate 1.1
