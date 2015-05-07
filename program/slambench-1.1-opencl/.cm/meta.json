@@ -63,6 +63,7 @@
     }
   }, 
   "run_vars": {
+    "OPENCL_KERNEL":"$#src_path#$kernels.cl",
     "KERNEL_TIMINGS": "1"
   }, 
   "run_vars_desc": {
