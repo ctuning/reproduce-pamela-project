@@ -604,6 +604,9 @@ bool Kfusion::tracking(float4 k, float icp_threshold, uint tracking_rate,
 		clError = clSetKernelArg(depth2vertex_ocl_kernel, arg++,
 				sizeof(cl_uint2), &imageSize);
 		checkErr(clError, "clSetKernelArg");
+
+                std::cout << "xyz=" << sizeof(Matrix4) << "," << &invK << "\n";
+
 		clError = clSetKernelArg(depth2vertex_ocl_kernel, arg++,
 				sizeof(Matrix4), &invK);
 		checkErr(clError, "clSetKernelArg");
