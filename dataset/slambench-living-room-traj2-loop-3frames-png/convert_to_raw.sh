@@ -1,0 +1,2 @@
+scene2raw input_dir living_room_traj2_loop_small.raw
+

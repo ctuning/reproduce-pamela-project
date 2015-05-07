@@ -1,0 +1,11 @@
+{
+  "dataset_files": [
+    "living_room_traj2_loop_small.raw"
+  ], 
+  "tags": [
+    "dataset", 
+    "raw", 
+    "video", 
+    "slambench"
+  ]
+}
