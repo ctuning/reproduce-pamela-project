@@ -23,6 +23,7 @@
 #include <iomanip>
 #include <getopt.h>
 
+#include <perfstats.h>
 #include <PowerMonitor.h>
 PowerMonitor *powerMonitor = NULL;
 
