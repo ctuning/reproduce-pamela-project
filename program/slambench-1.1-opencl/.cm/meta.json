@@ -19,7 +19,7 @@
       "tags": "lib,opencl"
     }
   }, 
-  "compiler_add_include_as_env": [
+  "compiler_add_include_as_env_from_deps": [
     "CK_ENV_LIB_STDCPP_INCLUDE", 
     "CK_ENV_LIB_STDCPP_INCLUDE_EXTRA"
   ], 

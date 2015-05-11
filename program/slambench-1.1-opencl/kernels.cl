@@ -31,6 +31,15 @@ typedef struct sMatrix4 {
 
 /************** FUNCTIONS ***************/
 
+inline Matrix4 float16toM4(float16 f) {
+       Matrix4 tmp;
+       tmp.data[0] = f.s0123;
+       tmp.data[1] = f.s4567;
+       tmp.data[2] = f.s89ab;
+       tmp.data[3] = f.scdef;
+       return tmp;
+}
+
 inline float sq(float r) {
 	return r * r;
 }
@@ -376,14 +385,14 @@ __kernel void renderVolumeKernel( __global uchar * render,
 		__global short2 * v_data,
 		const uint3 v_size,
 		const float3 v_dim,
-		const Matrix4 view,
+		const float16 view16,
 		const float nearPlane,
 		const float farPlane,
 		const float step,
 		const float largestep,
 		const float3 light,
 		const float3 ambient) {
-
+		Matrix4 view =  float16toM4(view16);
 	const Volume v = {v_size, v_dim,v_data};
 
 	const uint2 pos = (uint2) (get_global_id(0),get_global_id(1));
@@ -415,12 +424,13 @@ __kernel void raycastKernel( __global float * pos3D,  //float3
 		__global short2 * v_data,
 		const uint3 v_size,
 		const float3 v_dim,
-		const Matrix4 view,
+		const float16 view16,
 		const float nearPlane,
 		const float farPlane,
 		const float step,
 		const float largestep ) {
 
+		Matrix4 view =  float16toM4(view16);
 	const Volume volume = {v_size, v_dim,v_data};
 
 	const uint2 pos = (uint2) (get_global_id(0),get_global_id(1));
@@ -451,13 +461,16 @@ __kernel void integrateKernel (
 		const float3 v_dim,
 		__global const float * depth,
 		const uint2 depthSize,
-		const Matrix4 invTrack,
-		const Matrix4 K,
+		const float16 invTrack16,
+		const float16 K16,
 		const float mu,
 		const float maxweight ,
 		const float3 delta ,
 		const float3 cameraDelta
 ) {
+
+		Matrix4 K  =  float16toM4(K16);
+		Matrix4 invTrack =  float16toM4(invTrack16);
 
 	Volume vol; vol.data = v_data; vol.size = v_size; vol.dim = v_dim;
 
@@ -503,11 +516,14 @@ __kernel void trackKernel (
 		const uint2 refVertexSize,
 		__global const float * refNormal,// float3
 		const uint2 refNormalSize,
-		const Matrix4 Ttrack,
-		const Matrix4 view,
+		const float16 Ttrack16,
+		const float16 view16,
 		const float dist_threshold,
 		const float normal_threshold
 ) {
+
+		Matrix4  Ttrack =  float16toM4(Ttrack16);
+		Matrix4  view =  float16toM4(view16);
 
 	const uint2 pixel = (uint2)(get_global_id(0),get_global_id(1));
 
@@ -644,8 +660,10 @@ __kernel void depth2vertexKernel( __global float * vertex, // float3
 		const uint2 vertexSize ,
 		const __global float * depth,
 		const uint2 depthSize ,
-		const Matrix4 invK ) {
+		const float16 invK16 ) {
+		Matrix4 invK =  float16toM4(invK16);
 
+		
 	uint2 pixel = (uint2) (get_global_id(0),get_global_id(1));
 	float3 vert = (float3)(get_global_id(0),get_global_id(1),1.0f);
 

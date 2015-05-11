@@ -23,10 +23,6 @@
 #include <iomanip>
 #include <getopt.h>
 
-#include <perfstats.h>
-#include <PowerMonitor.h>
-PowerMonitor *powerMonitor = NULL;
-
 inline double tock() {
 	synchroniseDevices();
 #ifdef __APPLE__
@@ -70,10 +66,6 @@ int main(int argc, char ** argv) {
 		config.print_arguments();
 		exit(1);
 	}
-
-
-
-	powerMonitor = new PowerMonitor();
 
 	// ========= READER INITIALIZATION  =========
 
@@ -185,12 +177,6 @@ int main(int argc, char ** argv) {
 
 	if (config.dump_volume_file != "") {
 		kfusion.dumpVolume(config.dump_volume_file);
-	}
-
-	if (powerMonitor && powerMonitor->isActive()) {
-		std::ofstream powerStream("power.rpt");
-		powerMonitor->powerStats.print_all_data(powerStream);
-		powerStream.close();
 	}
 
 	//  =========  FREE BASIC BUFFERS  =========
