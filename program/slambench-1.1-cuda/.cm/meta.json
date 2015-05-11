@@ -46,7 +46,8 @@
         "run_input_files": [], 
         "run_output_files": [
           "tmp-ck-timer.json"
-        ]
+        ],
+        "post_process_cmd":"python $#src_path#$convert_timers_to_ck_format.py"
       }
     }
   }, 
