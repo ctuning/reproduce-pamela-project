@@ -40,7 +40,6 @@
 		if((tock_clockData.tv_sec > tick_clockData.tv_sec) && (tock_clockData.tv_nsec >= tick_clockData.tv_nsec))   std::cerr<< tock_clockData.tv_sec - tick_clockData.tv_sec << std::setfill('0') << std::setw(9);\
 		std::cerr  << (( tock_clockData.tv_nsec - tick_clockData.tv_nsec) + ((tock_clockData.tv_nsec<tick_clockData.tv_nsec)?1000000000:0)) << " " <<  size << std::endl;}}
 #else
-#endif
 #include "winmisc.h"
 
 	#define TICK()    {if (print_kernel_timing) {tick_clockData=win_tock();}}
@@ -48,7 +47,7 @@
 	#define TOCK(str,size)  {if (print_kernel_timing) {tock_clockData=win_tock(); std::cerr<< str << " ";\
 		if(tock_clockData > tick_clockData) std::cerr<< tock_clockData - tick_clockData << std::setfill('0') << std::setw(9);\
 		std::cerr  << ( tock_clockData - tick_clockData ) << " " <<  size << std::endl;}}
-
+#endif
 #endif
 
 // input once
