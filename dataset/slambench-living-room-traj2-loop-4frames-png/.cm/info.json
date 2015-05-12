@@ -1,5 +1,5 @@
 {
-  "backup_data_uid": "52124b85b3e63230", 
+  "backup_data_uid": "799f2557e1ffe770", 
   "backup_module_uid": "8a7141c59cd335f5", 
   "backup_module_uoa": "dataset", 
   "control": {
@@ -16,5 +16,5 @@
       "0205"
     ]
   }, 
-  "data_name": "slambench-living-room-traj2-loop-3frames-png"
+  "data_name": "slambench - living room trajectory 2 - loop - png - 4 frames"
 }
