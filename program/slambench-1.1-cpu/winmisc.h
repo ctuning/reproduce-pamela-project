@@ -31,5 +31,6 @@
 
 void win_usleep(__int64 usec);
 double win_tock(void);
+bool win_is_dir(char* str);
 
 #endif

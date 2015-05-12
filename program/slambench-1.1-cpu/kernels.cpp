@@ -8,6 +8,11 @@
  */
 #include <kernels.h>
 
+#ifdef WINDOWS
+#include <stdint.h>
+#endif
+
+
 #ifdef __APPLE__
 #include <mach/clock.h>
 #include <mach/mach.h>
@@ -27,12 +32,22 @@
 		if((tock_clockData.tv_sec > tick_clockData.tv_sec) && (tock_clockData.tv_nsec >= tick_clockData.tv_nsec))   std::cerr<< tock_clockData.tv_sec - tick_clockData.tv_sec << std::setfill('0') << std::setw(9);\
 		std::cerr  << (( tock_clockData.tv_nsec - tick_clockData.tv_nsec) + ((tock_clockData.tv_nsec<tick_clockData.tv_nsec)?1000000000:0)) << " " <<  size << std::endl;}}
 #else
+#ifndef WINDOWS
 	
 	#define TICK()    {if (print_kernel_timing) {clock_gettime(CLOCK_MONOTONIC, &tick_clockData);}}
 
 	#define TOCK(str,size)  {if (print_kernel_timing) {clock_gettime(CLOCK_MONOTONIC, &tock_clockData); std::cerr<< str << " ";\
 		if((tock_clockData.tv_sec > tick_clockData.tv_sec) && (tock_clockData.tv_nsec >= tick_clockData.tv_nsec))   std::cerr<< tock_clockData.tv_sec - tick_clockData.tv_sec << std::setfill('0') << std::setw(9);\
 		std::cerr  << (( tock_clockData.tv_nsec - tick_clockData.tv_nsec) + ((tock_clockData.tv_nsec<tick_clockData.tv_nsec)?1000000000:0)) << " " <<  size << std::endl;}}
+#else
+#endif
+#include "winmisc.h"
+
+	#define TICK()    {if (print_kernel_timing) {tick_clockData=win_tock();}}
+
+	#define TOCK(str,size)  {if (print_kernel_timing) {tock_clockData=win_tock(); std::cerr<< str << " ";\
+		if(tock_clockData > tick_clockData) std::cerr<< tock_clockData - tick_clockData << std::setfill('0') << std::setw(9);\
+		std::cerr  << ( tock_clockData - tick_clockData ) << " " <<  size << std::endl;}}
 
 #endif
 
@@ -60,8 +75,13 @@ bool print_kernel_timing = false;
 	mach_timespec_t tick_clockData;
 	mach_timespec_t tock_clockData;
 #else
+#ifndef WINDOWS
 	struct timespec tick_clockData;
 	struct timespec tock_clockData;
+#else
+        double tick_clockData;
+        double tock_clockData;
+#endif
 #endif
 	
 void Kfusion::languageSpecificConstructor() {
@@ -1011,7 +1031,7 @@ void Kfusion::dumpVolume(std::string filename) {
 	std::cout << "Dumping the volumetric representation on file: " << filename
 			<< std::endl;
 	fDumpFile.open(filename.c_str(), std::ios::out | std::ios::binary);
-	if (fDumpFile == NULL) {
+	if (!fDumpFile) {
 		std::cout << "Error opening file: " << filename << std::endl;
 		exit(1);
 	}

@@ -28,7 +28,11 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#ifdef WINDOWS
+#include <time.h>
+#else
 #include <sys/time.h>
+#endif
 
 #define OPENME_DEBUG "OPENME_DEBUG"
 

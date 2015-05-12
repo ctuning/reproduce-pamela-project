@@ -15,10 +15,6 @@
 #include <sys/stat.h>
 #include <sstream>
 
-#ifdef WINDOWS
-# include "winmisc.h"
-#endif
-
 std::vector<std::string> &split(const std::string &s, char delim,
 		std::vector<std::string> &elems) {
 	std::stringstream ss(s);
@@ -173,10 +169,9 @@ DepthReader *createReader(Configuration *config, std::string filename) {
 		}
 	}
 
-#ifndef WINDOWS
 	struct stat st;
 	lstat(filename.c_str(), &st);
-#endif
+
 	if (filename == "") {
 #ifdef DO_OPENNI
 		//This is for openni from a camera
@@ -188,14 +183,9 @@ DepthReader *createReader(Configuration *config, std::string filename) {
 #else
 		reader = NULL;
 #endif
-#ifndef WINDOWS
 	} else if (S_ISDIR(st.st_mode)) {
-#else
-	} else if (win_is_dir((char *) filename.c_str())) {
-#endif
 		reader = new SceneDepthReader((char *) (filename.c_str()), config->fps,
 				config->blocking_read);
-
 	}
 #ifdef DO_OPENNI
 	else if(filename.substr(filename.length()-4, 4)==".oni") {

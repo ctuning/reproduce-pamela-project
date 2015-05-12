@@ -28,4 +28,12 @@ double win_tock(void)
       return (double)(clock()) / CLOCKS_PER_SEC;
 }
 
+bool win_is_dir(char* str)
+{
+   DWORD dwAttrib = GetFileAttributes(str);
+
+   return (dwAttrib != INVALID_FILE_ATTRIBUTES && 
+          (dwAttrib & FILE_ATTRIBUTE_DIRECTORY));
+}
+
 #endif
