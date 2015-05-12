@@ -28,11 +28,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#ifdef __MINGW32__
 #include <sys/time.h>
-#else
-#include <time.h>
-#endif
 
 #define OPENME_DEBUG "OPENME_DEBUG"
 
