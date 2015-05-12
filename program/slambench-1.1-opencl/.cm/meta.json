@@ -139,10 +139,10 @@
     }
   }, 
   "run_vars": {
-    "KERNEL_TIMINGS": "0", 
+    "KERNEL_TIMINGS": "1", 
     "OPENCL_DEVICE": "0", 
     "OPENCL_KERNEL": "$#src_path#$kernels.cl", 
-    "OPENCL_PLATEFORM": "1"
+    "OPENCL_PLATEFORM": "0"
   }, 
   "run_vars_desc": {
     "##KERNEL_TIMINGS": {
