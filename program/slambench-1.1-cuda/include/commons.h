@@ -44,6 +44,16 @@
 #include <TooN/se3.h>
 #include <TooN/GR_SVD.h>
 
+#ifndef S_ISDIR
+#  define S_IFDIR _S_IFDIR
+#  define       S_ISDIR(mode)   (((mode) & S_IFDIR) == S_IFDIR)
+#endif
+
+#ifndef S_ISREG
+#  define S_IFREG _S_IFREG
+#  define       S_ISREG(mode)   (((mode) & S_IFREG) == S_IFREG)
+#endif
+
 ////////////////////////// MATh STUFF //////////////////////
 
 #define INVALID -2
@@ -572,7 +582,7 @@ void writeVolume(std::string filename, Volume v) {
 	std::ofstream fDumpFile;
 	fDumpFile.open(filename.c_str(), std::ios::out | std::ios::binary);
 
-	if (fDumpFile == NULL) {
+	if (!fDumpFile) {
 		std::cout << "Error opening file: " << filename << std::endl;
 		exit(1);
 	}

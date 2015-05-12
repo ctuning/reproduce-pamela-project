@@ -14,8 +14,11 @@
 #include <cutil_math.h>
 #include <vector>
 #include <sstream>
-#include <getopt.h>
-
+#ifndef WINDOWS
+# include <getopt.h>
+#else
+# include <getoptwin.h>
+#endif
 #include <constant_parameters.h>
 
 ////////////////////////// RUNTIME PARAMETERS //////////////////////

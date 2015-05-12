@@ -5,6 +5,9 @@
 
  This code is licensed under the MIT License.
 
+ This code has been updated by Grigori Fursin to support Windows
+ and universal autotuning/machine learning CK framework
+
  */
 
 #include <kernels.h>
@@ -21,10 +24,18 @@
 #include <sys/stat.h>
 #include <sstream>
 #include <iomanip>
-#include <getopt.h>
+
+#ifdef OPENME
+#include <openme.h>
+#endif
+#ifdef XOPENME
+#include <ctuning.h>
+#endif
 
 inline double tock() {
 	synchroniseDevices();
+#ifndef WINDOWS
+#include <getopt.h>
 #ifdef __APPLE__
 		clock_serv_t cclock;
 		mach_timespec_t clockData;
@@ -36,8 +47,14 @@ inline double tock() {
 		clock_gettime(CLOCK_MONOTONIC, &clockData);
 #endif
 		return (double) clockData.tv_sec + clockData.tv_nsec / 1000000000.0;
-}	
+#else
+# include <getoptwin.h>
+# include <winmisc.h>
 
+  return win_tock();
+#endif
+
+}	
 
 
 /***
@@ -45,6 +62,14 @@ inline double tock() {
  */
 
 int main(int argc, char ** argv) {
+
+#ifdef OPENME
+  openme_init(NULL,NULL,NULL,0);
+  openme_callback("PROGRAM_START", NULL);
+#endif
+#ifdef XOPENME
+  program_start();
+#endif
 
 	Configuration config(argc, argv);
 
@@ -122,6 +147,15 @@ int main(int argc, char ** argv) {
 			<< std::endl;
 	logstream->setf(std::ios::fixed, std::ios::floatfield);
 
+
+
+#ifdef OPENME
+  openme_callback("ACC_KERNEL_START", NULL);
+#endif
+#ifdef XOPENME
+  clock_start(0);
+#endif
+
 	while (reader->readNextDepthFrame(inputDepth)) {
 
 		Matrix4 pose = kfusion.getPose();
@@ -173,6 +207,14 @@ int main(int argc, char ** argv) {
 
 		timings[0] = tock();
 	}
+
+#ifdef XOPENME
+  clock_end(0);
+#endif
+#ifdef OPENME
+  openme_callback("ACC_KERNEL_END", NULL);
+#endif
+
 	// ==========     DUMP VOLUME      =========
 
 	if (config.dump_volume_file != "") {
@@ -185,7 +227,13 @@ int main(int argc, char ** argv) {
 	free(depthRender);
 	free(trackRender);
 	free(volumeRender);
+
+#ifdef XOPENME
+  program_end();
+#endif
+#ifdef OPENME
+  openme_callback("PROGRAM_END", NULL);
+#endif
+
 	return 0;
-
 }
-

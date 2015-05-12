@@ -19,8 +19,24 @@
 #include <iomanip>
 #include <stdio.h>
 #include <stdbool.h>
-#include <unistd.h>
+#ifndef WINDOWS
+# include <unistd.h>
+#else
+# include "winmisc.h"
+#endif
+
 #include <time.h>
+
+#ifndef S_ISDIR
+#  define S_IFDIR _S_IFDIR
+#  define       S_ISDIR(mode)   (((mode) & S_IFDIR) == S_IFDIR)
+#endif
+
+#ifndef S_ISREG
+#  define S_IFREG _S_IFREG
+#  define       S_ISREG(mode)   (((mode) & S_IFREG) == S_IFREG)
+#endif
+
 enum ReaderType {
 	READER_RAW, READER_SCENE, READER_OPENNI
 };
@@ -53,6 +69,7 @@ public:
 			return;
 		}
 
+#ifndef WINDOWS
 #ifdef __APPLE__
 		clock_serv_t cclock;
 		mach_timespec_t clockData;
@@ -65,6 +82,9 @@ public:
 #endif
 		double current_frame = clockData.tv_sec
 				+ clockData.tv_nsec / 1000000000.0;
+#else
+                double current_frame = (double)(clock()) / CLOCKS_PER_SEC;
+#endif
 		static double first_frame = current_frame;
 
 		int frame = std::ceil((current_frame - first_frame) * (double) _fps);
@@ -74,7 +94,11 @@ public:
 		double ttw = ((double) _frame * tpf - current_frame + first_frame);
 		if (_blocking_read) {
 			if (ttw > 0)
+#ifdef WINDOWS
+				win_usleep(1000000.0 * ttw);
+#else
 				usleep(1000000.0 * ttw);
+#endif
 		}
 
 	}
@@ -109,6 +133,11 @@ public:
 	SceneDepthReader(std::string dir, int fps, bool blocking_read) :
 			DepthReader(), _dir(dir), _size(make_uint2(640, 480)) {
 		std::cerr << "No such directory " << dir << std::endl;
+#ifdef WINDOWS
+/* not supporting camera in Windows for now */
+		cameraOpen = false;
+		cameraActive = false;
+#else
 		struct stat st;
 		lstat(dir.c_str(), &st);
 		if (S_ISDIR(st.st_mode)) {
@@ -122,7 +151,7 @@ public:
 			cameraOpen = false;
 			cameraActive = false;
 		}
-
+#endif
 	}
 	;
 	ReaderType getType() {

@@ -1,12 +1,15 @@
 {
   "backup_data_uid": "bb2ba2811660c147", 
-  "build_compiler_vars": {}, 
+  "build_compiler_vars": {
+    "XOPENME": "1", 
+    "_HAS_EXCEPTIONS": "0"
+  }, 
   "build_compiler_vars_desc": {}, 
   "compile_deps": {
     "compiler": {
       "local": "yes", 
       "sort": 10, 
-      "tags": "compiler,lang-cpp"
+      "tags": "compiler,lang-cpp-cuda"
     }, 
     "lib.toon": {
       "local": "yes", 
@@ -66,8 +69,12 @@
     }
   }, 
   "source_files": [
-    "ctuning.c", 
-    "syrk.c"
+    "ctuning.c",
+    "winmisc.c",
+    "getoptwin.c", 
+    "reader.cpp", 
+    "benchmark.cpp", 
+    "kernels.cu"
   ], 
   "tags": [
     "cuda", 

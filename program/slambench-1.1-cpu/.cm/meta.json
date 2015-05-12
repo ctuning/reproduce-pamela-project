@@ -1,6 +1,9 @@
 {
   "backup_data_uid": "e4495a6270f52615", 
-  "build_compiler_vars": {}, 
+  "build_compiler_vars": {
+    "XOPENME": "1", 
+    "_HAS_EXCEPTIONS": "0"
+  }, 
   "build_compiler_vars_desc": {}, 
   "compile_deps": {
     "compiler": {
@@ -67,6 +70,9 @@
     }
   }, 
   "source_files": [
+    "ctuning.c",
+    "winmisc.c",
+    "getoptwin.c", 
     "reader.cpp", 
     "benchmark.cpp", 
     "kernels.cpp"
