@@ -1,0 +1,1 @@
+On older architectures, add flag -arch compute_11

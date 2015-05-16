@@ -29,9 +29,11 @@
 #ifndef __XOPENME_H_
 #define __XOPENME_H_
 
-void clock_start(int timer);
-void clock_end(int timer);
-void program_start(void);
-void program_end(void);
+extern "C" {
+ void clock_start(int timer);
+ void clock_end(int timer);
+ void program_end(void);
+ void program_start(void);
+}
 
 #endif

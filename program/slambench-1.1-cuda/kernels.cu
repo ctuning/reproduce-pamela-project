@@ -627,9 +627,9 @@ void Kfusion::languageSpecificConstructor() {
 		print_kernel_timing = true;
 	if (firstAcquire)
 		cudaSetDeviceFlags (cudaDeviceMapHost);
-	//size_t freeMem, totalMem;
-	//cudaMemGetInfo(&freeMem, &totalMem);
-	//std::cerr<< "Total mem: " << totalMem/(1024*1024) << " freeMem: " << freeMem/(1024*1024) << "\n";
+	size_t freeMem, totalMem;
+	cudaMemGetInfo(&freeMem, &totalMem);
+	std::cerr<< "Total mem: " << totalMem/(1024*1024) << " freeMem: " << freeMem/(1024*1024) << "\n";
 	uint3 vr = make_uint3(volumeResolution.x, volumeResolution.y,
 			volumeResolution.z);
 	float3 vd = make_float3(volumeDimensions.x, volumeDimensions.y,
