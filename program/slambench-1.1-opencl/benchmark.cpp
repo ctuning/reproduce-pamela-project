@@ -63,6 +63,9 @@ inline double tock() {
 
 int main(int argc, char ** argv) {
 
+char tmp[256];
+char tmp1[256];
+
 #ifdef OPENME
   openme_init(NULL,NULL,NULL,0);
   openme_callback("PROGRAM_START", NULL);
@@ -125,20 +128,24 @@ int main(int argc, char ** argv) {
 	//  =========  BASIC BUFFERS  (input / output )  =========
 
 	// Construction Scene reader and input buffer
-	uint16_t* inputDepth = (uint16_t*) malloc(
-			sizeof(uint16_t) * inputSize.x * inputSize.y);
-	uchar4* depthRender = (uchar4*) malloc(
-			sizeof(uchar4) * computationSize.x * computationSize.y);
-	uchar4* trackRender = (uchar4*) malloc(
-			sizeof(uchar4) * computationSize.x * computationSize.y);
-	uchar4* volumeRender = (uchar4*) malloc(
-			sizeof(uchar4) * computationSize.x * computationSize.y);
+	uint64_t sInputRGB = sizeof(uchar3) * inputSize.x * inputSize.y;
+	uint64_t sInputDepth = sizeof(uint16_t) * inputSize.x * inputSize.y;
+	uint64_t sDepthRender = sizeof(uchar4) * computationSize.x * computationSize.y;
+	uint64_t sTrackRender = sizeof(uchar4) * computationSize.x * computationSize.y;
+	uint64_t sVolumeRender = sizeof(uchar4) * computationSize.x * computationSize.y;
+ 
+	uchar3* inputRGB = (uchar3*) malloc(sInputRGB);
+	uint16_t* inputDepth = (uint16_t*) malloc(sInputDepth);
+	uchar4* depthRender = (uchar4*) malloc(sDepthRender);
+	uchar4* trackRender = (uchar4*) malloc(sTrackRender);
+	uchar4* volumeRender = (uchar4*) malloc(sVolumeRender);
 
 	uint frame = 0;
 
 	Kfusion kfusion(computationSize, config.volume_resolution,
 			config.volume_size, init_pose, config.pyramid);
 
+	double delay;
 	double timings[7];
 	timings[0] = tock();
 
@@ -156,7 +163,10 @@ int main(int argc, char ** argv) {
   clock_start(0);
 #endif
 
-	while (reader->readNextDepthFrame(inputDepth)) {
+delay=tock();
+
+	while (reader->readNextDepthFrame(inputRGB,inputDepth)) {
+
 
 		Matrix4 pose = kfusion.getPose();
 
@@ -165,6 +175,9 @@ int main(int argc, char ** argv) {
 		float zt = pose.data[2].w - init_pose.z;
 
 		timings[1] = tock();
+
+//		printf("xyz= %u %u\n", inputDepth, inputSize);
+//                exit(1);
 
 		kfusion.preprocessing(inputDepth, inputSize);
 
@@ -206,6 +219,34 @@ int main(int argc, char ** argv) {
 		frame++;
 
 		timings[0] = tock();
+
+		if ((tock()-delay)>1)
+                {
+                   printf("ping\n");
+
+sprintf(tmp, "tmp-raw-input-rgb-%u.rgb", frame);
+
+FILE *fx=fopen( tmp , "wb" );
+//fwrite(inputRGB, sInputRGB, 1, fx);
+//sprintf(tmp1, "ck convert_raw_rgb_image dataset.features input_file=%s output_file=tmp-raw-input.png width=640 height=480 output_type=png", tmp);
+
+//fwrite(depthRender, sDepthRender, 1, fx);
+//sprintf(tmp1, "ck convert_raw_rgb_image dataset.features input_file=%s output_file=tmp-raw-output.jpg width=320 height=240 mode=CMYK output_type=jpeg", tmp);
+
+//fwrite(trackRender, sTrackRender, 1, fx);
+//sprintf(tmp1, "ck convert_raw_rgb_image dataset.features input_file=%s output_file=tmp-raw-output.jpg width=320 height=240 mode=CMYK output_type=jpeg", tmp);
+
+fwrite(volumeRender, sVolumeRender, 1, fx);
+sprintf(tmp1, "ck convert_raw_rgb_image dataset.features input_file=%s output_file=tmp-raw-output.jpg width=320 height=240 mode=CMYK output_type=jpeg", tmp);
+
+fclose(fx);
+
+
+system(tmp1);
+
+                   delay=tock();
+
+                }
 	}
 
 #ifdef XOPENME

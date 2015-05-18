@@ -28,10 +28,10 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#ifdef WINDOWS
-#include <time.h>
-#else
+#ifdef __MINGW32__
 #include <sys/time.h>
+#else
+#include <time.h>
 #endif
 
 #define OPENME_DEBUG "OPENME_DEBUG"
@@ -117,14 +117,13 @@ void program_end(void)
 
   fprintf(f,"{\n");
   fprintf(f," \"execution_time\":%.6lf,\n", secs[0]);
-  fprintf(f," \"kernel_execution_time\":[\n");
+
   for (timer=0; timer<NTIMERS; timer++) 
   {
-    fprintf(f,"    %.6lf", secs[timer]);
+    fprintf(f," \"execution_time_kernel_%u\":%.6lf", timer, secs[timer]);
     if (timer!=(NTIMERS-1)) fprintf(f, ",");
     fprintf(f, "\n");
   }
-  fprintf(f," ]\n");
   fprintf(f,"}\n");
 
   fclose(f);
