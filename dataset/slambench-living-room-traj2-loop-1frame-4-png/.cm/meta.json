@@ -1,6 +1,6 @@
 {
   "dataset_files": [
-    "scene_00_0000.png"
+    "scene_00_0003.png"
   ], 
   "features": {
     "colors": "rgb", 
@@ -10,7 +10,7 @@
   }, 
   "tags": [
     "dataset", 
-    "png",
+    "png", 
     "video", 
     "slambench"
   ]

@@ -1,6 +1,6 @@
 {
   "dataset_files": [
-    "scene_00_0000.png"
+    "living_room_traj2_loop_small.raw"
   ], 
   "features": {
     "colors": "rgb", 
@@ -10,7 +10,7 @@
   }, 
   "tags": [
     "dataset", 
-    "png",
+    "raw", 
     "video", 
     "slambench"
   ]

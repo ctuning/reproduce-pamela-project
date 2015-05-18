@@ -1,0 +1,22 @@
+##### How to use the benchmark mode with the ICL-NUIM dataset #####
+
+SLAMBench provides an interface to the ICL-NUIM dataset. 
+This enables the accuracy evaluation on a SLAM implementation via the ICL-NUIM ground truth. 
+ICL-NUIM provides 4 trajectories, we pick trajectory 2 and show how to use the dataset (for the download of each trajectory we recommend 2 GB of space available on the system):
+
+```
+#!plain
+mkdir living_room_traj2_loop
+cd living_room_traj2_loop
+wget http://www.doc.ic.ac.uk/~ahanda/living_room_traj2_loop.tgz
+tar xzf living_room_traj2_loop.tgz
+cd ..
+```
+
+You can use the ICL-NUIM dataset in its native format or in a RAW format (with the latter acquiring speed increases). 
+RAW is the format to be used for benchmarking purposes, to generate the RAW file: 
+
+```
+#!plain
+./build/kfusion/thirdparty/scene2raw living_room_traj2_loop living_room_traj2_loop.raw
+```

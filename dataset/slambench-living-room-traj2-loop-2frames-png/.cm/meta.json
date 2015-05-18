@@ -1,6 +1,6 @@
 {
   "dataset_files": [
-    "living_room_traj2_loop_small.raw"
+    "scene_00_0001.png"
   ], 
   "features": {
     "colors": "rgb", 
