@@ -48,29 +48,37 @@ if ll>0:
    x=l[0].split('\t')
    ch=0
    for q in x:
-       qx='characteristic_'+str(ch)
-       desc[qx]=q.strip()
+       qn=q.strip()
+       qx='characteristic_'+str(qn)
+       desc[ch]=qx
        d[qx]=[]
        ch+=1
 
 for k in range(1,ll):
     x=l[k].split('\t')
     ch=0
-    for q in x:
-        qx='characteristic_'+str(ch)
-        d[qx].append(q.strip())
-        ch+=1
+    if len(x)>1:
+       for q in x:
+           qx=desc[ch]
+           qv=q.strip()
+           try: qv=float(qv)
+           except ValueError: pass
+           d[qx].append(qv)
+           ch+=1
 
 # Check fps
 if ll>2:
    rll=ll-2
 
    d['frames']=rll
-   ket=d.get('kernel_execution_time',[])
+   ket=d.get('characteristic_total',[])
    if len(ket)>0:
-      dket=ket[0]
-      fps=float(rll)/dket
-      d['fps']=fps
+      fs=0.0
+      for f in ket:
+          fs+=f
+      if fs>0:
+         fps=float(rll)/fs
+         d['fps']=fps
 
 # Write CK json
 f=open('tmp-ck-timer.json','wt')
