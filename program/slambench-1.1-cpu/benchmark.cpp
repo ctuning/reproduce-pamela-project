@@ -66,6 +66,9 @@ int main(int argc, char ** argv) {
 char tmp[256];
 char tmp1[256];
 
+double fgg_total=0.0;
+double fgg_fps=0.0;
+
 #ifdef OPENME
   openme_init(NULL,NULL,NULL,0);
   openme_callback("PROGRAM_START", NULL);
@@ -116,6 +119,11 @@ char tmp1[256];
 	std::cerr << "input Size is = " << inputSize.x << "," << inputSize.y
 			<< std::endl;
 
+#ifdef XOPENME
+	xopenme_add_feature_i(0, "  \"input_size_x\":%u", inputSize.x);
+	xopenme_add_feature_i(1, "  \"input_size_y\":%u", inputSize.y);
+#endif
+
 	//  =========  BASIC PARAMETERS  (input size / computation size )  =========
 
 	const uint2 computationSize = make_uint2(
@@ -128,6 +136,8 @@ char tmp1[256];
 	//  =========  BASIC BUFFERS  (input / output )  =========
 
 	// Construction Scene reader and input buffer
+
+//FGG
 	uint64_t sInputRGB = sizeof(uchar3) * inputSize.x * inputSize.y;
 	uint64_t sInputDepth = sizeof(uint16_t) * inputSize.x * inputSize.y;
 	uint64_t sDepthRender = sizeof(uchar4) * computationSize.x * computationSize.y;
@@ -161,9 +171,8 @@ char tmp1[256];
 #endif
 #ifdef XOPENME
   clock_start(0);
+ delay=tock();
 #endif
-
-delay=tock();
 
 	while (reader->readNextDepthFrame(inputRGB,inputDepth)) {
 
@@ -218,25 +227,35 @@ delay=tock();
 
 		frame++;
 
+		fgg_total+=(timings[5] - timings[0]);
+                fgg_fps=frame/fgg_total;
+#ifdef XOPENME
+        	xopenme_add_feature_d(2, "  \"run_time_total\":%lf", fgg_total);
+        	xopenme_add_feature_d(3, "  \"run_time_fps\":%lf", fgg_fps);
+#endif
+
+
 		timings[0] = tock();
 
-/*
+// FGG (Grigori Fursin) added to dump arrays to get a run-time snapshot of a system for reproducibility and off-line autotuning
+
 		if ((tock()-delay)>1)
                 {
-                   printf("ping\n");
 
-sprintf(tmp, "tmp-raw-input-rgb-%u.rgb", frame);
-FILE *fx=fopen( tmp , "wb" );
-fwrite(inputRGB, sInputRGB, 1, fx);
-fclose(fx);
+  	if (getenv("XOPENME_DUMP_MEMORY_INPUT_RGB") && (atoi(getenv("XOPENME_DUMP_MEMORY_INPUT_RGB"))==1))
+           xopenme_dump_memory("tmp-raw-input-rgb.rgb", inputRGB, sInputRGB);
+  	if (getenv("XOPENME_DUMP_MEMORY_DEPTHRENDER") && (atoi(getenv("XOPENME_DUMP_MEMORY_DEPTHRENDER"))==1))
+           xopenme_dump_memory("tmp-raw-depthrender.rgb", depthRender, sDepthRender);
+  	if (getenv("XOPENME_DUMP_MEMORY_TRACKRENDER") && (atoi(getenv("XOPENME_DUMP_MEMORY_TRACKRENDER"))==1))
+           xopenme_dump_memory("tmp-raw-trackrender.rgb", trackRender, sTrackRender);
+  	if (getenv("XOPENME_DUMP_MEMORY_VOLUMERENDER") && (atoi(getenv("XOPENME_DUMP_MEMORY_VOLUMERENDER"))==1))
+           xopenme_dump_memory("tmp-raw-volumerender.rgb", volumeRender, sVolumeRender);
 
-sprintf(tmp1, "ck convert_raw_rgb_image dataset.features input_file=%s output_file=tmp-raw-output.jpg width=320 height=240 mode=CMYK output_type=jpeg", tmp);
-system(tmp1);
+                   program_end();
 
                    delay=tock();
-
                 }
-*/
+
 	}
 
 #ifdef XOPENME
