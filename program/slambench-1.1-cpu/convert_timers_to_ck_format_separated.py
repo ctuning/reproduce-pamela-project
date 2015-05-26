@@ -51,7 +51,7 @@ if ll>0:
        qn=q.strip()
        qx='dim_'+str(qn)
        desc[ch]=qx
-       d[qx]=''
+       d[qx]=[]
        ch+=1
 
 for k in range(1,ll):
@@ -61,11 +61,9 @@ for k in range(1,ll):
        for q in x:
            qx=desc[ch]
            qv=q.strip()
-#           try: qv=float(qv)
-#           except ValueError: pass
-           if d[qx]=='': d[qx]='@@'
-           else: d[qx]+=','
-           d[qx]+=qv
+           try: qv=float(qv)
+           except ValueError: pass
+           d[qx].append(qv)
            ch+=1
 
 # Check fps
@@ -73,12 +71,11 @@ if ll>2:
    rll=ll-2
 
    d['frames']=rll
-   ket=d.get('dim_total','')
+   ket=d.get('dim_total',[])
    if len(ket)>0:
-      ket=ket[2:].split(',')
       fs=0.0
       for f in ket:
-          fs+=float(f)
+          fs+=f
       d['total_execution_time_from_kernels']=fs
       if fs>0:
          fps=float(rll)/fs

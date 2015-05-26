@@ -220,6 +220,7 @@ delay=tock();
 
 		timings[0] = tock();
 
+/*
 		if ((tock()-delay)>1)
                 {
                    printf("ping\n");
@@ -235,6 +236,7 @@ system(tmp1);
                    delay=tock();
 
                 }
+*/
 	}
 
 #ifdef XOPENME

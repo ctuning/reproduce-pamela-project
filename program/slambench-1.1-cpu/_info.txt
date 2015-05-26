@@ -1,0 +1,4 @@
+Grigori Fursin converted parts of slambench to Windows:
+ http://tcpreplay.synfin.net/doxygen3.4/compat_2windows-config_8h-source.html
+
+Managed to compile successfully only with clang >= 3.6.0 on Windows
