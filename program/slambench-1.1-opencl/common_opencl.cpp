@@ -51,8 +51,8 @@ void opencl_init(void) {
         }
 
 	platform_id = platforms[0];
-	if (getenv("OPENCL_PLATEFORM"))
-		platform_id = platforms[atoi(getenv("OPENCL_PLATEFORM"))];
+	if (getenv("OPENCL_PLATFORM"))
+		platform_id = platforms[atoi(getenv("OPENCL_PLATFORM"))];
 
 	char platformName[256];
 	clError = clGetPlatformInfo(platform_id, CL_PLATFORM_VENDOR,

@@ -28,6 +28,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
 #ifdef __MINGW32__
 # include <sys/time.h>
 #else
@@ -38,21 +40,29 @@
 # endif
 #endif
 
+#ifndef OPENME_NTIMERS
+# define OPENME_NTIMERS 1
+#endif
+
+#ifndef OPENME_NFEATURES
+# define OPENME_NFEATURES 0
+#endif
+
 #define OPENME_DEBUG "OPENME_DEBUG"
 
-char* ck_time_file="tmp-ck-timer.json";
-
-#define NTIMERS 1
+static char* ck_time_file="tmp-ck-timer.json";
 
 #ifdef WINDOWS
-static clock_t start[NTIMERS];
+static clock_t start[OPENME_NTIMERS];
 #else 
-static double start[NTIMERS];
-static struct timeval  before[NTIMERS], after;
+static double start[OPENME_NTIMERS];
+static struct timeval  before[OPENME_NTIMERS], after;
 #endif
-static double secs[NTIMERS];
+static double secs[OPENME_NTIMERS];
 
 static char *env;
+
+static char *features[OPENME_NFEATURES]; 
 
 void clock_start(int timer)
 {
@@ -89,28 +99,64 @@ void clock_end(int timer)
 void program_start(void)
 {
   int timer;
+  int feature;
 
   if ( ((env = getenv(OPENME_DEBUG)) != NULL) && (atoi(env)==1) )
     printf("OpenME event: start program\n");
 
   printf("Start program\n");
 
-  for (timer=0; timer<NTIMERS; timer++)
+  for (timer=0; timer<OPENME_NTIMERS; timer++)
   {
     secs[timer] = 0.0;
     start[timer] = 0.0;
   }
+
+  for (feature=0; feature<OPENME_NFEATURES; feature++)
+  {
+
+    features[feature]=(char*) malloc(1024*sizeof(char));
+    features[feature][0]=0;
+  }
+}
+
+void xopenme_add_feature_i(int feature, char* desc, int sfeature)
+{
+  sprintf(features[feature], desc, sfeature);
+}
+
+void xopenme_add_feature_f(int feature, char* desc, float sfeature)
+{
+  sprintf(features[feature], desc, sfeature);
+}
+
+void xopenme_add_feature_d(int feature, char* desc, double sfeature)
+{
+  sprintf(features[feature], desc, sfeature);
+}
+
+void xopenme_add_feature_s(int feature, char* desc, void* sfeature)
+{
+  sprintf(features[feature], desc, sfeature);
+}
+
+void xopenme_dump_memory(char* name, void* array, long size)
+{
+  FILE *fx=fopen(name , "wb" );
+  fwrite(array, size, 1, fx);
+  fclose(fx);
 }
 
 void program_end(void)
 {
   FILE* f;
   int timer;
+  int feature;
 
   if ( ((env = getenv(OPENME_DEBUG)) != NULL) && (atoi(env)==1) )
     printf("OpenME event: ending program\n");
 
-  printf("Stop program\n");
+  printf("Stop program123\n");
 
   f=fopen(ck_time_file, "w");
   if (f==NULL)
@@ -120,14 +166,27 @@ void program_end(void)
   }
 
   fprintf(f,"{\n");
-  fprintf(f," \"execution_time\":%.6lf,\n", secs[0]);
 
-  for (timer=0; timer<NTIMERS; timer++) 
+  fprintf(f," \"execution_time\":%.6lf,\n", secs[0]);
+  for (timer=0; timer<OPENME_NTIMERS; timer++) 
   {
     fprintf(f," \"execution_time_kernel_%u\":%.6lf", timer, secs[timer]);
-    if (timer!=(NTIMERS-1)) fprintf(f, ",");
+    if (timer!=(OPENME_NTIMERS-1) || (OPENME_NFEATURES!=0)) fprintf(f, ",");
     fprintf(f, "\n");
   }
+
+  if (OPENME_NFEATURES>0)
+  {
+    fprintf(f," \"features\":{\n");
+    for (feature=0; feature<OPENME_NFEATURES; feature++) 
+    {
+      fprintf(f,"  %s", features[feature]);
+      if (feature!=(OPENME_NFEATURES-1)) fprintf(f, ",");
+      fprintf(f, "\n");
+    }
+    fprintf(f," }\n");
+  }
+
   fprintf(f,"}\n");
 
   fclose(f);

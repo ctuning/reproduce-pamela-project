@@ -49,7 +49,7 @@ if ll>0:
    ch=0
    for q in x:
        qn=q.strip()
-       qx='dim_'+str(qn)
+       qx='execution_time_kernel_'+str(qn)
        desc[ch]=qx
        d[qx]=[]
        ch+=1
@@ -71,7 +71,7 @@ if ll>2:
    rll=ll-2
 
    d['frames']=rll
-   ket=d.get('dim_total',[])
+   ket=d.get('execution_time_kernel_total',[])
    if len(ket)>0:
       fs=0.0
       for f in ket:
