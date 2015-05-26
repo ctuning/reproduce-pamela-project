@@ -141,7 +141,7 @@
   }, 
   "run_vars": {
     "KERNEL_TIMINGS": "1", 
-    "OPENCL_DEVICE": "1", 
+    "OPENCL_DEVICE": "0", 
     "OPENCL_KERNEL": "$#src_path#$kernels.cl", 
     "OPENCL_PLATFORM": "0",
     "XOPENME_DUMP_MEMORY_INPUT_RGB":"1",
