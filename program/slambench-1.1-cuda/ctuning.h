@@ -29,11 +29,14 @@
 #ifndef __XOPENME_H_
 #define __XOPENME_H_
 
-extern "C" {
- void clock_start(int timer);
- void clock_end(int timer);
- void program_end(void);
- void program_start(void);
-}
+void clock_start(int timer);
+void clock_end(int timer);
+void program_start(void);
+void program_end(void);
+void xopenme_add_feature_i(int feature, char* desc, int sfeature);
+void xopenme_add_feature_f(int feature, char* desc, float sfeature);
+void xopenme_add_feature_d(int feature, char* desc, double sfeature);
+void xopenme_add_feature_s(int feature, char* desc, void* sfeature);
+void xopenme_dump_memory(char* name, void* array, long size);
 
 #endif

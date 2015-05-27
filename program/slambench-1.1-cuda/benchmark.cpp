@@ -63,6 +63,12 @@ inline double tock() {
 
 int main(int argc, char ** argv) {
 
+char tmp[256];
+char tmp1[256];
+
+double fgg_total=0.0;
+double fgg_fps=0.0;
+
 #ifdef OPENME
   openme_init(NULL,NULL,NULL,0);
   openme_callback("PROGRAM_START", NULL);
@@ -113,6 +119,11 @@ int main(int argc, char ** argv) {
 	std::cerr << "input Size is = " << inputSize.x << "," << inputSize.y
 			<< std::endl;
 
+#ifdef XOPENME
+	xopenme_add_feature_i(0, "  \"input_size_x\":%u", inputSize.x);
+	xopenme_add_feature_i(1, "  \"input_size_y\":%u", inputSize.y);
+#endif
+
 	//  =========  BASIC PARAMETERS  (input size / computation size )  =========
 
 	const uint2 computationSize = make_uint2(
@@ -125,20 +136,26 @@ int main(int argc, char ** argv) {
 	//  =========  BASIC BUFFERS  (input / output )  =========
 
 	// Construction Scene reader and input buffer
-	uint16_t* inputDepth = (uint16_t*) malloc(
-			sizeof(uint16_t) * inputSize.x * inputSize.y);
-	uchar4* depthRender = (uchar4*) malloc(
-			sizeof(uchar4) * computationSize.x * computationSize.y);
-	uchar4* trackRender = (uchar4*) malloc(
-			sizeof(uchar4) * computationSize.x * computationSize.y);
-	uchar4* volumeRender = (uchar4*) malloc(
-			sizeof(uchar4) * computationSize.x * computationSize.y);
+
+//FGG
+	uint64_t sInputRGB = sizeof(uchar3) * inputSize.x * inputSize.y;
+	uint64_t sInputDepth = sizeof(uint16_t) * inputSize.x * inputSize.y;
+	uint64_t sDepthRender = sizeof(uchar4) * computationSize.x * computationSize.y;
+	uint64_t sTrackRender = sizeof(uchar4) * computationSize.x * computationSize.y;
+	uint64_t sVolumeRender = sizeof(uchar4) * computationSize.x * computationSize.y;
+ 
+	uchar3* inputRGB = (uchar3*) malloc(sInputRGB);
+	uint16_t* inputDepth = (uint16_t*) malloc(sInputDepth);
+	uchar4* depthRender = (uchar4*) malloc(sDepthRender);
+	uchar4* trackRender = (uchar4*) malloc(sTrackRender);
+	uchar4* volumeRender = (uchar4*) malloc(sVolumeRender);
 
 	uint frame = 0;
 
 	Kfusion kfusion(computationSize, config.volume_resolution,
 			config.volume_size, init_pose, config.pyramid);
 
+	double delay;
 	double timings[7];
 	timings[0] = tock();
 
@@ -154,9 +171,11 @@ int main(int argc, char ** argv) {
 #endif
 #ifdef XOPENME
   clock_start(0);
+ delay=tock();
 #endif
 
-	while (reader->readNextDepthFrame(inputDepth)) {
+	while (reader->readNextDepthFrame(inputRGB,inputDepth)) {
+
 
 		Matrix4 pose = kfusion.getPose();
 
@@ -165,6 +184,9 @@ int main(int argc, char ** argv) {
 		float zt = pose.data[2].w - init_pose.z;
 
 		timings[1] = tock();
+
+//		printf("xyz= %u %u\n", inputDepth, inputSize);
+//                exit(1);
 
 		kfusion.preprocessing(inputDepth, inputSize);
 
@@ -205,7 +227,35 @@ int main(int argc, char ** argv) {
 
 		frame++;
 
+		fgg_total+=(timings[5] - timings[0]);
+                fgg_fps=frame/fgg_total;
+#ifdef XOPENME
+        	xopenme_add_feature_d(2, "  \"run_time_total\":%lf", fgg_total);
+        	xopenme_add_feature_d(3, "  \"run_time_fps\":%lf", fgg_fps);
+#endif
+
+
 		timings[0] = tock();
+
+// FGG (Grigori Fursin) added to dump arrays to get a run-time snapshot of a system for reproducibility and off-line autotuning
+
+		if ((tock()-delay)>1)
+                {
+
+  	if (getenv("XOPENME_DUMP_MEMORY_INPUT_RGB") && (atoi(getenv("XOPENME_DUMP_MEMORY_INPUT_RGB"))==1))
+           xopenme_dump_memory("tmp-raw-input-rgb.rgb", inputRGB, sInputRGB);
+  	if (getenv("XOPENME_DUMP_MEMORY_DEPTHRENDER") && (atoi(getenv("XOPENME_DUMP_MEMORY_DEPTHRENDER"))==1))
+           xopenme_dump_memory("tmp-raw-depthrender.rgb", depthRender, sDepthRender);
+  	if (getenv("XOPENME_DUMP_MEMORY_TRACKRENDER") && (atoi(getenv("XOPENME_DUMP_MEMORY_TRACKRENDER"))==1))
+           xopenme_dump_memory("tmp-raw-trackrender.rgb", trackRender, sTrackRender);
+  	if (getenv("XOPENME_DUMP_MEMORY_VOLUMERENDER") && (atoi(getenv("XOPENME_DUMP_MEMORY_VOLUMERENDER"))==1))
+           xopenme_dump_memory("tmp-raw-volumerender.rgb", volumeRender, sVolumeRender);
+
+                   program_end();
+
+                   delay=tock();
+                }
+
 	}
 
 #ifdef XOPENME

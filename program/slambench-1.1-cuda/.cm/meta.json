@@ -2,6 +2,7 @@
   "backup_data_uid": "bb2ba2811660c147", 
   "build_compiler_vars": {
     "XOPENME": "1", 
+    "OPENME_NFEATURES":"4",
     "_HAS_EXCEPTIONS": "0"
   }, 
   "build_compiler_vars_desc": {}, 
