@@ -5,7 +5,7 @@ import shutil
 
 print ('Starting continuous convert of images - Press Ctrl-C to stop')
 
-files=["tmp/tmp-raw-input-rgb.rgb"] #, "tmp/tmp-raw-depthrender.rgb", "tmp/tmp-raw-trackrender.rgb", "tmp/tmp-raw-volumerender.rgb"]
+files=["tmp/tmp-raw-input-rgb.rgb", "tmp/tmp-raw-depthrender.rgb", "tmp/tmp-raw-trackrender.rgb", "tmp/tmp-raw-volumerender.rgb"]
 tfiles=[None,None,None,None]
 width=[640,320,320,320]
 height=[480,240,240,240]
