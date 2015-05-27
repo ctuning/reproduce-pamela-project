@@ -13,9 +13,11 @@ types=[None,'CMYK','CMYK','CMYK']
 output=['png','jpeg','jpeg','jpeg']
 
 js='tmp/tmp-ck-timer.json'
+jsh='tmp/tmp-ck-timer.json.html'
 tjs=None
 
 while True:
+   # Record run-time state raw images and convert them to png or jpeg
    for q in range(0, len(files)):
        fn=files[q]
        t=tfiles[q]
@@ -47,6 +49,7 @@ while True:
 
              print ' * converted'
 
+   # Record run-time state to html
    if os.path.isfile(js):
       tt=os.path.getmtime(js)
       if tjs==None or tjs!=tt:
@@ -58,6 +61,10 @@ while True:
 
             h='Total FPS='+str(d.get('features',{}).get('run_time_fps',''))+'\n'
 
-            r=ck.save_text_file({'text_file':js+'.html', 'string':h})
+            r=ck.save_text_file({'text_file':jsh, 'string':h})
+
+   # if html file doesn't exist, creat dummy
+   if not os.path.isfile(jsh):
+      r=ck.save_text_file({'text_file':jsh, 'string':''})
 
    time.sleep(0.3)
