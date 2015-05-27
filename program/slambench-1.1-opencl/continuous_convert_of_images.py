@@ -10,7 +10,7 @@ tfiles=[None,None,None,None]
 width=[640,320,320,320]
 height=[480,240,240,240]
 types=[None,'CMYK','CMYK','CMYK']
-output=['png','png','png','png']
+output=['jpeg','jpeg','jpeg','jpeg']
 
 js='tmp/tmp-ck-timer.json'
 jsh='tmp/tmp-ck-timer.json.html'
