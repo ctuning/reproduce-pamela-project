@@ -2,7 +2,7 @@
   "backup_data_uid": "6a7145744fa93c7e", 
   "build_compiler_vars": {
     "XOPENME": "1", 
-    "OPENME_NFEATURES":"4",
+    "XOPENME_DUMPING_TIME": "1.0",
     "_HAS_EXCEPTIONS": "0"
   }, 
   "build_compiler_vars_desc": {}, 
@@ -21,6 +21,11 @@
       "local": "yes", 
       "sort": 15, 
       "tags": "lib,opencl"
+    },
+    "lib.xopenme": {
+      "local": "yes", 
+      "sort": 30, 
+      "tags": "lib,xopenme"
     }
   }, 
   "compiler_add_include_as_env_from_deps": [
@@ -43,6 +48,30 @@
   "program": "yes", 
   "run_cmds": {
     "default": {
+      "dataset_tags": [
+        "dataset", 
+        "raw", 
+        "video", 
+        "slambench"
+      ], 
+      "ignore_return_code": "no", 
+      "run_time": {
+        "fine_grain_timer_file": "tmp-ck-timer.json", 
+        "post_process_cmd": "python $#src_path#$convert_timers_to_ck_format.py", 
+        "run_cmd_main": "$#BIN_FILE#$ -s 4.8 -p 0.34,0.5,0.24 -z 1 -c 2 -r 1 -k 481.2,480,320,240 -i $#dataset_path#$$#dataset_filename#$ -o tmp-output.tmp", 
+        "run_cmd_out1": "tmp-output1.tmp", 
+        "run_cmd_out2": "tmp-output2.tmp", 
+        "run_correctness_output_files": [], 
+        "run_input_files": [
+          "kernels.cl"
+        ], 
+        "run_output_files": [
+          "tmp-output.tmp", 
+          "tmp-ck-timer.json"
+        ]
+      }
+    },
+    "default_rendering_each_4_frames": {
       "dataset_tags": [
         "dataset", 
         "raw", 
@@ -77,7 +106,7 @@
       "run_time": {
         "fine_grain_timer_file": "tmp-ck-timer.json", 
         "post_process_cmd": "python $#src_path#$convert_timers_to_ck_format.py", 
-        "run_cmd_main": "$#BIN_FILE#$ -s 5.0 -p 0.34,0.5,0.24 -z 4 -c 2 -r 2 -k 481.2,480,320,240 -i $#dataset_path#$$#dataset_filename#$ -o tmp-output.tmp", 
+        "run_cmd_main": "$#BIN_FILE#$ -s 5.0 -p 0.34,0.5,0.24 -z 1 -c 2 -r 2 -k 481.2,480,320,240 -i $#dataset_path#$$#dataset_filename#$ -o tmp-output.tmp", 
         "run_cmd_out1": "tmp-output1.tmp", 
         "run_cmd_out2": "tmp-output2.tmp", 
         "run_correctness_output_files": [], 
@@ -101,7 +130,7 @@
       "run_time": {
         "fine_grain_timer_file": "tmp-ck-timer.json", 
         "post_process_cmd": "python $#src_path#$convert_timers_to_ck_format.py", 
-        "run_cmd_main": "$#BIN_FILE#$ -s 5.0 -p 0.485,0.5,0.55 -z 4 -c 2 -r 2 -k 481.2,480,320,240 -i $#dataset_path#$$#dataset_filename#$ -o tmp-output.tmp", 
+        "run_cmd_main": "$#BIN_FILE#$ -s 5.0 -p 0.485,0.5,0.55 -z 1 -c 2 -r 2 -k 481.2,480,320,240 -i $#dataset_path#$$#dataset_filename#$ -o tmp-output.tmp", 
         "run_cmd_out1": "tmp-output1.tmp", 
         "run_cmd_out2": "tmp-output2.tmp", 
         "run_correctness_output_files": [], 
@@ -125,7 +154,7 @@
       "run_time": {
         "fine_grain_timer_file": "tmp-ck-timer.json", 
         "post_process_cmd": "python $#src_path#$convert_timers_to_ck_format.py", 
-        "run_cmd_main": "$#BIN_FILE#$ -s 5.0 -p 0.2685,0.5,0.4 -z 4 -c 2 -r 2 -k 481.2,480,320,240 -i $#dataset_path#$$#dataset_filename#$ -o tmp-output.tmp", 
+        "run_cmd_main": "$#BIN_FILE#$ -s 5.0 -p 0.2685,0.5,0.4 -z 1 -c 2 -r 2 -k 481.2,480,320,240 -i $#dataset_path#$$#dataset_filename#$ -o tmp-output.tmp", 
         "run_cmd_out1": "tmp-output1.tmp", 
         "run_cmd_out2": "tmp-output2.tmp", 
         "run_correctness_output_files": [], 
@@ -157,7 +186,6 @@
     }
   }, 
   "source_files": [
-    "ctuning.c",
     "winmisc.c",
     "getoptwin.c", 
     "reader.cpp", 

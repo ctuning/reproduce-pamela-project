@@ -29,7 +29,7 @@
 #include <openme.h>
 #endif
 #ifdef XOPENME
-#include <ctuning.h>
+#include <xopenme.h>
 #endif
 
 inline double tock() {
@@ -56,6 +56,9 @@ inline double tock() {
 
 }	
 
+#ifndef XOPENME_DUMPING_TIME
+#define XOPENME_DUMPING_TIME 1.0
+#endif
 
 /***
  * This program loop over a scene recording
@@ -66,15 +69,16 @@ int main(int argc, char ** argv) {
 char tmp[256];
 char tmp1[256];
 
-double fgg_total=0.0;
-double fgg_fps=0.0;
-
 #ifdef OPENME
   openme_init(NULL,NULL,NULL,0);
   openme_callback("PROGRAM_START", NULL);
 #endif
+
 #ifdef XOPENME
-  program_start();
+double fgg_total=0.0;
+double fgg_fps=0.0;
+
+        xopenme_init(1,4);
 #endif
 
 	Configuration config(argc, argv);
@@ -120,8 +124,8 @@ double fgg_fps=0.0;
 			<< std::endl;
 
 #ifdef XOPENME
-	xopenme_add_feature_i(0, "  \"input_size_x\":%u", inputSize.x);
-	xopenme_add_feature_i(1, "  \"input_size_y\":%u", inputSize.y);
+	xopenme_add_var_i(0, (char*) "  \"input_size_x\":%u", inputSize.x);
+	xopenme_add_var_i(1, (char*) "  \"input_size_y\":%u", inputSize.y);
 #endif
 
 	//  =========  BASIC PARAMETERS  (input size / computation size )  =========
@@ -155,7 +159,9 @@ double fgg_fps=0.0;
 	Kfusion kfusion(computationSize, config.volume_resolution,
 			config.volume_size, init_pose, config.pyramid);
 
+#ifdef XOPENME
 	double delay;
+#endif
 	double timings[7];
 	timings[0] = tock();
 
@@ -167,11 +173,11 @@ double fgg_fps=0.0;
 
 
 #ifdef OPENME
-  openme_callback("ACC_KERNEL_START", NULL);
+        openme_callback("ACC_KERNEL_START", NULL);
 #endif
 #ifdef XOPENME
-  clock_start(0);
- delay=tock();
+        xopenme_clock_start(0);
+        delay=tock();
 #endif
 
 	while (reader->readNextDepthFrame(inputRGB,inputDepth)) {
@@ -184,9 +190,6 @@ double fgg_fps=0.0;
 		float zt = pose.data[2].w - init_pose.z;
 
 		timings[1] = tock();
-
-//		printf("xyz= %u %u\n", inputDepth, inputSize);
-//                exit(1);
 
 		kfusion.preprocessing(inputDepth, inputSize);
 
@@ -227,42 +230,43 @@ double fgg_fps=0.0;
 
 		frame++;
 
-		fgg_total+=(timings[5] - timings[0]);
-                fgg_fps=frame/fgg_total;
 #ifdef XOPENME
-        	xopenme_add_feature_d(2, "  \"run_time_total\":%lf", fgg_total);
-        	xopenme_add_feature_d(3, "  \"run_time_fps\":%lf", fgg_fps);
+		fgg_total+=(timings[5] - timings[0]);
+                fgg_fps=0;
+                if (fgg_total!=0) fgg_fps=frame/fgg_total;
+        	xopenme_add_var_d(2, (char*) "  \"run_time_total\":%lf", fgg_total);
+        	xopenme_add_var_d(3, (char*) "  \"run_time_fps\":%lf", fgg_fps);
 #endif
 
 
 		timings[0] = tock();
 
 // FGG (Grigori Fursin) added to dump arrays to get a run-time snapshot of a system for reproducibility and off-line autotuning
-
-		if ((tock()-delay)>1)
+#ifdef XOPENME
+		if ((tock()-delay)>XOPENME_DUMPING_TIME)
                 {
 
-  	if (getenv("XOPENME_DUMP_MEMORY_INPUT_RGB") && (atoi(getenv("XOPENME_DUMP_MEMORY_INPUT_RGB"))==1))
-           xopenme_dump_memory("tmp-raw-input-rgb.rgb", inputRGB, sInputRGB);
-  	if (getenv("XOPENME_DUMP_MEMORY_DEPTHRENDER") && (atoi(getenv("XOPENME_DUMP_MEMORY_DEPTHRENDER"))==1))
-           xopenme_dump_memory("tmp-raw-depthrender.rgb", depthRender, sDepthRender);
-  	if (getenv("XOPENME_DUMP_MEMORY_TRACKRENDER") && (atoi(getenv("XOPENME_DUMP_MEMORY_TRACKRENDER"))==1))
-           xopenme_dump_memory("tmp-raw-trackrender.rgb", trackRender, sTrackRender);
-  	if (getenv("XOPENME_DUMP_MEMORY_VOLUMERENDER") && (atoi(getenv("XOPENME_DUMP_MEMORY_VOLUMERENDER"))==1))
-           xopenme_dump_memory("tmp-raw-volumerender.rgb", volumeRender, sVolumeRender);
+                   if (getenv("XOPENME_DUMP_MEMORY_INPUT_RGB") && (atoi(getenv("XOPENME_DUMP_MEMORY_INPUT_RGB"))==1))
+                      xopenme_dump_memory("tmp-raw-input-rgb.rgb", inputRGB, sInputRGB);
+                   if (getenv("XOPENME_DUMP_MEMORY_DEPTHRENDER") && (atoi(getenv("XOPENME_DUMP_MEMORY_DEPTHRENDER"))==1))
+                      xopenme_dump_memory("tmp-raw-depthrender.rgb", depthRender, sDepthRender);
+                   if (getenv("XOPENME_DUMP_MEMORY_TRACKRENDER") && (atoi(getenv("XOPENME_DUMP_MEMORY_TRACKRENDER"))==1))
+                      xopenme_dump_memory("tmp-raw-trackrender.rgb", trackRender, sTrackRender);
+                   if (getenv("XOPENME_DUMP_MEMORY_VOLUMERENDER") && (atoi(getenv("XOPENME_DUMP_MEMORY_VOLUMERENDER"))==1))
+                      xopenme_dump_memory("tmp-raw-volumerender.rgb", volumeRender, sVolumeRender);
 
-                   program_end();
+                   xopenme_dump_state();
 
                    delay=tock();
                 }
-
+#endif
 	}
 
 #ifdef XOPENME
-  clock_end(0);
+        xopenme_clock_end(0);
 #endif
 #ifdef OPENME
-  openme_callback("ACC_KERNEL_END", NULL);
+        openme_callback("ACC_KERNEL_END", NULL);
 #endif
 
 	// ==========     DUMP VOLUME      =========
@@ -279,10 +283,11 @@ double fgg_fps=0.0;
 	free(volumeRender);
 
 #ifdef XOPENME
-  program_end();
+        xopenme_dump_state();
+        xopenme_finish();
 #endif
 #ifdef OPENME
-  openme_callback("PROGRAM_END", NULL);
+        openme_callback("PROGRAM_END", NULL);
 #endif
 
 	return 0;
