@@ -16,6 +16,11 @@
       "local": "yes", 
       "sort": 20, 
       "tags": "lib,toon"
+    },
+    "lib.toon": {
+      "local": "yes", 
+      "sort": 30, 
+      "tags": "lib,xopenme"
     }
   }, 
   "compiler_add_include_as_env_from_deps": [
