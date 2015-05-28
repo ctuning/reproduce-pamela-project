@@ -58,7 +58,6 @@
         "run_cmd_out2": "tmp-output2.tmp", 
         "run_correctness_output_files": [], 
         "run_input_files": [
-          "kernels.cl"
         ], 
         "run_output_files": [
           "tmp-output.tmp", 
@@ -82,7 +81,6 @@
         "run_cmd_out2": "tmp-output2.tmp", 
         "run_correctness_output_files": [], 
         "run_input_files": [
-          "kernels.cl"
         ], 
         "run_output_files": [
           "tmp-output.tmp", 
@@ -106,7 +104,6 @@
         "run_cmd_out2": "tmp-output2.tmp", 
         "run_correctness_output_files": [], 
         "run_input_files": [
-          "kernels.cl"
         ], 
         "run_output_files": [
           "tmp-output.tmp", 
@@ -130,7 +127,6 @@
         "run_cmd_out2": "tmp-output2.tmp", 
         "run_correctness_output_files": [], 
         "run_input_files": [
-          "kernels.cl"
         ], 
         "run_output_files": [
           "tmp-output.tmp", 
@@ -154,7 +150,6 @@
         "run_cmd_out2": "tmp-output2.tmp", 
         "run_correctness_output_files": [], 
         "run_input_files": [
-          "kernels.cl"
         ], 
         "run_output_files": [
           "tmp-output.tmp", 
