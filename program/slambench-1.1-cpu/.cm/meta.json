@@ -179,6 +179,7 @@
     "benchmark.cpp", 
     "kernels.cpp"
   ], 
+  "species":"c8156d4b87b44fd9",
   "tags": [
     "cpu", 
     "program", 
