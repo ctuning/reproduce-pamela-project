@@ -179,7 +179,7 @@
     "benchmark.cpp", 
     "kernels.cu"
   ], 
-  "species":"c8156d4b87b44fd9",
+  "species":["c8156d4b87b44fd9"],
   "tags": [
     "cuda", 
     "program", 
