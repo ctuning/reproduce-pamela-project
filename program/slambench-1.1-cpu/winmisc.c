@@ -22,13 +22,18 @@ double win_tock(void)
     LARGE_INTEGER xfrequency;
     LARGE_INTEGER xtime;
 
-    if ((::QueryPerformanceFrequency(&xfrequency) != FALSE) && (::QueryPerformanceCounter(&xtime) != FALSE))
-      return static_cast<double> (xtime.QuadPart)/xfrequency.QuadPart;
+    if ((QueryPerformanceFrequency(&xfrequency) != FALSE) && (QueryPerformanceCounter(&xtime) != FALSE))
+      return (double) (xtime.QuadPart)/xfrequency.QuadPart;
     else
       return (double)(clock()) / CLOCKS_PER_SEC;
 }
 
-bool win_is_dir(char* str)
+#ifdef __llvm__
+bool 
+#else
+BOOL
+#endif
+win_is_dir(char* str)
 {
    DWORD dwAttrib = GetFileAttributes(str);
 

@@ -39,9 +39,10 @@
     "CK_CXX_EXTRA", 
     "CK_ENV_LIB_STDCPP_STATIC"
   ], 
-  "local_include_dirs": [
-    "include", 
-    "thirdparty"
+  "include_dirs": [
+    "$#ck_take_from_{e4495a6270f52615}#$include", 
+    "$#ck_take_from_{e4495a6270f52615}#$thirdparty",
+    "$#ck_take_from_{e4495a6270f52615}#$"
   ], 
   "main_language": "cpp", 
   "process_in_tmp": "yes", 
@@ -186,11 +187,11 @@
     }
   }, 
   "source_files": [
-    "winmisc.c",
-    "getoptwin.c", 
-    "reader.cpp", 
+    "$#ck_take_from_{e4495a6270f52615}#$winmisc.c",
+    "$#ck_take_from_{e4495a6270f52615}#$getoptwin.c", 
+    "$#ck_take_from_{e4495a6270f52615}#$reader.cpp", 
+    "$#ck_take_from_{e4495a6270f52615}#$benchmark.cpp", 
     "common_opencl.cpp", 
-    "benchmark.cpp", 
     "kernels.cpp"
   ], 
   "species":["c8156d4b87b44fd9"],

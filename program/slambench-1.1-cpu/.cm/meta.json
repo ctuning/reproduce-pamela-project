@@ -34,7 +34,7 @@
     "CK_CXX_EXTRA",
     "CK_ENV_LIB_STDCPP_STATIC"
   ], 
-  "local_include_dirs": [
+  "include_dirs": [
     "include", 
     "thirdparty"
   ], 
