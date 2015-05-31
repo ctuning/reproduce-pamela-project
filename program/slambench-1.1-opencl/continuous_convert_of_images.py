@@ -67,13 +67,38 @@ while True:
             rtt=rts.get("run_time_total",'')
             rf=rts.get("frames",'')
 
+            rocld=rts.get("opencl_device", '')
+            roclp=rts.get("opencl_platform",'')
+
+            roclu=rts.get("opencl_device_units",'')
+            if roclu=='': roclu='1'
+            roclu=int(roclu)
+
+            rompu=rts.get("openmp_max_threads",'')
+            if rompu=='': rompu='1'
+            rompu=int(rompu)
+            if rompu=='-1': rompu=1
+
+            threads=max(roclu, rompu)
+
+            # Prepare html
             h=''
-            h+='Average FPS='+str(rfps)+'<br>\n'
-            h+='Elapsed time='+str(rtt)+'<br>\n'
+            h+='Average FPS: '+('%.2f' % rfps)+'<br>\n'
+
             h+='<br>\n'
-            h+='Frames='+str(rf)+'<br>\n'
+            h+='FPS per thread: '+('%.2f' % (rfps/threads))+'<br>\n'
+            h+='Threads: '+str(threads)+'<br>\n'
+
             h+='<br>\n'
-            h+='Image '+str(risx)+'x'+str(risy)+'<br>\n'
+            h+='Elapsed time: '+('%.2f' % rtt)+'<br>\n'
+            h+='Frames: '+str(rf)+'<br>\n'
+            h+='<br>\n'
+            h+='Image: '+str(risx)+'x'+str(risy)+'<br>\n'
+            h+='<br>\n'
+            if roclp!='': 
+               h+='OpenCL platform: '+roclp+'<br>\n'
+            if rocld!='': 
+               h+='OpenCL device: '+rocld+'<br>\n'
 
             r=ck.save_text_file({'text_file':jsh, 'string':h})
 

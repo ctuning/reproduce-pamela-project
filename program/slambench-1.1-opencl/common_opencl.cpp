@@ -11,6 +11,10 @@
 #include "common_opencl.h"
 #include <sstream>
 
+#ifdef XOPENME
+#include <xopenme.h>
+#endif
+
 // OPEN CL STUFF
 cl_int clError = CL_SUCCESS;
 cl_platform_id platform_id = 0;
@@ -62,6 +66,10 @@ void opencl_init(void) {
 
 	delete platforms;
 
+#ifdef XOPENME
+	xopenme_add_var_s(6, (char*) "  \"opencl_platform\":\"%s\"", platformName);
+#endif
+
 	// Connect to a compute device
 	//
 	cl_uint device_count = 0;
@@ -94,6 +102,12 @@ void opencl_init(void) {
 //FGG		std::cerr << "Multiple devices found defaulting to: " << device_name;
 		std::cerr << "Selecting device: " << device_name;
 		std::cerr << " with " << compute_units << " compute units" << std::endl;
+
+#ifdef XOPENME
+                xopenme_add_var_s(7, (char*) "  \"opencl_device\":\"%s\"", device_name);
+                xopenme_add_var_i(8, (char*) "  \"opencl_device_units\":%u", compute_units);
+#endif
+
 //FGG	}
 	delete deviceIds;
 	// Create a compute context 
