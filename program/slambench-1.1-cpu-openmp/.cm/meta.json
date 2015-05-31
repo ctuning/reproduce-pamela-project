@@ -3,6 +3,7 @@
   "build_compiler_vars": {
     "XOPENME": "1", 
     "XOPENME_DUMPING_TIME": "1.0", 
+    "USE_OPENMP":"",
     "_HAS_EXCEPTIONS": "0"
   }, 
   "base_uoa":"e4495a6270f52615",
@@ -31,7 +32,7 @@
   "compiler_env": "CK_CXX", 
   "compiler_flags_as_env": "$<<CK_COMPILER_FLAG_OPENMP>>$", 
   "data_name": "slambench-1.1-cpu", 
-  "extra_ld_vars": "$<<CK_EXTRA_LIB_M>>$", 
+  "extra_ld_vars": "$<<CK_EXTRA_LIB_M>>$ $<<CK_LINKER_FLAG_OPENMP>>$", 
   "linker_add_lib_as_env": [
     "CK_CXX_EXTRA", 
     "CK_ENV_LIB_STDCPP_STATIC"

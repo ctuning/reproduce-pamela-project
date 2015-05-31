@@ -78,7 +78,7 @@ char tmp1[256];
 double fgg_total=0.0;
 double fgg_fps=0.0;
 
-        xopenme_init(1,4);
+        xopenme_init(1,8);
 #endif
 
 	Configuration config(argc, argv);
@@ -236,6 +236,7 @@ double fgg_fps=0.0;
                 if (fgg_total!=0) fgg_fps=frame/fgg_total;
         	xopenme_add_var_d(2, (char*) "  \"run_time_total\":%lf", fgg_total);
         	xopenme_add_var_d(3, (char*) "  \"run_time_fps\":%lf", fgg_fps);
+        	xopenme_add_var_i(4, (char*) "  \"frames\":%lu", frame);
 #endif
 
 

@@ -10,7 +10,7 @@ tfiles=[None,None,None,None]
 width=[640,320,320,320]
 height=[480,240,240,240]
 types=[None,'CMYK','CMYK','CMYK']
-output=['png','jpeg','jpeg','jpeg']
+output=['jpeg','jpeg','jpeg','jpeg']
 
 js='tmp/tmp-ck-timer.json'
 jsh='tmp/tmp-ck-timer.json.html'
@@ -59,7 +59,21 @@ while True:
          if r['return']==0:
             d=r['dict']
 
-            h='Total FPS='+str(d.get('features',{}).get('run_time_fps',''))+'\n'
+            rts=d.get('run_time_state',{})
+
+            risx=rts.get("input_size_x",'')
+            risy=rts.get("input_size_y",'')
+            rfps=rts.get("run_time_fps",'')
+            rtt=rts.get("run_time_total",'')
+            rf=rts.get("frames",'')
+
+            h=''
+            h+='Average FPS='+str(rfps)+'<br>\n'
+            h+='Elapsed time='+str(rtt)+'<br>\n'
+            h+='<br>\n'
+            h+='Frames='+str(rf)+'<br>\n'
+            h+='<br>\n'
+            h+='Image '+str(risx)+'x'+str(risy)+'<br>\n'
 
             r=ck.save_text_file({'text_file':jsh, 'string':h})
 
