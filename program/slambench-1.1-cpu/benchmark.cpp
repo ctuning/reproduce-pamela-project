@@ -31,6 +31,9 @@
 #ifdef XOPENME
 #include <xopenme.h>
 #endif
+#ifdef USE_OPENMP
+#include <omp.h>
+#endif
 
 inline double tock() {
 	synchroniseDevices();
@@ -126,6 +129,11 @@ double fgg_fps=0.0;
 #ifdef XOPENME
 	xopenme_add_var_i(0, (char*) "  \"input_size_x\":%u", inputSize.x);
 	xopenme_add_var_i(1, (char*) "  \"input_size_y\":%u", inputSize.y);
+# ifdef USE_OPENMP
+	xopenme_add_var_i(5, (char*) "  \"openmp_max_threads\":%d", (int) omp_get_max_threads());
+# else
+	xopenme_add_var_i(5, (char*) "  \"openmp_max_threads\":%d", -1);
+# endif
 #endif
 
 	//  =========  BASIC PARAMETERS  (input size / computation size )  =========
