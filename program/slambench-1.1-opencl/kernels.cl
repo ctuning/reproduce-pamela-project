@@ -717,8 +717,19 @@ __kernel void mm2metersKernel(
 		const __global ushort * in ,
 		const uint2 inSize ,
 		const int ratio ) {
+
+#ifdef FGG_CUSTOM
+        ushort temp1;
+#endif
+
 	uint2 pixel = (uint2) (get_global_id(0),get_global_id(1));
+#ifdef FGG_CUSTOM
+        temp1=in[x * ratio + inSize.x * y * ratio];
+	depth[pixel.x + depthSize.x * pixel.y] = (temp1 > 2800) ? 3.5f : 2.2f;
+#else
 	depth[pixel.x + depthSize.x * pixel.y] = in[pixel.x * ratio + inSize.x * pixel.y * ratio] / 1000.0f;
+#endif
+
 }
 
 __kernel void initVolumeKernel(__global short2 * data) {

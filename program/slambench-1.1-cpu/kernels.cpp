@@ -592,14 +592,27 @@ void mm2metersKernel(float * out, uint2 outSize, const ushort * in,
 		exit(1);
 	}
 
+#ifdef FGG_CUSTOM
+        ushort temp1;
+#endif
+
 	int ratio = inSize.x / outSize.x;
 	unsigned int y;
 #pragma omp parallel for \
         shared(out), private(y)
 	for (y = 0; y < outSize.y; y++)
 		for (unsigned int x = 0; x < outSize.x; x++) {
+
+
+#ifdef FGG_CUSTOM
+			temp1= in[x * ratio + inSize.x * y * ratio];
+			out[x + outSize.x * y] = (temp1 > 2800) ? 3.5f : 2.2f;
+
+#else
 			out[x + outSize.x * y] = in[x * ratio + inSize.x * y * ratio]
 					/ 1000.0f;
+#endif
+
 		}
 	TOCK("mm2metersKernel", outSize.x * outSize.y);
 }
