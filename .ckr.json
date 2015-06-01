@@ -7,5 +7,5 @@
   }, 
   "data_alias": "ck-reproduce-project-pamela-2015", 
   "data_uoa": "ck-reproduce-project-pamela-2015",
-  "repo_deps":["ck-autotuning"]
+  "repo_deps":[{"repo_uoa":"ck-autotuning"}]
 }
