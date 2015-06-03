@@ -2,10 +2,9 @@
   "backup_data_uid": "e4495a6270f52615", 
   "build_compiler_vars": {
     "XOPENME": "1", 
-    "XOPENME_DUMPING_TIME": "1.0",
+    "XOPENME_DUMPING_TIME": "1.0", 
     "_HAS_EXCEPTIONS": "0"
   }, 
-  "build_compiler_vars_desc": {}, 
   "compile_deps": {
     "compiler": {
       "local": "yes", 
@@ -16,7 +15,7 @@
       "local": "yes", 
       "sort": 20, 
       "tags": "lib,toon"
-    },
+    }, 
     "lib.xopenme": {
       "local": "yes", 
       "sort": 30, 
@@ -30,64 +29,18 @@
   "compiler_env": "CK_CXX", 
   "data_name": "slambench-1.1-cpu", 
   "extra_ld_vars": "$<<CK_EXTRA_LIB_M>>$", 
-  "linker_add_lib_as_env": [
-    "CK_CXX_EXTRA",
-    "CK_ENV_LIB_STDCPP_STATIC"
-  ], 
   "include_dirs": [
     "include", 
     "thirdparty"
+  ], 
+  "linker_add_lib_as_env": [
+    "CK_CXX_EXTRA", 
+    "CK_ENV_LIB_STDCPP_STATIC"
   ], 
   "main_language": "cpp", 
   "process_in_tmp": "yes", 
   "program": "yes", 
   "run_cmds": {
-    "default": {
-      "dataset_tags": [
-        "dataset", 
-        "raw", 
-        "video", 
-        "slambench"
-      ], 
-      "ignore_return_code": "no", 
-      "run_time": {
-        "fine_grain_timer_file": "tmp-ck-timer.json", 
-        "post_process_cmd": "python $#src_path_local#$convert_timers_to_ck_format.py", 
-        "run_cmd_main": "$#BIN_FILE#$ -s 4.8 -p 0.34,0.5,0.24 -z 1 -c 2 -r 1 -k 481.2,480,320,240 -i $#dataset_path#$$#dataset_filename#$ -o tmp-output.tmp", 
-        "run_cmd_out1": "tmp-output1.tmp", 
-        "run_cmd_out2": "tmp-output2.tmp", 
-        "run_correctness_output_files": [], 
-        "run_input_files": [
-        ], 
-        "run_output_files": [
-          "tmp-output.tmp", 
-          "tmp-ck-timer.json"
-        ]
-      }
-    },
-    "default_rendering_each_4_frames": {
-      "dataset_tags": [
-        "dataset", 
-        "raw", 
-        "video", 
-        "slambench"
-      ], 
-      "ignore_return_code": "no", 
-      "run_time": {
-        "fine_grain_timer_file": "tmp-ck-timer.json", 
-        "post_process_cmd": "python $#src_path_local#$convert_timers_to_ck_format.py", 
-        "run_cmd_main": "$#BIN_FILE#$ -s 4.8 -p 0.34,0.5,0.24 -z 4 -c 2 -r 1 -k 481.2,480,320,240 -i $#dataset_path#$$#dataset_filename#$ -o tmp-output.tmp", 
-        "run_cmd_out1": "tmp-output1.tmp", 
-        "run_cmd_out2": "tmp-output2.tmp", 
-        "run_correctness_output_files": [], 
-        "run_input_files": [
-        ], 
-        "run_output_files": [
-          "tmp-output.tmp", 
-          "tmp-ck-timer.json"
-        ]
-      }
-    },
     "cmd1": {
       "dataset_tags": [
         "dataset", 
@@ -100,17 +53,16 @@
         "fine_grain_timer_file": "tmp-ck-timer.json", 
         "post_process_cmd": "python $#src_path_local#$convert_timers_to_ck_format.py", 
         "run_cmd_main": "$#BIN_FILE#$ -s 5.0 -p 0.34,0.5,0.24 -z 1 -c 2 -r 2 -k 481.2,480,320,240 -i $#dataset_path#$$#dataset_filename#$ -o tmp-output.tmp", 
-        "run_cmd_out1": "tmp-output1.tmp", 
-        "run_cmd_out2": "tmp-output2.tmp", 
+        "run_cmd_out1": "", 
+        "run_cmd_out2": "", 
         "run_correctness_output_files": [], 
-        "run_input_files": [
-        ], 
+        "run_input_files": [], 
         "run_output_files": [
           "tmp-output.tmp", 
           "tmp-ck-timer.json"
         ]
       }
-    },
+    }, 
     "cmd2": {
       "dataset_tags": [
         "dataset", 
@@ -123,17 +75,16 @@
         "fine_grain_timer_file": "tmp-ck-timer.json", 
         "post_process_cmd": "python $#src_path_local#$convert_timers_to_ck_format.py", 
         "run_cmd_main": "$#BIN_FILE#$ -s 5.0 -p 0.485,0.5,0.55 -z 1 -c 2 -r 2 -k 481.2,480,320,240 -i $#dataset_path#$$#dataset_filename#$ -o tmp-output.tmp", 
-        "run_cmd_out1": "tmp-output1.tmp", 
-        "run_cmd_out2": "tmp-output2.tmp", 
+        "run_cmd_out1": "", 
+        "run_cmd_out2": "", 
         "run_correctness_output_files": [], 
-        "run_input_files": [
-        ], 
+        "run_input_files": [], 
         "run_output_files": [
           "tmp-output.tmp", 
           "tmp-ck-timer.json"
         ]
       }
-    },
+    }, 
     "cmd3": {
       "dataset_tags": [
         "dataset", 
@@ -146,11 +97,48 @@
         "fine_grain_timer_file": "tmp-ck-timer.json", 
         "post_process_cmd": "python $#src_path_local#$convert_timers_to_ck_format.py", 
         "run_cmd_main": "$#BIN_FILE#$ -s 5.0 -p 0.2685,0.5,0.4 -z 1 -c 2 -r 2 -k 481.2,480,320,240 -i $#dataset_path#$$#dataset_filename#$ -o tmp-output.tmp", 
-        "run_cmd_out1": "tmp-output1.tmp", 
-        "run_cmd_out2": "tmp-output2.tmp", 
         "run_correctness_output_files": [], 
-        "run_input_files": [
-        ], 
+        "run_input_files": [], 
+        "run_output_files": [
+          "tmp-output.tmp", 
+          "tmp-ck-timer.json"
+        ]
+      }
+    }, 
+    "default": {
+      "dataset_tags": [
+        "dataset", 
+        "raw", 
+        "video", 
+        "slambench"
+      ], 
+      "ignore_return_code": "no", 
+      "run_time": {
+        "fine_grain_timer_file": "tmp-ck-timer.json", 
+        "post_process_cmd": "python $#src_path_local#$convert_timers_to_ck_format.py", 
+        "run_cmd_main": "$#BIN_FILE#$ -s 4.8 -p 0.34,0.5,0.24 -z 1 -c 2 -r 1 -k 481.2,480,320,240 -i $#dataset_path#$$#dataset_filename#$ -o tmp-output.tmp", 
+        "run_correctness_output_files": [], 
+        "run_input_files": [], 
+        "run_output_files": [
+          "tmp-output.tmp", 
+          "tmp-ck-timer.json"
+        ]
+      }
+    }, 
+    "default_rendering_each_4_frames": {
+      "dataset_tags": [
+        "dataset", 
+        "raw", 
+        "video", 
+        "slambench"
+      ], 
+      "ignore_return_code": "no", 
+      "run_time": {
+        "fine_grain_timer_file": "tmp-ck-timer.json", 
+        "post_process_cmd": "python $#src_path_local#$convert_timers_to_ck_format.py", 
+        "run_cmd_main": "$#BIN_FILE#$ -s 4.8 -p 0.34,0.5,0.24 -z 4 -c 2 -r 1 -k 481.2,480,320,240 -i $#dataset_path#$$#dataset_filename#$ -o tmp-output.tmp", 
+        "run_correctness_output_files": [], 
+        "run_input_files": [], 
         "run_output_files": [
           "tmp-output.tmp", 
           "tmp-ck-timer.json"
@@ -159,27 +147,22 @@
     }
   }, 
   "run_vars": {
-    "KERNEL_TIMINGS": "1",
-    "XOPENME_DUMP_MEMORY_INPUT_RGB":"1",
-    "XOPENME_DUMP_MEMORY_DEPTHRENDER":"1",
-    "XOPENME_DUMP_MEMORY_TRACKRENDER":"1",
-    "XOPENME_DUMP_MEMORY_VOLUMERENDER":"1"
-  }, 
-  "run_vars_desc": {
-    "##KERNEL_TIMINGS": {
-      "default": "1", 
-      "desc": "Print kernels timing", 
-      "type": "text"
-    }
+    "KERNEL_TIMINGS": "1", 
+    "XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+    "XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+    "XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+    "XOPENME_DUMP_MEMORY_VOLUMERENDER": "1"
   }, 
   "source_files": [
-    "winmisc.c",
+    "winmisc.c", 
     "getoptwin.c", 
     "reader.cpp", 
     "benchmark.cpp", 
     "kernels.cpp"
   ], 
-  "species":["c8156d4b87b44fd9"],
+  "species": [
+    "c8156d4b87b44fd9"
+  ], 
   "tags": [
     "cpu", 
     "program", 
