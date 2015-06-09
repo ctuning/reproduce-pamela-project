@@ -59,7 +59,7 @@
         "fine_grain_timer_file": "tmp-ck-timer.json", 
         "post_process_cmd": "python $#src_path_local#$convert_timers_to_ck_format.py", 
         "run_cmd_main": "$#BIN_FILE#$ -s 5.0 -p 0.34,0.5,0.24 -z 1 -c 2 -r 2 -k 481.2,480,320,240 -i $#dataset_path#$$#dataset_filename#$ -o tmp-output.tmp", 
-        "run_cmd_out1": "", 
+        "run_cmd_out1": "stdout.log", 
         "run_cmd_out2": "", 
         "run_correctness_output_files": [], 
         "run_input_files": [
@@ -83,7 +83,7 @@
         "fine_grain_timer_file": "tmp-ck-timer.json", 
         "post_process_cmd": "python $#src_path_local#$convert_timers_to_ck_format.py", 
         "run_cmd_main": "$#BIN_FILE#$ -s 5.0 -p 0.485,0.5,0.55 -z 1 -c 2 -r 2 -k 481.2,480,320,240 -i $#dataset_path#$$#dataset_filename#$ -o tmp-output.tmp", 
-        "run_cmd_out1": "", 
+        "run_cmd_out1": "stdout.log", 
         "run_cmd_out2": "", 
         "run_correctness_output_files": [], 
         "run_input_files": [
@@ -107,7 +107,7 @@
         "fine_grain_timer_file": "tmp-ck-timer.json", 
         "post_process_cmd": "python $#src_path_local#$convert_timers_to_ck_format.py", 
         "run_cmd_main": "$#BIN_FILE#$ -s 5.0 -p 0.2685,0.5,0.4 -z 1 -c 2 -r 2 -k 481.2,480,320,240 -i $#dataset_path#$$#dataset_filename#$ -o tmp-output.tmp", 
-        "run_cmd_out1": "", 
+        "run_cmd_out1": "stdout.log", 
         "run_cmd_out2": "", 
         "run_correctness_output_files": [], 
         "run_input_files": [
@@ -131,7 +131,7 @@
         "fine_grain_timer_file": "tmp-ck-timer.json", 
         "post_process_cmd": "python $#src_path_local#$convert_timers_to_ck_format.py", 
         "run_cmd_main": "$#BIN_FILE#$ -s 4.8 -p 0.34,0.5,0.24 -z 1 -c 2 -r 1 -k 481.2,480,320,240 -i $#dataset_path#$$#dataset_filename#$ -o tmp-output.tmp", 
-        "run_cmd_out1": "", 
+        "run_cmd_out1": "stdout.log", 
         "run_cmd_out2": "", 
         "run_correctness_output_files": [], 
         "run_input_files": [
@@ -155,7 +155,7 @@
         "fine_grain_timer_file": "tmp-ck-timer.json", 
         "post_process_cmd": "python $#src_path_local#$convert_timers_to_ck_format.py", 
         "run_cmd_main": "$#BIN_FILE#$ -s 4.8 -p 0.34,0.5,0.24 -z 4 -c 2 -r 1 -k 481.2,480,320,240 -i $#dataset_path#$$#dataset_filename#$ -o tmp-output.tmp", 
-        "run_cmd_out1": "", 
+        "run_cmd_out1": "stdout.log", 
         "run_cmd_out2": "", 
         "run_correctness_output_files": [], 
         "run_input_files": [
