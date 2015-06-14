@@ -7,7 +7,7 @@
   "data_uoa_list":["pamela-autotune-flags-slambench-linux-i10", "pamela-autotune-flags-slambench-linux-best"],
 
   "flat_keys_list":[
-    "##characteristics#compile#obj_size#min",
+    "##characteristics#compile#binary_size#min",
     "##characteristics#run#execution_time_kernel_0#center",
     "##characteristics#run#execution_time_kernel_0#halfrange"
   ],
@@ -19,7 +19,7 @@
   "title":"Powered by Collective Knowledge",
 
   "axis_x_desc":"Binary size",
-  "axis_y_desc":"Execution time",
+  "axis_y_desc":"Whole execution time (sec.)",
 
   "plot_grid":"yes",
 

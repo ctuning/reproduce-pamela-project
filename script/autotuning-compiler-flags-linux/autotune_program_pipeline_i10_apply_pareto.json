@@ -22,8 +22,8 @@
 
 
 
-  "frontier_keys":["##characteristics#run#execution_time_kernel_0#center",
-                   "##characteristics#compile#obj_size#min"],
+  "frontier_keys":["##characteristics#run#execution_time_kernel_0#exp",
+                   "##characteristics#compile#binary_size#min"],
 
 
 

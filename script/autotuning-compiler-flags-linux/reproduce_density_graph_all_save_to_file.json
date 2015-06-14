@@ -19,7 +19,7 @@
 
   "title":"Powered by Collective Knowledge",
 
-  "axis_x_desc":"Execution time",
+  "axis_x_desc":"Whole execution time (sec.)",
   "axis_y_desc":"Density",
 
   "plot_grid":"yes",
@@ -28,8 +28,8 @@
   "mpl_image_size_y":"6",
   "mpl_image_dpi":"100",
 
-  "out_repo_uoa":"ck-autotuning",
-  "out_data_uoa":"demo-autotuning-compiler-flags-susan-linux",
+  "out_repo_uoa":"reproduce-pamela-project",
+  "out_data_uoa":"pamela-autotune-flags-slambench-linux",
 
   "out_to_file":"density_all_times.png",
 

@@ -4,7 +4,7 @@
   "data_uoa_list":["pamela-autotune-flags-slambench-linux-i10", "pamela-autotune-flags-slambench-linux-best", "pamela-autotune-flags-slambench-linux-i10-pareto"],
 
   "flat_keys_list":[
-    "##characteristics#compile#obj_size#min",
+    "##characteristics#compile#binary_size#min",
     "##characteristics#run#execution_time_kernel_0#center",
     "##characteristics#run#execution_time_kernel_0#halfrange"
   ],
@@ -15,8 +15,8 @@
 
   "title":"Powered by Collective Knowledge",
 
-  "axis_x_desc":"Object file size (bytes)",
-  "axis_y_desc":"Kernel execution time (sec.)",
+  "axis_x_desc":"Binary file size (bytes)",
+  "axis_y_desc":"Whole execution time (sec.)",
 
   "plot_grid":"yes",
 
@@ -30,8 +30,8 @@
                  "1":{"size":40, "elinewidth":"7", "color":"#000000"},
                  "0":{"size":40, "color":"#3366cc"}},
 
-  "out_repo_uoa":"ck-autotuning",
-  "out_data_uoa":"demo-autotuning-compiler-flags-susan-linux",
+  "out_repo_uoa":"reproduce-pamela-project",
+  "out_data_uoa":"pamela-autotune-flags-slambench-linux",
 
   "out_to_file":"2d_points_time_vs_size_with_pareto.png",
 
