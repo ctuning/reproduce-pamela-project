@@ -1,1 +1,1 @@
-ck rm experiment:demo-autotune-flags-susan-linux-*
+ck rm experiment:pamela-autotune-flags-slambench-linux-*
