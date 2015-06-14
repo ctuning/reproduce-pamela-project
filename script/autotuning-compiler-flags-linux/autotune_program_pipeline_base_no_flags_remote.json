@@ -12,7 +12,7 @@
    },
 
   "record":"yes",
-  "record_uoa":"demo-autotune-flags-susan-linux-no-flags",
+  "record_uoa":"pamela-autotune-flags-slambench-linux-no-flags",
 
   "record_repo":"remote-ck",
   "record_experiment_repo":"upload",

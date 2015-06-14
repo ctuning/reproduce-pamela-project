@@ -1,7 +1,7 @@
 {
   "experiment_module_uoa":"experiment",
 
-  "data_uoa_list":["demo-autotune-flags-susan-linux-i10", "demo-autotune-flags-susan-linux-best", "demo-autotune-flags-susan-linux-i10-pareto"],
+  "data_uoa_list":["pamela-autotune-flags-slambench-linux-i10", "pamela-autotune-flags-slambench-linux-best", "pamela-autotune-flags-slambench-linux-i10-pareto"],
 
   "flat_keys_list":[
     "##characteristics#compile#obj_size#min",

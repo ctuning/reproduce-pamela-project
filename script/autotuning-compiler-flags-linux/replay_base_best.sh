@@ -1,1 +1,1 @@
-ck replay experiment:demo-autotune-flags-susan-linux-best @replay_base_best.json --subpoint=$1
+ck replay experiment:pamela-autotune-flags-slambench-linux-best @replay_base_best.json --subpoint=$1
