@@ -7,8 +7,6 @@
     ]
   ],
 
-  "repetitions":1,
-
   "pipeline_update":{
      "cpu_freq":"max",
      "gpu_freq":"max",
