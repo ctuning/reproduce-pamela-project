@@ -30,6 +30,9 @@
   "ymin":1,
   "ymax":4,
 
+   "size_x": 700, 
+   "size_y": 400, 
+
   "point_style":{"3":{"size":40, "elinewidth":"7", "color":"#007f00"},
                  "2":{"size":10, "color":"#dc3912", "frontier":"yes", "line_style":"--"},
                  "1":{"size":40, "elinewidth":"7", "color":"#000000"},

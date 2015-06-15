@@ -24,6 +24,9 @@
 
   "plot_grid":"yes",
 
+   "size_x": 700, 
+   "size_y": 400, 
+
   "mpl_image_size_x":"12",
   "mpl_image_size_y":"6",
   "mpl_image_dpi":"100",

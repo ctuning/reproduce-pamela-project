@@ -26,6 +26,9 @@
 
   "bound_lines":"no",
 
+  "size_x": 700, 
+  "size_y": 400, 
+
   "point_style":{"3":{"size":40, "elinewidth":"7", "color":"#00df00"},
                  "2":{"size":40, "elinewidth":"7", "color":"#000000"},
                  "1":{"size":10, "color":"#dc3912", "frontier":"yes", "line_style":"--"},

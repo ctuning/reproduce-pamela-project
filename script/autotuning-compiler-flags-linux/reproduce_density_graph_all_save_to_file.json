@@ -28,6 +28,9 @@
   "mpl_image_size_y":"6",
   "mpl_image_dpi":"100",
 
+  "size_x": 700, 
+  "size_y": 400, 
+
   "out_repo_uoa":"reproduce-pamela-project",
   "out_data_uoa":"pamela-autotune-flags-slambench-linux",
 
