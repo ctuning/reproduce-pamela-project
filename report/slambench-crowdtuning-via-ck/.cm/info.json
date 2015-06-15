@@ -1,14 +1,14 @@
 {
-  "backup_data_uid": "3645af97abb448ab", 
-  "backup_module_uid": "2d41f89bcf32d4d4", 
-  "backup_module_uoa": "graph", 
+  "backup_data_uid": "2b4a2375b24fc461", 
+  "backup_module_uid": "1e348bd6ab43ce8a", 
+  "backup_module_uoa": "report", 
   "control": {
     "author": "Grigori Fursin", 
     "author_email": "Grigori.Fursin@cTuning.org", 
     "author_webpage": "http://cTuning.org/lab/people/gfursin", 
     "copyright": "See CK Copyright.txt for copyright details", 
     "engine": "CK", 
-    "iso_datetime": "2015-06-12T17:21:48.571000", 
+    "iso_datetime": "2015-06-14T20:25:51.734000", 
     "license": "See CK LICENSE.txt for licensing details", 
     "version": [
       "1", 
@@ -16,5 +16,5 @@
       "0605"
     ]
   }, 
-  "data_name": "Pamela project - slambench crowdtuning demo"
+  "data_name": "Pamela project - slambench crowdtuning via ck"
 }
