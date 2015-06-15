@@ -9,8 +9,8 @@
      {"type":"random", "omit_probability":"0.90", "tags":"basic,optimization", "notags":""}
   ],
 
-  "seed":22345,
-  "iterations":100,
+  "seed":12345,
+  "iterations":10,
   "repetitions":3,
 
   "pipeline_update":{

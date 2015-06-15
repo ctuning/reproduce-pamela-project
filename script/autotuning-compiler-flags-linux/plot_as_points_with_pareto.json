@@ -15,7 +15,7 @@
   "title":"Powered by Collective Knowledge",
 
   "axis_x_desc":"Binary file size (bytes)",
-  "axis_y_desc":"Whole execution time (sec.)",
+  "axis_y_desc":"Whole execution time, expected value (sec.)",
 
   "plot_grid":"yes",
 
