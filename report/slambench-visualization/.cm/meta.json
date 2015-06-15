@@ -21,6 +21,7 @@
   ], 
   "live": "yes", 
   "template": "live.html", 
-  "title": "Live report: run-time visualization of slambench output (connected to online aggregation of results and learning)",
-  "top":"no"
+  "title": "Live report: run-time visualization of slambench output (connected to online learning)",
+  "top":"no",
+  "auto_refresh":"yes"
 }
