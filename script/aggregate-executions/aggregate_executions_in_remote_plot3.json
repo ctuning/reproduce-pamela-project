@@ -1,0 +1,32 @@
+{
+  "remote_repo_uoa":"remote-ck",
+  "experiment_repo_uoa":"upload",
+
+  "experiment_module_uoa":"experiment",
+
+  "data_uoa_list":["pamela-slambench-best-aggregated"],
+
+  "ignore_graph_separation":"yes",
+
+  "substitute_x_with_loop":"yes",
+
+  "flat_keys_list":[
+    "##features#platform#cpu#sub_name#min",
+    "##characteristics#run#execution_time_kernel_0#exp"
+  ],
+
+  "ignore_point_if_none":"yes",
+
+  "plot_type":"mpl_2d_bars",
+
+  "title":"Powered by Collective Knowledge",
+
+  "axis_x_desc":"Whole execution time (sec.)",
+  "axis_y_desc":"Histogram",
+
+  "plot_grid":"yes",
+
+  "mpl_image_size_x":"12",
+  "mpl_image_size_y":"6",
+  "mpl_image_dpi":"100"
+}
