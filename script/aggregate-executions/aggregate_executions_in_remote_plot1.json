@@ -12,7 +12,7 @@
   ],
 
   "ymin":0,
-  "ymax":20,
+  "ymax":30,
 
   "plot_type":"mpl_2d_scatter",
   "display_x_error_bar":"no",
