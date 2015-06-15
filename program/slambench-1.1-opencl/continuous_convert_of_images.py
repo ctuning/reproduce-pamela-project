@@ -3,6 +3,19 @@ import time
 import os
 import shutil
 
+# Get tmp address
+ii={'action':'update',
+    'module_uoa':'tmp',
+    'data_uoa':'slambench-output',
+    'ignore_update':''}
+rx=ck.access(ii)
+if rx['return']>0:
+   ck.err(rx)
+
+pp=rx['path']
+ppt=os.path.join(pp, 'tmp')
+if not os.path.isdir(ppt): os.makedirs(ppt)
+
 print ('Starting continuous convert of images - Press Ctrl-C to stop')
 
 files=["tmp/tmp-raw-input-rgb.rgb", "tmp/tmp-raw-depthrender.rgb", "tmp/tmp-raw-trackrender.rgb", "tmp/tmp-raw-volumerender.rgb"]
@@ -13,7 +26,7 @@ types=[None,'CMYK','CMYK','CMYK']
 output=['jpeg','jpeg','jpeg','jpeg']
 
 js='tmp/tmp-ck-timer.json'
-jsh='tmp/tmp-ck-timer.json.html'
+jsh=os.path.join(pp, 'tmp/tmp-ck-timer.json.html')
 tjs=None
 
 while True:
@@ -29,7 +42,8 @@ while True:
              tfiles[q]=tt
 
              of1=fn+'.'+of
-             of2=fn+'.'+of+'.tmp'
+             of2=os.path.join(pp,fn+'.'+of+'.tmp')
+             of3=os.path.join(pp,fn+'.'+of)
 
              ii={'action':'convert_raw_rgb_image',
                  'module_uoa':'dataset.features',
@@ -45,7 +59,7 @@ while True:
 
              r=ck.access(ii)
              if r['return']==0:
-                shutil.copy(of2,of1)
+                shutil.copy(of2,of3)
 
              print ' * converted'
 
@@ -102,7 +116,7 @@ while True:
 
             r=ck.save_text_file({'text_file':jsh, 'string':h})
 
-   # if html file doesn't exist, creat dummy
+   # if html file doesn't exist, create dummy
    if not os.path.isfile(jsh):
       r=ck.save_text_file({'text_file':jsh, 'string':''})
 
