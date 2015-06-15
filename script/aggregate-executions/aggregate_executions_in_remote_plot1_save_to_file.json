@@ -31,5 +31,13 @@
 
   "point_style":{"2":{"size":40, "elinewidth":"7", "color":"#00df00"},
                  "1":{"elinewidth":"5", "color":"#dc3912"},
-                 "0":{"color":"#3366cc"}}
+                 "0":{"color":"#3366cc"}},
+
+  "out_repo_uoa":"reproduce-pamela-project",
+  "out_data_uoa":"pamela-slambench-aggregated",
+
+  "out_to_file":"time_vs_freq.png",
+
+  "save_table_to_json_file":"time_vs_freq.json",
+  "save_table_to_csv_file":"time_vs_freq.csv"
 }

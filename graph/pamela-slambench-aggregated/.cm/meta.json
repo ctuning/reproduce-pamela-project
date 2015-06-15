@@ -1,0 +1,80 @@
+{
+  "get_shared_repo": "ck pull repo:reproduce-pamela-project", 
+  "graphs": [
+    {
+      "id": "time_vs_freq", 
+      "name": "Execution time vs CPU frequency - crowdsourcing analysis from all platforms", 
+      "params": {
+        "axis_x_desc": "CPU frequency (MHz.)", 
+        "axis_y_desc": "Whole execution time (sec.)", 
+        "data_uoa_list": [
+          "pamela-slambench-best-aggregated"
+        ], 
+        "display_x_error_bar": "no", 
+        "display_y_error_bar": "no", 
+        "experiment_module_uoa": "experiment", 
+        "flat_keys_list": [
+          "##characteristics#current_freq#0#min", 
+          "##characteristics#run#execution_time_kernel_0#exp"
+        ], 
+        "mpl_image_dpi": "100", 
+        "mpl_image_size_x": "12", 
+        "mpl_image_size_y": "6", 
+        "plot_grid": "yes", 
+        "plot_type": "mpl_2d_scatter", 
+        "point_style": {
+          "0": {
+            "color": "#3366cc"
+          }, 
+          "1": {
+            "color": "#dc3912", 
+            "elinewidth": "5"
+          }, 
+          "2": {
+            "color": "#00df00", 
+            "elinewidth": "7", 
+            "size": 40
+          }
+        }, 
+        "size_x": 700, 
+        "size_y": 400, 
+        "title": "Powered by Collective Knowledge", 
+        "ymax": 20, 
+        "ymin": 0
+      }
+    }, 
+    {
+      "id": "histogram", 
+      "name": "Histogram of all execution times from all platforms", 
+      "notes": "", 
+      "params": {
+        "axis_x_desc": "Whole execution time (sec.)", 
+        "axis_y_desc": "Histogram", 
+        "bins": 100, 
+        "data_uoa_list": [
+          "pamela-slambench-best-aggregated"
+        ], 
+        "expand_list": "yes", 
+        "experiment_module_uoa": "experiment", 
+        "flat_keys_list": [
+          "##characteristics#run#execution_time_kernel_0#all"
+        ], 
+        "ignore_graph_separation": "yes", 
+        "ignore_point_if_none": "yes", 
+        "mpl_image_dpi": "100", 
+        "mpl_image_size_x": "12", 
+        "mpl_image_size_y": "6", 
+        "plot_grid": "yes", 
+        "plot_type": "mpl_1d_histogram", 
+        "size_x": 700, 
+        "size_y": 400, 
+        "title": "Powered by Collective Knowledge"
+      }
+    }
+  ], 
+  "name": "Pamela project - slambench aggregation of execution time scenario", 
+  "scripts_data_uoa": "8e12737621431b93", 
+  "scripts_module_uoa": "script", 
+  "scripts_repo_uoa": "", 
+  "shared_repo": "reproduce-pamela-project"
+}
