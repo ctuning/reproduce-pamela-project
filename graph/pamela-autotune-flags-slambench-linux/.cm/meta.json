@@ -4,7 +4,7 @@
     {
       "id": "2d_points_time_vs_size_with_pareto", 
       "name": "2D graphs: execution time vs binary size (expected values as points)", 
-      "notes": "Demo of the multi-objective autotuning of slambench via CK (can be any objective, i.e. execution time, energy, code size, cost, precision, reliability)", 
+      "notes": "Demo of the multi-objective autotuning of slambench via CK (can be any objective, i.e. execution time, energy, code size, cost, precision, reliability). Black dot - GCC with -O3. Green dot - LLVM with -O3", 
       "params": {
         "axis_x_desc": "Binary file size (bytes)", 
         "axis_y_desc": "Whole execution time, expected value (sec.)", 
@@ -61,7 +61,7 @@
     {
       "id": "2d_variation_time_vs_size_with_pareto", 
       "name": "2D graphs: execution time vs obj size (with variation)", 
-      "notes": "Demo of the multi-objective autotuning of slambench via CK (can be any objective, i.e. execution time, energy, code size, cost, precision, reliability)", 
+      "notes": "Demo of the multi-objective autotuning of slambench via CK (can be any objective, i.e. execution time, energy, code size, cost, precision, reliability). Black dot - GCC with -O3. Green dot - LLVM with -O3", 
       "params": {
         "axis_x_desc": "Binary file size (bytes)", 
         "axis_y_desc": "Whole execution time (sec.)", 
