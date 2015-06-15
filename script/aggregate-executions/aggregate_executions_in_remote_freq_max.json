@@ -1,0 +1,22 @@
+{
+  "iterations":1,
+
+  "choices_order":[
+    [
+     "##compiler_flags#*"
+    ]
+  ],
+
+  "pipeline_update":{
+     "cpu_freq":"max",
+     "gpu_freq":"max",
+     "select_best_base_flag_for_first_iteration":"yes"
+   },
+
+  "record":"yes",
+  "record_uoa":"pamela-slambench-best-aggregated",
+
+  "record_repo":"remote-ck",
+  "record_experiment_repo":"upload"
+
+}
