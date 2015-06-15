@@ -5,8 +5,7 @@
 
   "flat_keys_list":[
     "##characteristics#compile#binary_size#min",
-    "##characteristics#run#execution_time_kernel_0#center",
-    "##characteristics#run#execution_time_kernel_0#halfrange"
+    "##characteristics#run#execution_time_kernel_0#exp"
   ],
 
   "plot_type":"mpl_2d_scatter",
@@ -34,14 +33,5 @@
   "point_style":{"3":{"size":40, "elinewidth":"7", "color":"#007f00"},
                  "2":{"size":10, "color":"#dc3912", "frontier":"yes", "line_style":"--"},
                  "1":{"size":40, "elinewidth":"7", "color":"#000000"},
-                 "0":{"size":40, "color":"#3366cc"}},
-
-  "out_repo_uoa":"reproduce-pamela-project",
-  "out_data_uoa":"pamela-autotune-flags-slambench-linux",
-
-  "out_to_file":"2d_points_time_vs_size_with_pareto.png",
-
-  "save_table_to_json_file":"2d_points_time_vs_size_with_pareto.json",
-  "save_table_to_csv_file":"2d_points_time_vs_size_with_pareto.csv"
-
+                 "0":{"size":40, "color":"#3366cc"}}
 }

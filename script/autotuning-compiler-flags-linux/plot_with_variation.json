@@ -1,7 +1,7 @@
 {
   "experiment_module_uoa":"experiment",
 
-  "data_uoa_list":["pamela-autotune-flags-slambench-linux-i10", "pamela-autotune-flags-slambench-linux-best"],
+  "data_uoa_list":["pamela-autotune-flags-slambench-linux-i10", "pamela-autotune-flags-slambench-linux-best", "pamela-autotune-flags-slambench-linux-best-llvm"],
 
   "flat_keys_list":[
     "##characteristics#compile#binary_size#min",
@@ -24,6 +24,7 @@
   "mpl_image_size_y":"6",
   "mpl_image_dpi":"100",
 
-  "point_style":{"1":{"elinewidth":"5", "color":"#dc3912"},
+  "point_style":{"2":{"size":40, "elinewidth":"7", "color":"#00df00"},
+                 "1":{"elinewidth":"5", "color":"#dc3912"},
                  "0":{"color":"#3366cc"}}
 }
