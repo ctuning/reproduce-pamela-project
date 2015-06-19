@@ -1,0 +1,42 @@
+{
+  "experiment_module_uoa":"experiment",
+
+  "data_uoa_list":["pamela-autotune-flags-slambench-linux-i10", 
+                   "pamela-autotune-flags-slambench-linux-best", 
+                   "pamela-autotune-flags-slambench-linux-i10-pareto", 
+                   "pamela-autotune-flags-slambench-linux-best-llvm"],
+
+  "flat_keys_list":[
+    "##characteristics#compile#binary_size#min",
+    "##characteristics#run#execution_time_kernel_0#exp"
+  ],
+
+  "plot_type":"d3_2d_scatter",
+  "display_x_error_bar":"no",
+  "display_y_error_bar":"no",
+
+  "title":"Powered by Collective Knowledge",
+
+  "axis_x_desc":"Binary file size (bytes)",
+  "axis_y_desc":"Whole execution time, expected value (sec.)",
+
+  "plot_grid":"yes",
+
+  "mpl_image_size_x":"12",
+  "mpl_image_size_y":"6",
+  "mpl_image_dpi":"100",
+
+  "xmin":50000,
+  "xmax":150000,
+  "ymin":1,
+  "ymax":4,
+
+  "bound_lines":"no",
+
+  "point_style":{"3":{"size":5, "type":"rect", "color":"#00af00"},
+                 "2":{"size":4, "color":"#dc3912"},
+                 "1":{"size":5, "type":"rect", "color":"#9f3f3f"},
+                 "0":{"size":4, "color":"#3366cc"}},
+
+  "save_to_html":"plot_as_points_with_pareto_interactive.html"
+}
