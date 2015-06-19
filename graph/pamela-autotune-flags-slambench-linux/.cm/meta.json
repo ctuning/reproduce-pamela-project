@@ -59,6 +59,59 @@
       }
     }, 
     {
+      "id": "2d_points_time_vs_size_with_pareto_interactive", 
+      "name": "Interactive 2D graphs: execution time vs binary size (expected values as points)", 
+      "notes": "Demo of the multi-objective autotuning of slambench via CK (can be any objective, i.e. execution time, energy, code size, cost, precision, reliability). Black dot - GCC with -O3. Green dot - LLVM with -O3", 
+      "output": "html", 
+      "params": {
+        "axis_x_desc": "Binary file size (bytes)", 
+        "axis_y_desc": "Whole execution time, expected value (sec.)", 
+        "bound_lines": "no", 
+        "data_uoa_list": [
+          "pamela-autotune-flags-slambench-linux-i10", 
+          "pamela-autotune-flags-slambench-linux-best", 
+          "pamela-autotune-flags-slambench-linux-i10-pareto", 
+          "pamela-autotune-flags-slambench-linux-best-llvm"
+        ], 
+        "display_x_error_bar": "no", 
+        "display_y_error_bar": "no", 
+        "experiment_module_uoa": "experiment", 
+        "flat_keys_list": [
+          "##characteristics#compile#binary_size#min", 
+          "##characteristics#run#execution_time_kernel_0#exp"
+        ], 
+        "plot_grid": "yes", 
+        "plot_type": "d3_2d_scatter", 
+        "point_style": {
+          "0": {
+            "color": "#3366cc", 
+            "size": 4
+          }, 
+          "1": {
+            "color": "#9f3f3f", 
+            "size": 5, 
+            "type": "rect"
+          }, 
+          "2": {
+            "color": "#dc3912", 
+            "size": 4
+          }, 
+          "3": {
+            "color": "#00af00", 
+            "size": 5, 
+            "type": "rect"
+          }
+        }, 
+        "size_x": 700, 
+        "size_y": 400, 
+        "title": "Powered by Collective Knowledge", 
+        "xmax": 150000, 
+        "xmin": 50000, 
+        "ymax": 4, 
+        "ymin": 1
+      }
+    }, 
+    {
       "id": "2d_variation_time_vs_size_with_pareto", 
       "name": "2D graphs: execution time vs obj size (with variation)", 
       "notes": "Demo of the multi-objective autotuning of slambench via CK (can be any objective, i.e. execution time, energy, code size, cost, precision, reliability). Black dot - GCC with -O3. Green dot - LLVM with -O3", 
