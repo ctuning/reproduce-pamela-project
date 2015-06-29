@@ -1,0 +1,17 @@
+{
+ "pipeline_update":{
+  "cpu_freq":"max",
+  "gpu_freq":"max",
+  "extra_run_cmd":" ",
+  "run_cmd_substitutes":{
+      "run_cmd_key_c":"1",
+      "run_cmd_key_r":1,
+      "run_cmd_key_l":1,
+      "run_cmd_key_m":1,
+      "run_cmd_key_y1":10,
+      "run_cmd_key_y2":5,
+      "run_cmd_key_y3":4,
+      "run_cmd_key_v":128
+  }
+ }
+}
