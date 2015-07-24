@@ -19,8 +19,8 @@
 
   "title":"Powered by Collective Knowledge",
 
-  "axis_x_desc":"Binary size",
-  "axis_y_desc":"Execution time",
+  "axis_x_desc":"Experiment No",
+  "axis_y_desc":"FPS (frames per second)",
 
   "plot_grid":"yes",
 
