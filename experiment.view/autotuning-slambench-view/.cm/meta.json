@@ -1,5 +1,6 @@
 {
   "flat_keys": [
+    "##choices#data_uoa",
     "##choices#host_os", 
     "##choices#target_os", 
     "##features#platform#cpu#name", 
@@ -25,6 +26,11 @@
     "##choices#compiler_vars#*"
   ], 
   "flat_keys_desc": [
+    {
+      "desc": "Program", 
+      "module_uoa": "b0ac08fe1d3c2615", 
+      "type": "uoa"
+    }, 
     {
       "desc": "Host OS", 
       "module_uoa": "0440cb72c2bc5cc6", 
