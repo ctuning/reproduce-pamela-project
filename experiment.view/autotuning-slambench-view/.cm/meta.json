@@ -8,6 +8,7 @@
     "##characteristics#run#run_time_state#opencl_device", 
     "##characteristics#run#run_time_state#opencl_device_units", 
     "##features#compiler_version#raw@0", 
+    "##choices#cmd_key",
     "##choices#dataset_uoa", 
     "##characteristics#run#run_time_state#input_size_x", 
     "##characteristics#run#run_time_state#input_size_y", 
@@ -53,6 +54,9 @@
       "desc": "Raw compiler name"
     }, 
     {
+      "desc": "CMD key"
+    }, 
+    {
       "desc": "Dataset UOA", 
       "module_uoa": "8a7141c59cd335f5", 
       "type": "uoa"
@@ -67,10 +71,8 @@
       "desc": "Kernel repetitions"
     }, 
     {
-      "desc": "Kernel repetitions"
-    }, 
-    {
-      "desc": "FPS"
+      "desc": "FPS",
+      "format":"%3.1f"
     }, 
     {
       "desc": "Energy total (A15, joules)"
