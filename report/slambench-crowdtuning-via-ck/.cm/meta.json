@@ -21,7 +21,5 @@
   ], 
   "live": "yes", 
   "template": "live.html", 
-  "title": "Live report: run-time visualization of slambench output (connected to online learning)",
-  "top":"no",
-  "auto_refresh":"yes"
+  "title": "Report demonstrating analysis and tuning of Slambench from PAMELA project via CK"
 }

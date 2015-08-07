@@ -19,7 +19,9 @@
       "url": "https://uk.linkedin.com/in/lokhmotov"
     }
   ], 
+  "auto_refresh": "yes", 
   "live": "yes", 
   "template": "live.html", 
-  "title": "Report demonstrating analysis and tuning of Slambench from PAMELA project via CK"
+  "title": "Aggregated execution times of slambench across multiple platforms (crowd-benchmarking)", 
+  "top": "no"
 }

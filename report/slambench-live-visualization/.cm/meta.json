@@ -19,9 +19,9 @@
       "url": "https://uk.linkedin.com/in/lokhmotov"
     }
   ], 
-  "auto_refresh": "yes", 
   "live": "yes", 
   "template": "live.html", 
-  "title": "Aggregated execution times of slambench across multiple platforms", 
-  "top": "no"
+  "title": "Pamela project powered by CK - live report: run-time visualization of slambench output (can be connected to active learning plugins)",
+  "top":"no",
+  "auto_refresh":"yes"
 }
