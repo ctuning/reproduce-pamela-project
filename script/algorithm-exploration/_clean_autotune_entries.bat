@@ -1,1 +1,1 @@
-ck rm experiment:pamela-autotune-flags-slambench-windows-*
+ck rm experiment:algorithm-exploration-slambench-*

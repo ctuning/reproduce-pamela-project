@@ -2,8 +2,10 @@
   "iterations":1,
 
   "pipeline_update":{
+
    "cpu_freq":"max",
    "gpu_freq":"max",
+
    "run_cmd_substitutes":{
        "run_cmd_key_c":"1",
        "run_cmd_key_r":1,

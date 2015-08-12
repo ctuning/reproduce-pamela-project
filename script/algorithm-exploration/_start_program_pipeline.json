@@ -12,6 +12,10 @@
       "run_cmd_key_y2":5,
       "run_cmd_key_y3":4,
       "run_cmd_key_v":128
+  },
+  "env":{
+    "OPENCL_PLATFORM":"0",
+    "OPENCL_DEVICE":"0"
   }
  }
 }

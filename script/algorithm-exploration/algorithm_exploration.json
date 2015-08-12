@@ -40,7 +40,7 @@
   ],
 
   "seed":12345,
-  "iterations":1000,
+  "iterations":100,
   "repetitions":3,
 
   "record":"yes",

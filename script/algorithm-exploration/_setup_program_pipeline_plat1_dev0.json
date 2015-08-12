@@ -10,6 +10,12 @@
 
  "cmd_key":"cmd_dse",
 
- "compile_only_once":"yes"
+ "compile_only_once":"yes",
+
+  "env":{
+    "OPENCL_PLATFORM":"1",
+    "OPENCL_DEVICE":"0"
+  }
+
 }
 
