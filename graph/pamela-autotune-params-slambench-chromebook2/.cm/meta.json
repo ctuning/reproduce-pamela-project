@@ -40,6 +40,9 @@
             "type": "rect"
           }
         }, 
+        "save_info_table_to_json_file": "2d_points_fps_vs_accuracy_with_pareto_interactive.json", 
+        "save_table_to_csv_file": "2d_points_fps_vs_accuracy_with_pareto_interactive.csv", 
+        "save_table_to_json_file": "2d_points_fps_vs_accuracy_with_pareto_interactive.json", 
         "size_x": 700, 
         "size_y": 400, 
         "title": "Powered by Collective Knowledge"

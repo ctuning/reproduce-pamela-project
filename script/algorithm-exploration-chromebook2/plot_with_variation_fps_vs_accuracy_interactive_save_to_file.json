@@ -51,6 +51,10 @@
       "output": "html"
     },
 
-  "out_to_file":  "2d_points_fps_vs_accuracy_with_pareto_interactive.html",
-  "save_to_style":"2d_points_fps_vs_accuracy_with_pareto_interactive.style"
+  "out_to_file":                 "2d_points_fps_vs_accuracy_with_pareto_interactive.html",
+  "save_to_style":               "2d_points_fps_vs_accuracy_with_pareto_interactive.style",
+
+  "save_table_to_json_file":     "2d_points_fps_vs_accuracy_with_pareto_interactive.json",
+  "save_info_table_to_json_file":"2d_points_fps_vs_accuracy_with_pareto_interactive.json",
+  "save_table_to_csv_file":      "2d_points_fps_vs_accuracy_with_pareto_interactive.csv"
 }
