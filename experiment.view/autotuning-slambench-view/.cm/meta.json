@@ -93,7 +93,7 @@
       "desc": "CPU freq (MHz)"
     }, 
     {
-      "desc": "GPU freq (MHz)"
+      "desc": "GPU freq (Hz)"
     }, 
     {
       "desc": "Algorithm accuracy"
