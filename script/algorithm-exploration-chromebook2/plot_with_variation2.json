@@ -2,13 +2,13 @@
   "experiment_module_uoa":"experiment",
 
   "data_uoa_list":[
-    "algorithm-exploration-slambench-default", 
-    "algorithm-exploration-slambench"
-   ],
+    "algorithm-exploration-slambench-opencl-samsung-chromebook2-plat0-dev0-default", 
+    "algorithm-exploration-slambench-opencl-samsung-chromebook2-plat0-dev0-i100"
+  ],
 
   "flat_keys_list":[
-    "##characteristics#run#fps#center",
-    "##characteristics#run#fps#halfrange"
+    "##characteristics#run#accuracy_ate_max#center",
+    "##characteristics#run#accuracy_ate_max#halfrange"
   ],
 
   "add_x_loop":"yes",

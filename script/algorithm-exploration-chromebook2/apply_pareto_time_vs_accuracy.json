@@ -1,0 +1,16 @@
+{
+  "only_filter":"yes",
+
+
+  "iterations":1,
+
+
+  "frontier_keys":[
+    "##characteristics#run#accuracy_ate_max#max",
+    "##characteristics#run#execution_time_kernel_0#min"
+   ],
+
+
+  "record":"yes",
+  "record_uoa":"algorithm-exploration-slambench-opencl-samsung-chromebook2-plat0-dev0-i40-pareto-time"
+}

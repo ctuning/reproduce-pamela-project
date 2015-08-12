@@ -1,0 +1,438 @@
+{
+  "choices": {
+    "cmd_key": "cmd_dse", 
+    "compile_only_once": "yes", 
+    "compile_type": "dynamic", 
+    "compiler_flags": {
+      "base_opt": "-O3"
+    }, 
+    "data_uoa": "slambench-1.1-opencl", 
+    "dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+    "device_id": "", 
+    "energy": "no", 
+    "env": {
+      "CK_CPU_FREQUENCY": "max", 
+      "CK_GPU_FREQUENCY": "max", 
+      "KERNEL_TIMINGS": "1", 
+      "OPENCL_DEVICE": "0", 
+      "OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+      "OPENCL_PLATFORM": "0", 
+      "XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+      "XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+      "XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+      "XOPENME_DUMP_MEMORY_VOLUMERENDER": "1"
+    }, 
+    "host_os": "linux-32", 
+    "joined_compiler_flags": "-O3", 
+    "module_uoa": "b0ac08fe1d3c2615", 
+    "repeat": 1, 
+    "run_cmd_key_c": "2", 
+    "run_cmd_key_l": 14.848, 
+    "run_cmd_key_m": 1.32, 
+    "run_cmd_key_r": 26, 
+    "run_cmd_key_v": 256, 
+    "run_cmd_key_y1": 4, 
+    "run_cmd_key_y2": 7, 
+    "run_cmd_key_y3": 7, 
+    "target_os": "linux-32", 
+    "target_os_bits": "32"
+  }, 
+  "choices_order": [
+    "##compiler_flags#base_opt", 
+    "##choices#run_cmd_key_c", 
+    "##choices#run_cmd_key_r", 
+    "##choices#run_cmd_key_l", 
+    "##choices#run_cmd_key_m", 
+    "##choices#run_cmd_key_y1", 
+    "##choices#run_cmd_key_y2", 
+    "##choices#run_cmd_key_y3", 
+    "##choices#run_cmd_key_v"
+  ], 
+  "features": {
+    "compiler_version": {
+      "list": [
+        "3", 
+        "6", 
+        "0"
+      ], 
+      "raw": [
+        "clang version 3.6.0 (tags/RELEASE_360/final)", 
+        "Target: armv7l-unknown-linux-gnueabihf", 
+        "Thread model: posix", 
+        ""
+      ], 
+      "str": "3.6.0"
+    }, 
+    "dataset": {
+      "total_size": 30720320
+    }, 
+    "platform": {
+      "acc": {
+        "all_freqs": [
+          "100000000", 
+          "177000000", 
+          "266000000", 
+          "350000000", 
+          "420000000", 
+          "480000000", 
+          "533000000", 
+          "600000000"
+        ], 
+        "current_freq": "600000000", 
+        "name": ""
+      }, 
+      "acc_misc": {}, 
+      "cpu": {
+        "all_freqs": {
+          "0": [
+            1900000, 
+            1800000, 
+            1700000, 
+            1600000, 
+            1500000, 
+            1400000, 
+            1300000, 
+            1200000, 
+            1100000, 
+            1000000, 
+            900000, 
+            800000, 
+            700000, 
+            650000, 
+            600000, 
+            550000, 
+            500000, 
+            450000, 
+            400000, 
+            350000, 
+            300000
+          ], 
+          "1": [
+            1900000, 
+            1800000, 
+            1700000, 
+            1600000, 
+            1500000, 
+            1400000, 
+            1300000, 
+            1200000, 
+            1100000, 
+            1000000, 
+            900000, 
+            800000, 
+            700000, 
+            650000, 
+            600000, 
+            550000, 
+            500000, 
+            450000, 
+            400000, 
+            350000, 
+            300000
+          ], 
+          "2": [
+            1900000, 
+            1800000, 
+            1700000, 
+            1600000, 
+            1500000, 
+            1400000, 
+            1300000, 
+            1200000, 
+            1100000, 
+            1000000, 
+            900000, 
+            800000, 
+            700000, 
+            650000, 
+            600000, 
+            550000, 
+            500000, 
+            450000, 
+            400000, 
+            350000, 
+            300000
+          ], 
+          "3": [
+            1900000, 
+            1800000, 
+            1700000, 
+            1600000, 
+            1500000, 
+            1400000, 
+            1300000, 
+            1200000, 
+            1100000, 
+            1000000, 
+            900000, 
+            800000, 
+            700000, 
+            650000, 
+            600000, 
+            550000, 
+            500000, 
+            450000, 
+            400000, 
+            350000, 
+            300000
+          ]
+        }, 
+        "cpu_abi": "", 
+        "cpu_features": "swp half thumb fastmult vfp edsp thumbee neon vfpv3 tls vfpv4 idiva idivt", 
+        "current_freq": {
+          "0": 1900.0, 
+          "1": 1900.0, 
+          "2": 1900.0, 
+          "3": 1900.0
+        }, 
+        "max_freq": {
+          "0": 1900.0, 
+          "1": 1900.0, 
+          "2": 1900.0, 
+          "3": 1900.0
+        }, 
+        "name": "SAMSUNG EXYNOS5 (Flattened Device Tree)", 
+        "num_proc": "4", 
+        "sub_name": "ARMv7 Processor rev 3 (v7l)"
+      }, 
+      "cpu_misc": {
+        "0": {
+          "BogoMIPS": "48.00", 
+          "CPU architectur": "7", 
+          "CPU implementer": "0x41", 
+          "CPU part": "0xc0f", 
+          "CPU revision": "3", 
+          "CPU variant": "0x2", 
+          "Features": "swp half thumb fastmult vfp edsp thumbee neon vfpv3 tls vfpv4 idiva idivt", 
+          "model name": "ARMv7 Processor rev 3 (v7l)", 
+          "processor": "0"
+        }, 
+        "1": {
+          "BogoMIPS": "50.66", 
+          "CPU architectur": "7", 
+          "CPU implementer": "0x41", 
+          "CPU part": "0xc0f", 
+          "CPU revision": "3", 
+          "CPU variant": "0x2", 
+          "Features": "swp half thumb fastmult vfp edsp thumbee neon vfpv3 tls vfpv4 idiva idivt", 
+          "model name": "ARMv7 Processor rev 3 (v7l)", 
+          "processor": "1"
+        }, 
+        "2": {
+          "BogoMIPS": "50.66", 
+          "CPU architectur": "7", 
+          "CPU implementer": "0x41", 
+          "CPU part": "0xc0f", 
+          "CPU revision": "3", 
+          "CPU variant": "0x2", 
+          "Features": "swp half thumb fastmult vfp edsp thumbee neon vfpv3 tls vfpv4 idiva idivt", 
+          "model name": "ARMv7 Processor rev 3 (v7l)", 
+          "processor": "2"
+        }, 
+        "3": {
+          "BogoMIPS": "50.66", 
+          "CPU architectur": "7", 
+          "CPU implementer": "0x41", 
+          "CPU part": "0xc0f", 
+          "CPU revision": "3", 
+          "CPU variant": "0x2", 
+          "Features": "swp half thumb fastmult vfp edsp thumbee neon vfpv3 tls vfpv4 idiva idivt", 
+          "Hardware": "SAMSUNG EXYNOS5 (Flattened Device Tree)", 
+          "Revision": "0000", 
+          "Serial": "0000000000000000", 
+          "model name": "ARMv7 Processor rev 3 (v7l)", 
+          "processor": "3"
+        }
+      }, 
+      "os": {
+        "bits": "32", 
+        "ck_os_base_uoa": "", 
+        "ck_os_uoa": "linux-32", 
+        "name": "Ubuntu 12.04.5 LTS", 
+        "name_long": "Linux-3.8.11-armv7l-with-Ubuntu-12.04-precise", 
+        "name_short": "Linux 3.8.11"
+      }, 
+      "os_misc": {}, 
+      "platform": {
+        "model": "", 
+        "name": "", 
+        "vendor": ""
+      }, 
+      "platform_misc": {}
+    }, 
+    "platform.cpu": {
+      "cpu": {
+        "all_freqs": {
+          "0": [
+            1900000, 
+            1800000, 
+            1700000, 
+            1600000, 
+            1500000, 
+            1400000, 
+            1300000, 
+            1200000, 
+            1100000, 
+            1000000, 
+            900000, 
+            800000, 
+            700000, 
+            650000, 
+            600000, 
+            550000, 
+            500000, 
+            450000, 
+            400000, 
+            350000, 
+            300000
+          ], 
+          "1": [
+            1900000, 
+            1800000, 
+            1700000, 
+            1600000, 
+            1500000, 
+            1400000, 
+            1300000, 
+            1200000, 
+            1100000, 
+            1000000, 
+            900000, 
+            800000, 
+            700000, 
+            650000, 
+            600000, 
+            550000, 
+            500000, 
+            450000, 
+            400000, 
+            350000, 
+            300000
+          ], 
+          "2": [
+            1900000, 
+            1800000, 
+            1700000, 
+            1600000, 
+            1500000, 
+            1400000, 
+            1300000, 
+            1200000, 
+            1100000, 
+            1000000, 
+            900000, 
+            800000, 
+            700000, 
+            650000, 
+            600000, 
+            550000, 
+            500000, 
+            450000, 
+            400000, 
+            350000, 
+            300000
+          ], 
+          "3": [
+            1900000, 
+            1800000, 
+            1700000, 
+            1600000, 
+            1500000, 
+            1400000, 
+            1300000, 
+            1200000, 
+            1100000, 
+            1000000, 
+            900000, 
+            800000, 
+            700000, 
+            650000, 
+            600000, 
+            550000, 
+            500000, 
+            450000, 
+            400000, 
+            350000, 
+            300000
+          ]
+        }, 
+        "cpu_abi": "", 
+        "cpu_features": "swp half thumb fastmult vfp edsp thumbee neon vfpv3 tls vfpv4 idiva idivt", 
+        "current_freq": {
+          "0": 1900.0, 
+          "1": 1900.0, 
+          "2": 1900.0, 
+          "3": 1900.0
+        }, 
+        "max_freq": {
+          "0": 1900.0, 
+          "1": 1900.0, 
+          "2": 1900.0, 
+          "3": 1900.0
+        }, 
+        "name": "SAMSUNG EXYNOS5 (Flattened Device Tree)", 
+        "num_proc": "4", 
+        "sub_name": "ARMv7 Processor rev 3 (v7l)"
+      }, 
+      "cpu_misc": {
+        "0": {
+          "BogoMIPS": "48.00", 
+          "CPU architectur": "7", 
+          "CPU implementer": "0x41", 
+          "CPU part": "0xc0f", 
+          "CPU revision": "3", 
+          "CPU variant": "0x2", 
+          "Features": "swp half thumb fastmult vfp edsp thumbee neon vfpv3 tls vfpv4 idiva idivt", 
+          "model name": "ARMv7 Processor rev 3 (v7l)", 
+          "processor": "0"
+        }, 
+        "1": {
+          "BogoMIPS": "50.66", 
+          "CPU architectur": "7", 
+          "CPU implementer": "0x41", 
+          "CPU part": "0xc0f", 
+          "CPU revision": "3", 
+          "CPU variant": "0x2", 
+          "Features": "swp half thumb fastmult vfp edsp thumbee neon vfpv3 tls vfpv4 idiva idivt", 
+          "model name": "ARMv7 Processor rev 3 (v7l)", 
+          "processor": "1"
+        }, 
+        "2": {
+          "BogoMIPS": "50.66", 
+          "CPU architectur": "7", 
+          "CPU implementer": "0x41", 
+          "CPU part": "0xc0f", 
+          "CPU revision": "3", 
+          "CPU variant": "0x2", 
+          "Features": "swp half thumb fastmult vfp edsp thumbee neon vfpv3 tls vfpv4 idiva idivt", 
+          "model name": "ARMv7 Processor rev 3 (v7l)", 
+          "processor": "2"
+        }, 
+        "3": {
+          "BogoMIPS": "50.66", 
+          "CPU architectur": "7", 
+          "CPU implementer": "0x41", 
+          "CPU part": "0xc0f", 
+          "CPU revision": "3", 
+          "CPU variant": "0x2", 
+          "Features": "swp half thumb fastmult vfp edsp thumbee neon vfpv3 tls vfpv4 idiva idivt", 
+          "Hardware": "SAMSUNG EXYNOS5 (Flattened Device Tree)", 
+          "Revision": "0000", 
+          "Serial": "0000000000000000", 
+          "model name": "ARMv7 Processor rev 3 (v7l)", 
+          "processor": "3"
+        }
+      }, 
+      "os": {
+        "bits": "32", 
+        "ck_os_base_uoa": "", 
+        "ck_os_uoa": "linux-32", 
+        "name": "Ubuntu 12.04.5 LTS", 
+        "name_long": "Linux-3.8.11-armv7l-with-Ubuntu-12.04-precise", 
+        "name_short": "Linux 3.8.11"
+      }, 
+      "os_misc": {}
+    }
+  }, 
+  "sub_points": 1
+}

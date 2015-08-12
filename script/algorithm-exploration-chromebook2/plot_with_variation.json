@@ -1,10 +1,7 @@
 {
   "experiment_module_uoa":"experiment",
 
-  "data_uoa_list":[
-    "algorithm-exploration-slambench-default", 
-    "algorithm-exploration-slambench"
-   ],
+  "data_uoa_list":["algorithm-exploration-slambench-default", "algorithm-exploration-slambench"],
 
   "flat_keys_list":[
     "##characteristics#run#fps#center",
