@@ -1,0 +1,56 @@
+{
+  "experiment_module_uoa":"experiment",
+
+  "data_uoa_list":[
+    "algorithm-exploration-slambench-opencl-samsung-chromebook2-plat0-dev0-i40",
+    "algorithm-exploration-slambench-opencl-samsung-chromebook2-plat0-dev0-i40-pareto-fps",
+    "algorithm-exploration-slambench-opencl-samsung-chromebook2-plat0-dev0-default" 
+  ],
+
+  "flat_keys_list":[
+    "##characteristics#run#accuracy_ate_max#max",
+    "##characteristics#run#fps#center",
+    "##characteristics#run#fps#halfrange"
+  ],
+
+  "ignore_point_if_empty_string":"yes",
+
+  "plot_type":"d3_2d_scatter",
+
+  "display_x_error_bar":"no",
+  "display_y_error_bar":"yes",
+
+  "title":"Powered by Collective Knowledge",
+
+  "axis_x_desc":"Accuracy (cm.)",
+  "axis_y_desc":"FPS (frames per second)",
+
+  "point_style":{"2":{"size":5, "type":"rect", "color":"#00df00"},
+                 "1":{"size":5, "type":"rect", "color":"#dc3912"},
+                 "0":{"size":4, "color":"#3366cc"}},
+
+  "out_repo_uoa":"reproduce-pamela-project",
+  "out_data_uoa":"pamela-autotune-params-slambench-chromebook2",
+
+    "size_x": 700, 
+    "size_y": 400, 
+
+    "experiment_module_uoa": "experiment", 
+
+    "out_common_meta": {
+       "get_shared_repo": "ck pull repo:reproduce-pamela-project", 
+       "name": "Pamela project - reproducing slambench multi-objective autotuning (FPS vs accuracy vs other characteristics)", 
+       "scripts_data_uoa": "bfd7ae44dda619dc", 
+       "scripts_module_uoa": "script", 
+       "scripts_repo_uoa": "", 
+       "shared_repo": "reproduce-pamela-project"
+    },
+    "out_graph_extra_meta":{
+      "name": "2D graphs: frames per second vs accuracy", 
+      "notes": "Demo of the parametric, multi-objective autotuning of slambench via CK",
+      "output": "html"
+    },
+
+  "out_to_file":  "2d_points_fps_vs_accuracy_with_pareto_interactive.html",
+  "save_to_style":"2d_points_fps_vs_accuracy_with_pareto_interactive.style"
+}

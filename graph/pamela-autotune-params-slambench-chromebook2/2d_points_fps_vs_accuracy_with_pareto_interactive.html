@@ -1,0 +1,2329 @@
+<script src="$#ck_root_url#$action=pull&common_func=yes&cid=module:graph&filename=third-party/d3/d3.v3.min.js"></script>
+
+<script>
+var margin = {top: 20, right: 20, bottom: 30, left: 40},
+    width = 600 - margin.left - margin.right,
+    height = 400 - margin.top - margin.bottom;
+
+/* 
+ * value accessor - returns the value to encode for a given data object.
+ * scale - maps value to a visual display encoding, such as a pixel position.
+ * map function - maps from data value to display value
+ * axis - sets up axis
+ */ 
+
+var xdata={
+  "1": [
+    [
+      0.011963, 
+      37.81285492940636, 
+      0.04779138968695662
+    ], 
+    [
+      0.015212, 
+      50.266798381109226, 
+      0.11433489210263659
+    ], 
+    [
+      0.008608, 
+      28.586661668425933, 
+      0.10259779006428893
+    ], 
+    [
+      0.010482, 
+      29.516935056350242, 
+      0.17149966546171314
+    ], 
+    [
+      0.013997, 
+      45.94937697645021, 
+      0.1372889989164534
+    ], 
+    [
+      0.028058, 
+      53.02625629925335, 
+      0.4128151434412608
+    ], 
+    [
+      0.008134, 
+      4.0773133384953475, 
+      0.04537880420999274
+    ], 
+    [
+      0.020553, 
+      52.54885438535676, 
+      0.432541197584289
+    ], 
+    [
+      0.007161, 
+      2.6230110956959205, 
+      0.05327091698590958
+    ]
+  ], 
+  "0": [
+    [
+      0.011963, 
+      37.81285492940636, 
+      0.04779138968695662
+    ], 
+    [
+      0.016523, 
+      6.037807664241329, 
+      0.24889291498383015
+    ], 
+    [
+      0.00724, 
+      2.2562332108852607, 
+      0.4934954252699587
+    ], 
+    [
+      0.015212, 
+      50.266798381109226, 
+      0.11433489210263659
+    ], 
+    [
+      0.010317, 
+      19.525540662488435, 
+      0.05813008117209151
+    ], 
+    [
+      0.010144, 
+      11.892414126401196, 
+      1.3347141846796982
+    ], 
+    [
+      0.008856, 
+      4.331835478096384, 
+      0.5969363754619168
+    ], 
+    [
+      0.008608, 
+      28.586661668425933, 
+      0.10259779006428893
+    ], 
+    [
+      0.010318, 
+      28.38870988214487, 
+      0.054318731541915355
+    ], 
+    [
+      0.009006, 
+      7.344509339697842, 
+      0.5136539560787114
+    ], 
+    [
+      0.007706, 
+      1.2155180674577188, 
+      0.15166722955816014
+    ], 
+    [
+      0.010381, 
+      19.170876152826814, 
+      0.039205297918536886
+    ], 
+    [
+      0.011914, 
+      2.8610504286014318, 
+      0.9279722422579145
+    ], 
+    [
+      0.010859, 
+      11.181514104871336, 
+      1.4694194391422108
+    ], 
+    [
+      0.008171, 
+      1.133689222746895, 
+      0.06556997086402772
+    ], 
+    [
+      0.00955, 
+      3.6201901974293786, 
+      0.14644278298300129
+    ], 
+    [
+      0.009211, 
+      3.894314310922451, 
+      0.19937718766747747
+    ], 
+    [
+      0.010298, 
+      27.17641190410676, 
+      0.09595586922713295
+    ], 
+    [
+      0.016223, 
+      7.845972509033547, 
+      0.31785593464277095
+    ], 
+    [
+      0.015625, 
+      45.87594883940926, 
+      0.14263806784257227
+    ], 
+    [
+      0.007303, 
+      2.02090465175114, 
+      0.006568419351529187
+    ], 
+    [
+      0.010482, 
+      29.516935056350242, 
+      0.17149966546171314
+    ], 
+    [
+      0.008808, 
+      4.259559903083455, 
+      0.08009536772079828
+    ], 
+    [
+      0.009826, 
+      3.9206210415039706, 
+      0.5436088699078512
+    ], 
+    [
+      0.010853, 
+      7.077970061799758, 
+      2.0306387120676446
+    ], 
+    [
+      0.008956, 
+      3.9253459866906684, 
+      0.11402250651784085
+    ], 
+    [
+      0.018109, 
+      50.21364386849185, 
+      0.7890694758580779
+    ], 
+    [
+      0.013997, 
+      45.94937697645021, 
+      0.1372889989164534
+    ], 
+    [
+      0.009352, 
+      4.278448881708526, 
+      0.2282064341956178
+    ], 
+    [
+      0.011969, 
+      36.52209721582007, 
+      0.1190794056435962
+    ], 
+    [
+      0.028058, 
+      53.02625629925335, 
+      0.4128151434412608
+    ], 
+    [
+      0.008134, 
+      4.0773133384953475, 
+      0.04537880420999274
+    ], 
+    [
+      0.020553, 
+      52.54885438535676, 
+      0.432541197584289
+    ], 
+    [
+      0.009468, 
+      3.2441426910222377, 
+      0.07974194624887887
+    ], 
+    [
+      0.008023, 
+      1.2192665995986895, 
+      0.05764144418776429
+    ], 
+    [
+      0.007161, 
+      2.6230110956959205, 
+      0.05327091698590958
+    ], 
+    [
+      0.00855, 
+      3.715701271349487, 
+      0.1565365645961858
+    ]
+  ], 
+  "2": [
+    [
+      0.011914, 
+      2.9648446565942206, 
+      0.634676895001141
+    ]
+  ]
+};
+
+var xinfo={
+  "1": [
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "11c67f674f6ca1cc", 
+      "data_uoa": "85d4702af59fc432", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 5, 
+        "##choices#run_cmd_key_y2": 5, 
+        "##choices#run_cmd_key_y1": 16, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 0.15000000000000002, 
+        "##choices#run_cmd_key_l": 11.504, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "4", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 64, 
+        "##choices#run_cmd_key_r": 32, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "420048cb59547e58", 
+      "data_uoa": "85d4702af59fc432", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 5, 
+        "##choices#run_cmd_key_y2": 4, 
+        "##choices#run_cmd_key_y1": 13, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 1.4300000000000002, 
+        "##choices#run_cmd_key_l": 27.669, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "4", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 64, 
+        "##choices#run_cmd_key_r": 8, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "54804bd42de7f408", 
+      "data_uoa": "85d4702af59fc432", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 8, 
+        "##choices#run_cmd_key_y2": 8, 
+        "##choices#run_cmd_key_y1": 12, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 0.1, 
+        "##choices#run_cmd_key_l": 61.175000000000004, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "4", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 128, 
+        "##choices#run_cmd_key_r": 28, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "a1c75841cb478ebd", 
+      "data_uoa": "85d4702af59fc432", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 5, 
+        "##choices#run_cmd_key_y2": 1, 
+        "##choices#run_cmd_key_y1": 1, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 0.79, 
+        "##choices#run_cmd_key_l": 12.83, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "4", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 256, 
+        "##choices#run_cmd_key_r": 20, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "ca8ae275e994e49a", 
+      "data_uoa": "85d4702af59fc432", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 7, 
+        "##choices#run_cmd_key_y2": 6, 
+        "##choices#run_cmd_key_y1": 1, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 0.75, 
+        "##choices#run_cmd_key_l": 3.927, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "4", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 128, 
+        "##choices#run_cmd_key_r": 11, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "d7afb30c3b31426f", 
+      "data_uoa": "85d4702af59fc432", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 2, 
+        "##choices#run_cmd_key_y2": 2, 
+        "##choices#run_cmd_key_y1": 10, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 0.6, 
+        "##choices#run_cmd_key_l": 63.574, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "4", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 64, 
+        "##choices#run_cmd_key_r": 10, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "e408841008b28682", 
+      "data_uoa": "85d4702af59fc432", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 5, 
+        "##choices#run_cmd_key_y2": 5, 
+        "##choices#run_cmd_key_y1": 11, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 0.67, 
+        "##choices#run_cmd_key_l": 34.535000000000004, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "1", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 64, 
+        "##choices#run_cmd_key_r": 25, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "e4ccbf7cc6b478c8", 
+      "data_uoa": "85d4702af59fc432", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 6, 
+        "##choices#run_cmd_key_y2": 3, 
+        "##choices#run_cmd_key_y1": 10, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 0.6799999999999999, 
+        "##choices#run_cmd_key_l": 61.961, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "4", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 64, 
+        "##choices#run_cmd_key_r": 7, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "f7aab3c018da7d16", 
+      "data_uoa": "85d4702af59fc432", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 6, 
+        "##choices#run_cmd_key_y2": 5, 
+        "##choices#run_cmd_key_y1": 11, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 1.31, 
+        "##choices#run_cmd_key_l": 59.493, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "1", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 256, 
+        "##choices#run_cmd_key_r": 4, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }
+  ], 
+  "0": [
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "11c67f674f6ca1cc", 
+      "data_uoa": "7785a0236f22403e", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 5, 
+        "##choices#run_cmd_key_y2": 5, 
+        "##choices#run_cmd_key_y1": 16, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 0.15000000000000002, 
+        "##choices#run_cmd_key_l": 11.504, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "4", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 64, 
+        "##choices#run_cmd_key_r": 32, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "163f4ca2859f3400", 
+      "data_uoa": "7785a0236f22403e", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 6, 
+        "##choices#run_cmd_key_y2": 2, 
+        "##choices#run_cmd_key_y1": 12, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 1.28, 
+        "##choices#run_cmd_key_l": 1.924, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "4", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 512, 
+        "##choices#run_cmd_key_r": 7, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "1e5584ba99a8b2db", 
+      "data_uoa": "7785a0236f22403e", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 3, 
+        "##choices#run_cmd_key_y2": 1, 
+        "##choices#run_cmd_key_y1": 8, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 0.37, 
+        "##choices#run_cmd_key_l": 40.764, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "1", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 256, 
+        "##choices#run_cmd_key_r": 7, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "420048cb59547e58", 
+      "data_uoa": "7785a0236f22403e", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 5, 
+        "##choices#run_cmd_key_y2": 4, 
+        "##choices#run_cmd_key_y1": 13, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 1.4300000000000002, 
+        "##choices#run_cmd_key_l": 27.669, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "4", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 64, 
+        "##choices#run_cmd_key_r": 8, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "4490beb8d2d706c6", 
+      "data_uoa": "7785a0236f22403e", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 1, 
+        "##choices#run_cmd_key_y2": 4, 
+        "##choices#run_cmd_key_y1": 15, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 0.9, 
+        "##choices#run_cmd_key_l": 48.141, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "2", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 64, 
+        "##choices#run_cmd_key_r": 8, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "4ba0b4488e1b2435", 
+      "data_uoa": "7785a0236f22403e", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 5, 
+        "##choices#run_cmd_key_y2": 2, 
+        "##choices#run_cmd_key_y1": 16, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 1.4800000000000002, 
+        "##choices#run_cmd_key_l": 60.126000000000005, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "2", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 64, 
+        "##choices#run_cmd_key_r": 29, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "4f091be09e4b63a8", 
+      "data_uoa": "7785a0236f22403e", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 8, 
+        "##choices#run_cmd_key_y2": 7, 
+        "##choices#run_cmd_key_y1": 13, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 0.61, 
+        "##choices#run_cmd_key_l": 44.437, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "2", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 512, 
+        "##choices#run_cmd_key_r": 25, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "54804bd42de7f408", 
+      "data_uoa": "7785a0236f22403e", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 8, 
+        "##choices#run_cmd_key_y2": 8, 
+        "##choices#run_cmd_key_y1": 12, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 0.1, 
+        "##choices#run_cmd_key_l": 61.175000000000004, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "4", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 128, 
+        "##choices#run_cmd_key_r": 28, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "59e4cd04bfcba2f3", 
+      "data_uoa": "7785a0236f22403e", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 2, 
+        "##choices#run_cmd_key_y2": 4, 
+        "##choices#run_cmd_key_y1": 3, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 0.58, 
+        "##choices#run_cmd_key_l": 58.688, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "4", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 256, 
+        "##choices#run_cmd_key_r": 24, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "5a58f33598e4d90b", 
+      "data_uoa": "7785a0236f22403e", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 7, 
+        "##choices#run_cmd_key_y2": 7, 
+        "##choices#run_cmd_key_y1": 4, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 1.32, 
+        "##choices#run_cmd_key_l": 14.848, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "2", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 256, 
+        "##choices#run_cmd_key_r": 26, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "66d671b3ec734489", 
+      "data_uoa": "7785a0236f22403e", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 3, 
+        "##choices#run_cmd_key_y2": 3, 
+        "##choices#run_cmd_key_y1": 9, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 1.07, 
+        "##choices#run_cmd_key_l": 43.943, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "1", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 512, 
+        "##choices#run_cmd_key_r": 26, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "67c79036be43389b", 
+      "data_uoa": "7785a0236f22403e", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 6, 
+        "##choices#run_cmd_key_y2": 6, 
+        "##choices#run_cmd_key_y1": 7, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 0.72, 
+        "##choices#run_cmd_key_l": 17.917, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "2", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 64, 
+        "##choices#run_cmd_key_r": 24, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "698b74ecf69d0445", 
+      "data_uoa": "7785a0236f22403e", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 4, 
+        "##choices#run_cmd_key_y2": 5, 
+        "##choices#run_cmd_key_y1": 10, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 1, 
+        "##choices#run_cmd_key_l": 1, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "1", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 128, 
+        "##choices#run_cmd_key_r": 1, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "6d29ac3f572f0498", 
+      "data_uoa": "7785a0236f22403e", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 3, 
+        "##choices#run_cmd_key_y2": 4, 
+        "##choices#run_cmd_key_y1": 3, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 1.05, 
+        "##choices#run_cmd_key_l": 34.169000000000004, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "2", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 64, 
+        "##choices#run_cmd_key_r": 8, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "81e74dbfbbc02026", 
+      "data_uoa": "7785a0236f22403e", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 4, 
+        "##choices#run_cmd_key_y2": 5, 
+        "##choices#run_cmd_key_y1": 3, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 1.1, 
+        "##choices#run_cmd_key_l": 13.158, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "1", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 512, 
+        "##choices#run_cmd_key_r": 11, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "84f8da91e402939b", 
+      "data_uoa": "7785a0236f22403e", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 1, 
+        "##choices#run_cmd_key_y2": 1, 
+        "##choices#run_cmd_key_y1": 9, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 1.2000000000000002, 
+        "##choices#run_cmd_key_l": 22.825, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "1", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 128, 
+        "##choices#run_cmd_key_r": 11, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "85401291ba01f83f", 
+      "data_uoa": "7785a0236f22403e", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 1, 
+        "##choices#run_cmd_key_y2": 7, 
+        "##choices#run_cmd_key_y1": 5, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 0.61, 
+        "##choices#run_cmd_key_l": 13.394, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "1", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 128, 
+        "##choices#run_cmd_key_r": 19, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "8a347ee81e465d94", 
+      "data_uoa": "7785a0236f22403e", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 5, 
+        "##choices#run_cmd_key_y2": 7, 
+        "##choices#run_cmd_key_y1": 3, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 0.6799999999999999, 
+        "##choices#run_cmd_key_l": 2.572, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "4", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 256, 
+        "##choices#run_cmd_key_r": 22, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "8dd9073f7ec9331d", 
+      "data_uoa": "7785a0236f22403e", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 6, 
+        "##choices#run_cmd_key_y2": 5, 
+        "##choices#run_cmd_key_y1": 12, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 0.13, 
+        "##choices#run_cmd_key_l": 61.146, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "4", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 512, 
+        "##choices#run_cmd_key_r": 29, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "9a108f4189ac3daf", 
+      "data_uoa": "7785a0236f22403e", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 3, 
+        "##choices#run_cmd_key_y2": 5, 
+        "##choices#run_cmd_key_y1": 10, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 0.98, 
+        "##choices#run_cmd_key_l": 5.349, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "4", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 128, 
+        "##choices#run_cmd_key_r": 12, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "9c2e548d8af93c52", 
+      "data_uoa": "7785a0236f22403e", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 5, 
+        "##choices#run_cmd_key_y2": 1, 
+        "##choices#run_cmd_key_y1": 3, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 1.4500000000000002, 
+        "##choices#run_cmd_key_l": 15.761000000000001, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "1", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 256, 
+        "##choices#run_cmd_key_r": 6, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "a1c75841cb478ebd", 
+      "data_uoa": "7785a0236f22403e", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 5, 
+        "##choices#run_cmd_key_y2": 1, 
+        "##choices#run_cmd_key_y1": 1, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 0.79, 
+        "##choices#run_cmd_key_l": 12.83, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "4", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 256, 
+        "##choices#run_cmd_key_r": 20, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "a40a7aba401dd14b", 
+      "data_uoa": "7785a0236f22403e", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 5, 
+        "##choices#run_cmd_key_y2": 1, 
+        "##choices#run_cmd_key_y1": 5, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 0.43000000000000005, 
+        "##choices#run_cmd_key_l": 63.757, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "2", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 512, 
+        "##choices#run_cmd_key_r": 8, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "a8c944d50b5fa875", 
+      "data_uoa": "7785a0236f22403e", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 4, 
+        "##choices#run_cmd_key_y2": 5, 
+        "##choices#run_cmd_key_y1": 3, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 0.87, 
+        "##choices#run_cmd_key_l": 23.713, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "1", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 64, 
+        "##choices#run_cmd_key_r": 31, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "b888dcb2b0775997", 
+      "data_uoa": "7785a0236f22403e", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 5, 
+        "##choices#run_cmd_key_y2": 2, 
+        "##choices#run_cmd_key_y1": 12, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 1.4500000000000002, 
+        "##choices#run_cmd_key_l": 25.63, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "2", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 128, 
+        "##choices#run_cmd_key_r": 19, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "bbfcd4efd448a39e", 
+      "data_uoa": "7785a0236f22403e", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 6, 
+        "##choices#run_cmd_key_y2": 1, 
+        "##choices#run_cmd_key_y1": 7, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 0.4, 
+        "##choices#run_cmd_key_l": 36.919000000000004, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "1", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 64, 
+        "##choices#run_cmd_key_r": 9, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "bef4beca487fb864", 
+      "data_uoa": "7785a0236f22403e", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 5, 
+        "##choices#run_cmd_key_y2": 1, 
+        "##choices#run_cmd_key_y1": 2, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 1.4300000000000002, 
+        "##choices#run_cmd_key_l": 7.17, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "4", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 64, 
+        "##choices#run_cmd_key_r": 6, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "ca8ae275e994e49a", 
+      "data_uoa": "7785a0236f22403e", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 7, 
+        "##choices#run_cmd_key_y2": 6, 
+        "##choices#run_cmd_key_y1": 1, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 0.75, 
+        "##choices#run_cmd_key_l": 3.927, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "4", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 128, 
+        "##choices#run_cmd_key_r": 11, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "d470296e00df45f7", 
+      "data_uoa": "7785a0236f22403e", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 2, 
+        "##choices#run_cmd_key_y2": 5, 
+        "##choices#run_cmd_key_y1": 3, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 0.55, 
+        "##choices#run_cmd_key_l": 4.156000000000001, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "1", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 64, 
+        "##choices#run_cmd_key_r": 23, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "d67f89cec0964758", 
+      "data_uoa": "7785a0236f22403e", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 2, 
+        "##choices#run_cmd_key_y2": 1, 
+        "##choices#run_cmd_key_y1": 8, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 0.18, 
+        "##choices#run_cmd_key_l": 15.083, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "4", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 128, 
+        "##choices#run_cmd_key_r": 8, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "d7afb30c3b31426f", 
+      "data_uoa": "7785a0236f22403e", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 2, 
+        "##choices#run_cmd_key_y2": 2, 
+        "##choices#run_cmd_key_y1": 10, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 0.6, 
+        "##choices#run_cmd_key_l": 63.574, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "4", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 64, 
+        "##choices#run_cmd_key_r": 10, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "e408841008b28682", 
+      "data_uoa": "7785a0236f22403e", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 5, 
+        "##choices#run_cmd_key_y2": 5, 
+        "##choices#run_cmd_key_y1": 11, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 0.67, 
+        "##choices#run_cmd_key_l": 34.535000000000004, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "1", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 64, 
+        "##choices#run_cmd_key_r": 25, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "e4ccbf7cc6b478c8", 
+      "data_uoa": "7785a0236f22403e", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 6, 
+        "##choices#run_cmd_key_y2": 3, 
+        "##choices#run_cmd_key_y1": 10, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 0.6799999999999999, 
+        "##choices#run_cmd_key_l": 61.961, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "4", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 64, 
+        "##choices#run_cmd_key_r": 7, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "e588cb0c8fe7f35e", 
+      "data_uoa": "7785a0236f22403e", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 1, 
+        "##choices#run_cmd_key_y2": 3, 
+        "##choices#run_cmd_key_y1": 15, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 1.04, 
+        "##choices#run_cmd_key_l": 41.038000000000004, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "1", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 128, 
+        "##choices#run_cmd_key_r": 30, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "f402d9bbfb850ced", 
+      "data_uoa": "7785a0236f22403e", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 8, 
+        "##choices#run_cmd_key_y2": 3, 
+        "##choices#run_cmd_key_y1": 7, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 1.05, 
+        "##choices#run_cmd_key_l": 27.976, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "1", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 512, 
+        "##choices#run_cmd_key_r": 4, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "f7aab3c018da7d16", 
+      "data_uoa": "7785a0236f22403e", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 6, 
+        "##choices#run_cmd_key_y2": 5, 
+        "##choices#run_cmd_key_y1": 11, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 1.31, 
+        "##choices#run_cmd_key_l": 59.493, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "1", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 256, 
+        "##choices#run_cmd_key_r": 4, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }, 
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "fd4dce64a80943f9", 
+      "data_uoa": "7785a0236f22403e", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#env#CK_GPU_FREQUENCY": "max", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#env#CK_CPU_FREQUENCY": "max", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#run_cmd_key_y3": 3, 
+        "##choices#run_cmd_key_y2": 7, 
+        "##choices#run_cmd_key_y1": 1, 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#run_cmd_key_m": 0.36, 
+        "##choices#run_cmd_key_l": 6.238, 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#run_cmd_key_c": "1", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#run_cmd_key_v": 64, 
+        "##choices#run_cmd_key_r": 27, 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#host_os": "linux-32", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }
+  ], 
+  "2": [
+    {
+      "repo_uoa": "208c21b837924601", 
+      "point_uid": "8408f85cfe4bcfbb", 
+      "data_uoa": "5b694a818e5d87c4", 
+      "features": {
+        "##choices#env#KERNEL_TIMINGS": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_INPUT_RGB": "1", 
+        "##choices#env#OPENCL_PLATFORM": "0", 
+        "##choices#run_cmd_substitutes#run_cmd_key_v": 128, 
+        "##choices#env#CK_GPU_FREQUENCY": "600000000", 
+        "##choices#data_uoa": "slambench-1.1-opencl", 
+        "##choices#run_cmd_substitutes#run_cmd_key_r": 1, 
+        "##choices#env#CK_CPU_FREQUENCY": "1900000", 
+        "##choices#dataset_uoa": "slambench-living-room-traj2-loop-20frames", 
+        "##choices#run_cmd_substitutes#run_cmd_key_m": 1, 
+        "##choices#joined_compiler_flags": "-O3", 
+        "##choices#env#OPENCL_DEVICE": "0", 
+        "##choices#run_cmd_substitutes#run_cmd_key_y1": 10, 
+        "##choices#run_cmd_substitutes#run_cmd_key_y2": 5, 
+        "##choices#run_cmd_substitutes#run_cmd_key_y3": 4, 
+        "##choices#run_cmd_substitutes#run_cmd_key_c": "1", 
+        "##choices#env#XOPENME_DUMP_MEMORY_TRACKRENDER": "1", 
+        "##choices#device_id": "", 
+        "##choices#repeat": 1, 
+        "##choices#env#XOPENME_DUMP_MEMORY_DEPTHRENDER": "1", 
+        "##choices#compile_type": "dynamic", 
+        "##choices#cmd_key": "cmd_dse", 
+        "##choices#energy": "no", 
+        "##choices#target_os_bits": "32", 
+        "##choices#env#XOPENME_DUMP_MEMORY_VOLUMERENDER": "1", 
+        "##choices#compile_only_once": "yes", 
+        "##choices#compiler_flags#base_opt": "-O3", 
+        "##choices#target_os": "linux-32", 
+        "##choices#run_cmd_substitutes#run_cmd_key_l": 1, 
+        "##choices#env#OPENCL_KERNEL": "/home/fursin/fggwork/ck-repos/reproduce-pamela-project/program/slambench-1.1-opencl/kernels.cl", 
+        "##choices#gpu_freq": "600000000", 
+        "##choices#host_os": "linux-32", 
+        "##choices#cpu_freq": "1900000", 
+        "##choices#module_uoa": "b0ac08fe1d3c2615"
+      }, 
+      "module_uoa": "bc0409fb61f0aa82"
+    }
+  ]
+};
+
+var xps={
+  "1": {
+    "color": "#dc3912", 
+    "type": "rect", 
+    "size": 5
+  }, 
+  "0": {
+    "color": "#3366cc", 
+    "size": 4
+  }, 
+  "2": {
+    "color": "#00df00", 
+    "type": "rect", 
+    "size": 5
+  }
+};
+
+// setup x 
+var xValue = function(d) { return d.x;}, // data -> value
+    xScale = d3.scale.linear().range([0, width]), // value -> display
+    xMap = function(d) { return xScale(xValue(d));}, // data -> display
+    xAxis = d3.svg.axis().scale(xScale).orient("bottom");
+
+// setup y
+var yValue = function(d) { return d.y;}, // data -> value
+    yScale = d3.scale.linear().range([height, 0]), // value -> display
+    yMap = function(d) { return yScale(yValue(d));}, // data -> display
+    yAxis = d3.svg.axis().scale(yScale).orient("left");
+
+// add the graph canvas to the body of the webpage
+var svg = d3.select("$#ck_where#$").append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+// add the tooltip area to the webpage
+var tooltip = d3.select("$#ck_where#$").append("div")
+                .attr("class", "tooltip")
+                .style("opacity", 0);
+
+
+/* Check min/max on all axis */
+pxmin="";
+pxmax="";
+pymin="";
+pymax="";
+
+xmin=-1;
+xmax=-1;
+ymin=-1;
+ymax=-1;
+
+var data;
+var adata=[];
+var sgraph;
+var ps;
+
+for (graph=0; graph < 100; graph++) {
+
+   sgraph=graph.toString();
+
+   if (!(sgraph in xdata)) break;
+
+   data=xdata[sgraph];
+
+   for (l=0; l<data.length; l++)
+   {
+     v=data[l];
+
+     if (pxmin=="" && (xmin==-1 || v[0]<xmin)) xmin=v[0];
+     if (pxmax=="" && (xmax==-1 || v[0]>xmax)) xmax=v[0];
+
+     if (pymin=="" && (ymin==-1 || v[1]<ymin)) ymin=v[1];
+     if (pymax=="" && (ymax==-1 || v[1]>ymax)) ymax=v[1];
+   }
+}
+
+if (pxmin!="") xmin=parseFloat(pxmin);
+if (pxmax!="") xmax=parseFloat(pxmax);
+if (pymin!="") ymin=parseFloat(pymin);
+if (pymax!="") ymax=parseFloat(pymax);
+
+// don't want dots overlapping axis, so add in buffer to data domain
+xScale.domain([xmin, xmax]);
+yScale.domain([ymin, ymax]);
+
+// x-axis
+svg.append("g")
+   .attr("class", "x axis")
+   .attr("transform", "translate(0," + height + ")")
+   .call(xAxis)
+   .append("text")
+   .attr("class", "label")
+   .attr("x", width)
+   .attr("y", -6)
+   .style("text-anchor", "end")
+   .text("Accuracy (cm.)");
+
+// y-axis
+svg.append("g")
+   .attr("class", "y axis")
+   .call(yAxis)
+   .append("text")
+   .attr("class", "label")
+   .attr("transform", "rotate(-90)")
+   .attr("y", 6)
+   .attr("dy", ".71em")
+   .style("text-anchor", "end")
+   .text("FPS (frames per second)");
+
+// Convert to internal format
+for (graph=0; graph < 100; graph++) {
+
+   sgraph=graph.toString();
+
+   if (!(sgraph in xdata)) break;
+
+   data=xdata[sgraph];
+   ps=xps[sgraph];
+   info=xinfo[sgraph];
+
+   for (q=0; q<data.length; q++)
+   {
+     var cid=info[q]['module_uoa']+':'+info[q]['data_uoa'];
+
+     var features=info[q].features;
+     var sfeatures="";
+     
+     var keys=[];
+     for (var key in features) {
+       if (features.hasOwnProperty(key)) {
+          keys.push(key);
+       }
+     }
+     keys.sort();
+
+     for (k=0; k<keys.length; k++)
+     {
+       key=keys[k];
+       sfeatures+=key+'='+features[key]+'<br>';
+     }
+
+     adata.push({"x":data[q][0], "y":data[q][1], "size":ps.size, "type":ps.type, "color":ps.color, "cid":cid, "subpoint":info[q].point_uid, 
+                 "info":info[q], "features":sfeatures})
+   }
+}
+
+// draw dots
+svg.selectAll(".dot")
+   .data(adata)
+   .enter()
+
+   .append("circle")
+   .attr("r", function(d) {return d.size})
+   .attr("cx", xMap)
+   .attr("cy", yMap)
+   .style("fill", function(d) {return d.color})
+
+   .on("click", function(d) {
+     window.open("$#ck_root_url#$wcid="+d.cid+'&subpoint='+d.subpoint);
+   })
+
+
+   .on("mouseover", function(d) {
+       tooltip.transition()
+            .duration(200)
+            .style("opacity", .9);
+       tooltip.html("<div style=\"text-align:left;background-color:yellow;opacity:0.8;filter:alpha(opacity=80);\"><small><b>x=" + xValue(d) + ", y=" + yValue(d) + "</b><br>"+d.features+"\n</small></div>")
+            .style("left", (d3.event.pageX + 5) + "px")
+            .style("top", (d3.event.pageY - 28) + "px");
+   })
+
+   .on("mouseout", function(d) {
+       tooltip.transition()
+            .duration(500)
+            .style("opacity", 0);
+   });
+
+</script>
