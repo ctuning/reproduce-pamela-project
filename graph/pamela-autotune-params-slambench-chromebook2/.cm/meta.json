@@ -50,7 +50,7 @@
     }
   ], 
   "name": "Pamela project - reproducing slambench multi-objective autotuning (FPS vs accuracy vs other characteristics)", 
-  "scripts_data_uoa": "bfd7ae44dda619dc", 
+  "scripts_data_uoa": "64fbdfa1d9c28942", 
   "scripts_module_uoa": "script", 
   "scripts_repo_uoa": "", 
   "shared_repo": "reproduce-pamela-project"
