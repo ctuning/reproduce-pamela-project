@@ -7,7 +7,7 @@
       "notes": "Demo of the parametric, multi-objective autotuning of slambench via CK", 
       "output": "html", 
       "params": {
-        "axis_x_desc": "Accuracy (cm.)", 
+        "axis_x_desc": "Accuracy (m.)", 
         "axis_y_desc": "FPS (frames per second)", 
         "data_uoa_list": [
           "algorithm-exploration-slambench-opencl-samsung-chromebook2-plat0-dev0-i40", 
