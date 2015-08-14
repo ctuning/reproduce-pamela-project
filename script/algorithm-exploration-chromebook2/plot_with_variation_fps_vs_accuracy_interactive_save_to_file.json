@@ -22,7 +22,7 @@
 
   "title":"Powered by Collective Knowledge",
 
-  "axis_x_desc":"Accuracy (cm.)",
+  "axis_x_desc":"Accuracy (m.)",
   "axis_y_desc":"FPS (frames per second)",
 
   "point_style":{"2":{"size":5, "type":"rect", "color":"#00df00"},
