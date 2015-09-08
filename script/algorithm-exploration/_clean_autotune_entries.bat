@@ -1,1 +1,1 @@
-ck rm experiment:algorithm-exploration-slambench-*
+ck rm local:experiment:algorithm-exploration-slambench*
