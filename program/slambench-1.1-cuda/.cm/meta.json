@@ -202,7 +202,6 @@
     }
   }, 
   "run_vars": {
-    "CT_REPEAT_MAIN": "1"
   }, 
   "source_files": [
     "$#ck_take_from_{e4495a6270f52615}#$winmisc.c", 
