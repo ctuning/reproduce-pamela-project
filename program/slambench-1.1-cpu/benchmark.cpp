@@ -239,7 +239,7 @@ double fgg_fps=0.0;
 		frame++;
 
 #ifdef XOPENME
-		fgg_total+=(timings[5] - timings[0]);
+		fgg_total+=(timings[6] - timings[0]);
                 fgg_fps=0;
                 if (fgg_total!=0) fgg_fps=frame/fgg_total;
         	xopenme_add_var_d(2, (char*) "  \"run_time_total\":%lf", fgg_total);
