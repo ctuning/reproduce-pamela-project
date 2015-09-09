@@ -7,11 +7,12 @@
    ],
 
   "flat_keys_list":[
+    "##characteristics#run#accuracy_ate_mean#all",
     "##characteristics#run#fps#center",
     "##characteristics#run#fps#halfrange"
   ],
 
-  "add_x_loop":"yes",
+  "add_x_loop":"no",
   "sort_index":0,
 
   "ignore_point_if_empty_string":"yes",
@@ -22,7 +23,7 @@
 
   "title":"Powered by Collective Knowledge",
 
-  "axis_x_desc":"Experiment No",
+  "axis_x_desc":"ATE (average trajectory error)",
   "axis_y_desc":"FPS (frames per second)",
 
   "plot_grid":"yes",
@@ -30,6 +31,8 @@
   "mpl_image_size_x":"12",
   "mpl_image_size_y":"6",
   "mpl_image_dpi":"100",
+
+  "out_to_file":"algorithm_exploration.png",
 
   "point_style":{"0":{"elinewidth":"5", "color":"#dc3912"},
                  "1":{"color":"#3366cc"}}
