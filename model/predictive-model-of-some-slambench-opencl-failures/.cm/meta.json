@@ -1,4 +1,5 @@
 {
   "model_file": "model-sklearn-dtc", 
+  "model_module_uoa": "model.sklearn", 
   "model_name": "dtc"
 }
