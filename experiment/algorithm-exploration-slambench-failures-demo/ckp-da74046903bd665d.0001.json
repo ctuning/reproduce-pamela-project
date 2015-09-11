@@ -1,0 +1,419 @@
+{
+  "characteristics_list": [
+    {
+      "current_freq": {
+        "0": 1200.0, 
+        "1": 1200.0, 
+        "2": 1200.0, 
+        "3": 1200.0
+      }, 
+      "run": {
+        "accuracy_ate_max": 0.006092, 
+        "accuracy_ate_mean": 0.003539, 
+        "accuracy_ate_min": 0.0, 
+        "execution_time": 0.186574, 
+        "execution_time_kernel_0": 0.186574, 
+        "execution_time_kernel_X": "@@0.000000,0.000000,0.000000,0.000000", 
+        "execution_time_kernel_Y": "@@0.000000,0.000000,0.000000,0.000000", 
+        "execution_time_kernel_Z": "@@0.000000,0.000000,0.000000,0.000000", 
+        "execution_time_kernel_acquisition": "@@0.006952,0.003516,0.004119,0.004478", 
+        "execution_time_kernel_computation": "@@0.027338,0.020909,0.020776,0.030734", 
+        "execution_time_kernel_frame": "@@0,1,2,3", 
+        "execution_time_kernel_integrated": "@@1,1,1,1", 
+        "execution_time_kernel_integration": "@@0.005010,0.004680,0.004579,0.004673", 
+        "execution_time_kernel_preprocessing": "@@0.009759,0.006809,0.006859,0.006841", 
+        "execution_time_kernel_raycasting": "@@0.000044,0.000024,0.000018,0.010047", 
+        "execution_time_kernel_rendering": "@@0.017829,0.016185,0.016147,0.016432", 
+        "execution_time_kernel_total": "@@0.052119,0.040610,0.041042,0.051644", 
+        "execution_time_kernel_tracked": "@@0,0,0,0", 
+        "execution_time_kernel_tracking": "@@0.012525,0.009395,0.009320,0.009173", 
+        "execution_time_with_module": 4.151537179946899, 
+        "fps": 21.573227624517973, 
+        "frames": 4, 
+        "repeat": 1, 
+        "return_code": 0, 
+        "run_success": "yes", 
+        "run_time_state": {
+          "frames": 4, 
+          "input_size_x": 640, 
+          "input_size_y": 480, 
+          "opencl_device": "PRIVATE", 
+          "opencl_device_units": 2, 
+          "opencl_platform": "PRIVATE", 
+          "openmp_max_threads": -1, 
+          "run_time_fps": 21.573301, 
+          "run_time_total": 0.185414
+        }, 
+        "total_execution_time": 0.186574, 
+        "total_execution_time_from_kernels": 0.185415
+      }
+    }, 
+    {
+      "current_freq": {
+        "0": 1200.0, 
+        "1": 1200.0, 
+        "2": 1200.0, 
+        "3": 1200.0
+      }, 
+      "run": {
+        "accuracy_ate_max": 0.006092, 
+        "accuracy_ate_mean": 0.003539, 
+        "accuracy_ate_min": 0.0, 
+        "execution_time": 0.186424, 
+        "execution_time_kernel_0": 0.186424, 
+        "execution_time_kernel_X": "@@0.000000,0.000000,0.000000,0.000000", 
+        "execution_time_kernel_Y": "@@0.000000,0.000000,0.000000,0.000000", 
+        "execution_time_kernel_Z": "@@0.000000,0.000000,0.000000,0.000000", 
+        "execution_time_kernel_acquisition": "@@0.007252,0.003598,0.003965,0.004409", 
+        "execution_time_kernel_computation": "@@0.026904,0.020957,0.020645,0.030594", 
+        "execution_time_kernel_frame": "@@0,1,2,3", 
+        "execution_time_kernel_integrated": "@@1,1,1,1", 
+        "execution_time_kernel_integration": "@@0.004978,0.004660,0.004598,0.004661", 
+        "execution_time_kernel_preprocessing": "@@0.009365,0.006792,0.006852,0.006885", 
+        "execution_time_kernel_raycasting": "@@0.000047,0.000022,0.000019,0.009895", 
+        "execution_time_kernel_rendering": "@@0.017868,0.016305,0.016219,0.016483", 
+        "execution_time_kernel_total": "@@0.052023,0.040860,0.040829,0.051486", 
+        "execution_time_kernel_tracked": "@@0,0,0,0", 
+        "execution_time_kernel_tracking": "@@0.012514,0.009482,0.009176,0.009152", 
+        "execution_time_with_module": 4.141815900802612, 
+        "fps": 21.598505383427465, 
+        "frames": 4, 
+        "repeat": 1, 
+        "return_code": 0, 
+        "run_success": "yes", 
+        "run_time_state": {
+          "frames": 4, 
+          "input_size_x": 640, 
+          "input_size_y": 480, 
+          "opencl_device": "PRIVATE", 
+          "opencl_device_units": 2, 
+          "opencl_platform": "PRIVATE", 
+          "openmp_max_threads": -1, 
+          "run_time_fps": 21.598485, 
+          "run_time_total": 0.185198
+        }, 
+        "total_execution_time": 0.186424, 
+        "total_execution_time_from_kernels": 0.185198
+      }
+    }, 
+    {
+      "current_freq": {
+        "0": 1200.0, 
+        "1": 1200.0, 
+        "2": 1200.0, 
+        "3": 1200.0
+      }, 
+      "run": {
+        "accuracy_ate_max": 0.006092, 
+        "accuracy_ate_mean": 0.003539, 
+        "accuracy_ate_min": 0.0, 
+        "execution_time": 0.185684, 
+        "execution_time_kernel_0": 0.185684, 
+        "execution_time_kernel_X": "@@0.000000,0.000000,0.000000,0.000000", 
+        "execution_time_kernel_Y": "@@0.000000,0.000000,0.000000,0.000000", 
+        "execution_time_kernel_Z": "@@0.000000,0.000000,0.000000,0.000000", 
+        "execution_time_kernel_acquisition": "@@0.006563,0.003527,0.004047,0.004418", 
+        "execution_time_kernel_computation": "@@0.026425,0.020951,0.020706,0.030750", 
+        "execution_time_kernel_frame": "@@0,1,2,3", 
+        "execution_time_kernel_integrated": "@@1,1,1,1", 
+        "execution_time_kernel_integration": "@@0.005012,0.004670,0.004594,0.004666", 
+        "execution_time_kernel_preprocessing": "@@0.008941,0.006816,0.006789,0.006884", 
+        "execution_time_kernel_raycasting": "@@0.000044,0.000022,0.000017,0.009909", 
+        "execution_time_kernel_rendering": "@@0.017966,0.016144,0.016352,0.016599", 
+        "execution_time_kernel_total": "@@0.050953,0.040621,0.041106,0.051768", 
+        "execution_time_kernel_tracked": "@@0,0,0,0", 
+        "execution_time_kernel_tracking": "@@0.012427,0.009443,0.009306,0.009292", 
+        "execution_time_with_module": 4.141988039016724, 
+        "fps": 21.686328938237335, 
+        "frames": 4, 
+        "repeat": 1, 
+        "return_code": 0, 
+        "run_success": "yes", 
+        "run_time_state": {
+          "frames": 4, 
+          "input_size_x": 640, 
+          "input_size_y": 480, 
+          "opencl_device": "PRIVATE", 
+          "opencl_device_units": 2, 
+          "opencl_platform": "PRIVATE", 
+          "openmp_max_threads": -1, 
+          "run_time_fps": 21.686353, 
+          "run_time_total": 0.184448
+        }, 
+        "total_execution_time": 0.185684, 
+        "total_execution_time_from_kernels": 0.184448
+      }
+    }
+  ], 
+  "choices": {
+    "cmd_key": "cmd_dse", 
+    "compile_only_once": "yes", 
+    "compile_type": "dynamic", 
+    "compiler_flags": {
+      "base_opt": "-O3"
+    }, 
+    "data_uoa": "slambench-1.1-opencl", 
+    "dataset_file": "living_room_traj2_loop_small.raw", 
+    "dataset_uoa": "slambench-living-room-traj2-loop-4frames", 
+    "device_id": "", 
+    "energy": "no", 
+    "host_os": "linux-32", 
+    "joined_compiler_flags": "-O3", 
+    "module_uoa": "b0ac08fe1d3c2615", 
+    "repeat": 1, 
+    "run_cmd_key_c": "4", 
+    "run_cmd_key_l": 5.349, 
+    "run_cmd_key_m": 0.98, 
+    "run_cmd_key_r": 12, 
+    "run_cmd_key_v": 128, 
+    "run_cmd_key_y1": 10, 
+    "run_cmd_key_y2": 5, 
+    "run_cmd_key_y3": 3, 
+    "target_os": "linux-32", 
+    "target_os_bits": "32"
+  }, 
+  "choices_order": [
+    "##compiler_flags#base_opt", 
+    "##choices#run_cmd_key_c", 
+    "##choices#run_cmd_key_r", 
+    "##choices#run_cmd_key_l", 
+    "##choices#run_cmd_key_m", 
+    "##choices#run_cmd_key_y1", 
+    "##choices#run_cmd_key_y2", 
+    "##choices#run_cmd_key_y3", 
+    "##choices#run_cmd_key_v"
+  ], 
+  "features": {
+    "compiler_version": {
+      "list": [
+        "4", 
+        "6", 
+        "3"
+      ], 
+      "raw": [
+        "gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3", 
+        "Copyright (C) 2011 Free Software Foundation, Inc.", 
+        "This is free software; see the source for copying conditions.  There is NO", 
+        "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.", 
+        "", 
+        ""
+      ], 
+      "str": "4.6.3"
+    }, 
+    "dataset": {
+      "total_size": 6144064
+    }, 
+    "platform": {
+      "acc": {
+        "all_freqs": [], 
+        "current_freq": "", 
+        "name": ""
+      }, 
+      "acc_misc": {}, 
+      "cpu": {
+        "all_freqs": {
+          "0": [
+            1200000, 
+            1104000, 
+            1008000, 
+            912000, 
+            816000, 
+            720000, 
+            600000, 
+            480000
+          ], 
+          "1": [
+            1200000, 
+            1104000, 
+            1008000, 
+            912000, 
+            816000, 
+            720000, 
+            600000, 
+            480000
+          ], 
+          "2": [
+            1200000, 
+            1104000, 
+            1008000, 
+            912000, 
+            816000, 
+            720000, 
+            600000, 
+            480000
+          ], 
+          "3": [
+            1200000, 
+            1104000, 
+            1008000, 
+            912000, 
+            816000, 
+            720000, 
+            600000, 
+            480000
+          ]
+        }, 
+        "cpu_abi": "", 
+        "cpu_features": "swp half thumb fastmult vfp edsp thumbee neon vfpv3 tls vfpv4 idiva idivt", 
+        "current_freq": {
+          "0": 1200.0, 
+          "1": 1200.0, 
+          "2": 1200.0, 
+          "3": 1200.0
+        }, 
+        "max_freq": {
+          "0": 1200.0, 
+          "1": 1200.0, 
+          "2": 1200.0, 
+          "3": 1200.0
+        }, 
+        "name": "PRIVATE", 
+        "num_proc": "4", 
+        "sub_name": ""
+      }, 
+      "cpu_misc": {
+        "0": {
+          "BogoMIPS": "4800.00", 
+          "Processor": "ARMv7 Processor rev 5 (v7l)", 
+          "processor": "0"
+        }, 
+        "1": {
+          "BogoMIPS": "4800.00", 
+          "processor": "1"
+        }, 
+        "2": {
+          "BogoMIPS": "4800.00", 
+          "processor": "2"
+        }, 
+        "3": {
+          "BogoMIPS": "4800.00", 
+          "CPU architectur": "7", 
+          "CPU implementer": "0x41", 
+          "CPU part": "0xc07", 
+          "CPU revision": "5", 
+          "CPU variant": "0x0", 
+          "Features": "swp half thumb fastmult vfp edsp thumbee neon vfpv3 tls vfpv4 idiva idivt", 
+          "Hardware": "PRIVATE", 
+          "Revision": "0000", 
+          "Serial": "PRIVATE", 
+          "processor": "3"
+        }
+      }, 
+      "os": {
+        "bits": "32", 
+        "ck_os_base_uoa": "", 
+        "ck_os_uoa": "linux-32", 
+        "name": "Ubuntu 12.04.5 LTS", 
+        "name_long": "Linux-3.4.39-armv7l-with-Ubuntu-12.04-precise", 
+        "name_short": "Linux 3.4.39"
+      }, 
+      "os_misc": {}, 
+      "platform": {
+        "model": "", 
+        "name": "", 
+        "vendor": ""
+      }, 
+      "platform_misc": {}
+    }, 
+    "platform.cpu": {
+      "cpu": {
+        "all_freqs": {
+          "0": [
+            1200000, 
+            1104000, 
+            1008000, 
+            912000, 
+            816000, 
+            720000, 
+            600000, 
+            480000
+          ], 
+          "1": [
+            1200000, 
+            1104000, 
+            1008000, 
+            912000, 
+            816000, 
+            720000, 
+            600000, 
+            480000
+          ], 
+          "2": [
+            1200000, 
+            1104000, 
+            1008000, 
+            912000, 
+            816000, 
+            720000, 
+            600000, 
+            480000
+          ], 
+          "3": [
+            1200000, 
+            1104000, 
+            1008000, 
+            912000, 
+            816000, 
+            720000, 
+            600000, 
+            480000
+          ]
+        }, 
+        "cpu_abi": "", 
+        "cpu_features": "swp half thumb fastmult vfp edsp thumbee neon vfpv3 tls vfpv4 idiva idivt", 
+        "current_freq": {
+          "0": 1200.0, 
+          "1": 1200.0, 
+          "2": 1200.0, 
+          "3": 1200.0
+        }, 
+        "max_freq": {
+          "0": 1200.0, 
+          "1": 1200.0, 
+          "2": 1200.0, 
+          "3": 1200.0
+        }, 
+        "name": "PRIVATE", 
+        "num_proc": "4", 
+        "sub_name": ""
+      }, 
+      "cpu_misc": {
+        "0": {
+          "BogoMIPS": "4800.00", 
+          "Processor": "ARMv7 Processor rev 5 (v7l)", 
+          "processor": "0"
+        }, 
+        "1": {
+          "BogoMIPS": "4800.00", 
+          "processor": "1"
+        }, 
+        "2": {
+          "BogoMIPS": "4800.00", 
+          "processor": "2"
+        }, 
+        "3": {
+          "BogoMIPS": "4800.00", 
+          "CPU architectur": "7", 
+          "CPU implementer": "0x41", 
+          "CPU part": "0xc07", 
+          "CPU revision": "5", 
+          "CPU variant": "0x0", 
+          "Features": "swp half thumb fastmult vfp edsp thumbee neon vfpv3 tls vfpv4 idiva idivt", 
+          "Hardware": "PRIVATE", 
+          "Revision": "0000", 
+          "Serial": "PRIVATE", 
+          "processor": "3"
+        }
+      }, 
+      "os": {
+        "bits": "32", 
+        "ck_os_base_uoa": "", 
+        "ck_os_uoa": "linux-32", 
+        "name": "Ubuntu 12.04.5 LTS", 
+        "name_long": "Linux-3.4.39-armv7l-with-Ubuntu-12.04-precise", 
+        "name_short": "Linux 3.4.39"
+      }, 
+      "os_misc": {}
+    }
+  }
+}

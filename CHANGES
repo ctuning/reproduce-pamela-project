@@ -1,3 +1,5 @@
+* 2015.09.12 FGG: * adding predictive modeling example (of some OpenCL failures)
+
 * 2015.09.10 FGG: * added decision tree to analyze failures and find wrong parameter combinations
                     (suggested by Anton). See script/algorithm-exploration-analyze-failures
 

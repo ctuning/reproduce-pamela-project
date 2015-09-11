@@ -1,0 +1,8 @@
+X[0] ##choices#run_cmd_key_c#min (c)
+X[1] ##choices#run_cmd_key_r#min (r)
+X[2] ##choices#run_cmd_key_l#min (l)
+X[3] ##choices#run_cmd_key_m#min (m)
+X[4] ##choices#run_cmd_key_y1#min (y1)
+X[5] ##choices#run_cmd_key_y2#min (y2)
+X[6] ##choices#run_cmd_key_y3#min (y3)
+X[7] ##choices#run_cmd_key_v#min (v)

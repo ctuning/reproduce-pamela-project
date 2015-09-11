@@ -1,0 +1,50 @@
+{
+  "1": {
+    "decision": [
+      "", 
+      {
+        "comparison": "<=", 
+        "feature": "7", 
+        "value": "384.0000"
+      }, 
+      "", 
+      {
+        "comparison": "<=", 
+        "feature": "2", 
+        "value": "1.7860"
+      }
+    ], 
+    "dot_label": "2", 
+    "value": true
+  }, 
+  "3": {
+    "decision": [
+      "not ", 
+      {
+        "comparison": "<=", 
+        "feature": "7", 
+        "value": "384.0000"
+      }
+    ], 
+    "dot_label": "4", 
+    "value": true
+  }, 
+  "2": {
+    "decision": [
+      "", 
+      {
+        "comparison": "<=", 
+        "feature": "7", 
+        "value": "384.0000"
+      }, 
+      "not ", 
+      {
+        "comparison": "<=", 
+        "feature": "2", 
+        "value": "1.7860"
+      }
+    ], 
+    "dot_label": "3", 
+    "value": false
+  }
+}
