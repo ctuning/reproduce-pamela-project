@@ -9,6 +9,10 @@ adaptation.
 It is used in several CK Getting Started Guide examples:
 https://github.com/ctuning/ck/wiki
 
+Prerequisites
+=============
+* Collective Knowledge Framework: http://github.com/ctuning/ck
+
 Installation
 ============
 
