@@ -1,3 +1,5 @@
+* 2015.09.19 FGG: * added 'failures' in experiment view (useful to replay and understand OpenCL bugs)
+
 * 2015.09.12 FGG: * added predictive modeling example (of some OpenCL failures)
                   * added recording of predictive model (to be shared and improved by collective wisdom)
 

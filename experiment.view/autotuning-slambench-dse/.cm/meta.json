@@ -1,5 +1,6 @@
 {
   "flat_keys": [
+    "##characteristics#run#return_code", 
     "##choices#data_uoa", 
     "##choices#host_os", 
     "##choices#target_os", 
@@ -31,11 +32,13 @@
     "##characteristics#compile#obj_size", 
     "##characteristics#current_freq#0", 
     "##choices#gpu_freq", 
-    "##characteristics#run#faults", 
     "##choices#compiler_flags#*", 
     "##choices#compiler_vars#*"
   ], 
   "flat_keys_desc": [
+    {
+      "desc": "Failure (yes if !=0)"
+    }, 
     {
       "desc": "Program", 
       "module_uoa": "b0ac08fe1d3c2615", 
@@ -135,9 +138,6 @@
     }, 
     {
       "desc": "GPU freq (Hz)"
-    }, 
-    {
-      "desc": "Faults"
     }, 
     {
       "desc": "Compiler flags"

@@ -1,5 +1,6 @@
 {
   "flat_keys": [
+    "##characteristics#run#return_code", 
     "##choices#data_uoa",
     "##choices#host_os", 
     "##choices#target_os", 
@@ -26,6 +27,9 @@
     "##choices#compiler_vars#*"
   ], 
   "flat_keys_desc": [
+    {
+      "desc": "Failure (yes if !=0)"
+    }, 
     {
       "desc": "Program", 
       "module_uoa": "b0ac08fe1d3c2615", 
