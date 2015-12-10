@@ -3,17 +3,15 @@
 
   "choices_order":[
     [
-     "##compiler_flags#*"
     ]
   ],
 
   "repetitions":1,
 
   "pipeline_update":{
-
      "cpu_freq":500000,
      "gpu_freq":"min",
-     "select_best_base_flag_for_first_iteration":"yes"
+     "speed":"yes"
    },
 
   "record":"yes",

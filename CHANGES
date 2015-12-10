@@ -1,3 +1,6 @@
+* 2015.12.09 FGG: * updating compiler flag autotuning (crowdtuning) scripts to support
+                    improved CK universal autotuning engine
+
 * 2015.09.19 FGG: * added 'failures' in experiment view (useful to replay and understand OpenCL bugs)
 
 * 2015.09.12 FGG: * added predictive modeling example (of some OpenCL failures)
