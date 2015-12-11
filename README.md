@@ -16,4 +16,18 @@ Prerequisites
 Installation
 ============
 
-> ck pull repo:reproduce-pamela-project
+$ ck pull repo:reproduce-pamela-project
+
+Data set repositories
+=====================
+
+$ ck pull repo:reproduce-pamela-project-small-dataset
+
+To obtain very large data set (4Gb), download it as zip
+from our shared Google drive:
+
+* https://drive.google.com/open?id=0B-wXENVfIO82S0lMQUZfVDVmc2c
+
+and then install it via
+
+$ ck add repo:reproduce-pamela-project-large-files --zip=ck-reproduce-pamela-2015-large-dataset.zip --quiet
