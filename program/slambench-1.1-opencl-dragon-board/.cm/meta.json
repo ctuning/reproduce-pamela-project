@@ -3,7 +3,9 @@
   "build_compiler_vars": {
     "XOPENME": "1", 
     "XOPENME_DUMPING_TIME": "1.0", 
-    "_HAS_EXCEPTIONS": "0"
+    "_HAS_EXCEPTIONS": "0",
+    "CK_OPENCL_SIZE_OF_GROUP":48,
+    "CK_OPENCL_NUMBER_OF_GROUPS": 8
   }, 
   "compile_deps": {
     "compiler": {

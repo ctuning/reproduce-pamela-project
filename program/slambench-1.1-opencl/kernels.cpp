@@ -7,6 +7,10 @@
 
  */
 
+#ifdef XOPENME
+#include <xopenme.h>
+#endif
+
 #include "common_opencl.h"
 #include <kernels.h>
 
@@ -58,8 +62,15 @@ cl_kernel renderTrack_ocl_kernel;
 cl_kernel renderDepth_ocl_kernel;
 
 // reduction parameters
-static const size_t size_of_group = 64;
-static const size_t number_of_groups = 8;
+#ifndef CK_OPENCL_SIZE_OF_GROUP
+#define CK_OPENCL_SIZE_OF_GROUP 64
+#endif
+#ifndef CK_OPENCL_NUMBER_OF_GROUPS
+#define CK_OPENCL_NUMBER_OF_GROUPS 8
+#endif
+
+static const size_t size_of_group = CK_OPENCL_SIZE_OF_GROUP;
+static const size_t number_of_groups = CK_OPENCL_NUMBER_OF_GROUPS;
 
 uint2 computationSizeBkp = make_uint2(0, 0);
 uint2 outputImageSizeBkp = make_uint2(0, 0);
@@ -722,6 +733,11 @@ bool Kfusion::tracking(float4 k, float icp_threshold, uint tracking_rate,
 
 			size_t RglobalWorksize[1] = { size_of_group * number_of_groups };
 			size_t RlocalWorksize[1] = { size_of_group }; // Dont change it !
+
+#ifdef XOPENME
+                        xopenme_add_var_i(9, (char*) "  \"opencl_size_of_group\":%i", size_of_group);
+                        xopenme_add_var_i(10, (char*) "  \"opencl_number_of_groups\":%i", number_of_groups);
+#endif
 
 			clError = clEnqueueNDRangeKernel(commandQueue, reduce_ocl_kernel, 1,
 					NULL, RglobalWorksize, RlocalWorksize, 0, NULL, NULL);

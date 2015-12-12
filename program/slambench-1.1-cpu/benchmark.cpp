@@ -81,7 +81,7 @@ char tmp1[256];
 double fgg_total=0.0;
 double fgg_fps=0.0;
 
-        xopenme_init(1,10);
+        xopenme_init(1,12);
 #endif
 
 	Configuration config(argc, argv);

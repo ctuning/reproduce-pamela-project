@@ -1,4 +1,6 @@
-* 2015.12.12 FGG: * failing autotuning pipeline if postprocessing script fails
+* 2015.12.12 FGG: * adding support to fail autotuning pipeline if postprocessing script fails
+                  * exposing OpenCL local workgroup size for external autotuning 
+                    (or to reduce on some specific platforms with limited resources)
 
 * 2015.12.09 FGG: * updating compiler flag autotuning (crowdtuning) scripts to support
                     improved CK universal autotuning engine
