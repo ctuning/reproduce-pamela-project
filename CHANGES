@@ -1,3 +1,5 @@
+* 2015.12.12 FGG: * failing autotuning pipeline if postprocessing script fails
+
 * 2015.12.09 FGG: * updating compiler flag autotuning (crowdtuning) scripts to support
                     improved CK universal autotuning engine
 

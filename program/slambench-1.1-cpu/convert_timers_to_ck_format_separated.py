@@ -21,6 +21,15 @@ exists=True
 try:
   f=open('tmp-ck-timer.json', 'r')
 except Exception as e:
+  print ('')
+  print ('Error: OpenME tmp-ck-timer.json output file was not produced - program execution likely failed!')
+
+  exit(1)
+
+  # originally I wanted it work even if this file from OpenME 
+  # is not generated, but then we had a problem detecting
+  # OpenCL failures. Hence I now quit with error
+
   exists=False
   pass
 
