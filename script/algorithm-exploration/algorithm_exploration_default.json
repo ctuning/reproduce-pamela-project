@@ -18,6 +18,8 @@
    }
   },
 
+  "repetitions":3,
+
   "record":"yes",
   "record_uoa":"algorithm-exploration-slambench-default",
 

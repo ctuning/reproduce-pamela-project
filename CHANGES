@@ -1,3 +1,6 @@
+* 2015.12.13 FGG: * adding replay script (example) of a default configuration during 
+                    multi-objective design space exploration
+
 * 2015.12.12 FGG: * adding support to fail autotuning pipeline if postprocessing script fails
                   * exposing OpenCL local workgroup size for external autotuning 
                     (or to reduce on some specific platforms with limited resources)
