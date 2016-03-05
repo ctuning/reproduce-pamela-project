@@ -7,7 +7,7 @@
    ],
 
   "flat_keys_list":[
-    "##characteristics#run#accuracy_ate_mean#all",
+    "##characteristics#run#accuracy_ate_max#all",
     "##characteristics#run#fps#center",
     "##characteristics#run#fps#halfrange"
   ],

@@ -7,12 +7,12 @@
    ],
 
   "flat_keys_list":[
-    "##characteristics#run#accuracy_ate_mean#all",
+    "##characteristics#run#accuracy_ate_max#all",
     "##characteristics#run#fps#center",
     "##characteristics#run#fps#halfrange"
   ],
 
-  "vector_thresholds":            [null, null, 0.3],
+  "vector_thresholds":            [null, null, 0.5],
   "vector_thresholds_conditions": [null, null, "<"],
 
   "add_x_loop":"no",
@@ -30,6 +30,9 @@
   "axis_y_desc":"FPS (frames per second)",
 
   "plot_grid":"yes",
+
+  "xmin":0,
+  "xmax":0.1,
 
   "mpl_image_size_x":"12",
   "mpl_image_size_y":"6",
