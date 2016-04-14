@@ -1,3 +1,5 @@
+* 2016.04.14 FGG: * moving soft:lib.toon to ck-env repository for others to be able to reuse it 
+
 * 2016.03.26 FGG: * adding program static MILEPOST features
 
 * 2015.12.13 FGG: * adding replay script (example) of a default configuration during 
