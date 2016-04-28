@@ -29,7 +29,7 @@
     "CK_ENV_LIB_STDCPP_INCLUDE_EXTRA"
   ], 
   "compiler_env": "CK_CXX", 
-  "compiler_flags_as_env": "$<<CK_COMPILER_FLAG_OPENMP>>$", 
+  "compiler_flags_as_env": "$<<CK_COMPILER_ENABLE_EXCEPTIONS>>$ $<<CK_COMPILER_FLAG_OPENMP>>$", 
   "data_name": "slambench-1.1-cpu", 
   "extra_ld_vars": "$<<CK_EXTRA_LIB_M>>$ $<<CK_LINKER_FLAG_OPENMP>>$", 
   "include_dirs": [

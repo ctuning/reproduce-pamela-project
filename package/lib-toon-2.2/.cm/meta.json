@@ -1,10 +1,19 @@
 {
+  "end_full_path": {
+    "android": "include$#sep#$TooN$#sep#$TooN.h", 
+    "linux": "include/TooN/TooN.h", 
+    "mingw": "include\\TooN\\TooN.h", 
+    "win": "include\\TooN\\TooN.h"
+  }, 
   "customize": {
     "extra_dir": "", 
-    "version": "2.2", 
-    "version_int": 20200
+    "version": "2.2"
   }, 
   "deps": {}, 
+  "only_for_host_os_tags": [
+    "windows", 
+    "linux"
+  ], 
   "process_script": "process", 
   "soft_uoa": "f3fbb766bb4456ea", 
   "suggested_path": "lib-toon", 

@@ -7,3 +7,7 @@ Grigori Fursin converted
    Managed to compile successfully only with clang >= 3.6.0 on Windows
 
  * managed to run on Android (Android NDK GCC 4.9.x) + android19-arm platform
+
+
+ * On Windows, we should use LLVM with VS 2014 (ver. 18), not yet 2015 (ver. 19!)
+   

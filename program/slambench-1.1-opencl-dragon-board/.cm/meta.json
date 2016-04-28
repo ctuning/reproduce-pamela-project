@@ -33,6 +33,7 @@
     "CK_ENV_LIB_STDCPP_INCLUDE", 
     "CK_ENV_LIB_STDCPP_INCLUDE_EXTRA"
   ], 
+  "compiler_flags_as_env": "$<<CK_COMPILER_ENABLE_EXCEPTIONS>>$",
   "compiler_env": "CK_CXX", 
   "data_name": "slambench-1.1-opencl", 
   "extra_ld_vars": "$<<CK_EXTRA_LIB_M>>$", 
