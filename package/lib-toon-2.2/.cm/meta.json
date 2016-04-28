@@ -1,15 +1,15 @@
 {
+  "customize": {
+    "extra_dir": "", 
+    "version": "2.2"
+  }, 
+  "deps": {}, 
   "end_full_path": {
     "android": "include$#sep#$TooN$#sep#$TooN.h", 
     "linux": "include/TooN/TooN.h", 
     "mingw": "include\\TooN\\TooN.h", 
     "win": "include\\TooN\\TooN.h"
   }, 
-  "customize": {
-    "extra_dir": "", 
-    "version": "2.2"
-  }, 
-  "deps": {}, 
   "only_for_host_os_tags": [
     "windows", 
     "linux"
