@@ -8,16 +8,19 @@
   "compile_deps": {
     "compiler": {
       "local": "yes", 
+      "name": "C++ compiler", 
       "sort": 10, 
       "tags": "compiler,lang-cpp-cuda"
     }, 
-    "lib.toon": {
+    "lib-toon": {
       "local": "yes", 
+      "name": "TooN library", 
       "sort": 20, 
       "tags": "lib,toon"
     }, 
-    "lib.xopenme": {
+    "lib-xopenme": {
       "local": "yes", 
+      "name": "xOpenME library", 
       "sort": 30, 
       "tags": "lib,xopenme"
     }
@@ -26,8 +29,8 @@
     "CK_ENV_LIB_STDCPP_INCLUDE", 
     "CK_ENV_LIB_STDCPP_INCLUDE_EXTRA"
   ], 
-  "compiler_flags_as_env": "$<<CK_COMPILER_ENABLE_EXCEPTIONS>>$",
   "compiler_env": "CK_CXX", 
+  "compiler_flags_as_env": "$<<CK_COMPILER_ENABLE_EXCEPTIONS>>$", 
   "data_name": "slambench-1.1-cuda", 
   "extra_ld_vars": "$<<CK_EXTRA_LIB_M>>$", 
   "include_dirs": [
@@ -43,34 +46,6 @@
   "process_in_tmp": "yes", 
   "program": "yes", 
   "run_cmds": {
-    "cmd_dse": {
-      "dataset_tags": [
-        "dataset", 
-        "raw", 
-        "video", 
-        "slambench"
-      ], 
-      "ignore_return_code": "no", 
-      "run_time": {
-        "fine_grain_timer_file": "tmp-ck-timer.json", 
-        "post_process_cmds": [
-           "python $#ck_take_from_{e4495a6270f52615}#$convert_timers_to_ck_format.py", 
-           "python $#ck_take_from_{e4495a6270f52615}#$thirdparty$#ck_host_os_sep#$checkPos.py tmp-output.tmp $#dataset_path#$livingRoom2.gt.freiburg > tmp-output-check-pos.tmp",
-           "python $#ck_take_from_{e4495a6270f52615}#$checkPos_ck.py"
-        ],
-        "run_cmd_main": "$#BIN_FILE#$ -s 5.0 -p 0.34,0.5,0.24 -z 1 -c $#run_cmd_key_c#$ -r $#run_cmd_key_r#$ -l $#run_cmd_key_l#$ -m $#run_cmd_key_m#$ -k 481.2,480,320,240 -y $#run_cmd_key_y1#$,$#run_cmd_key_y2#$,$#run_cmd_key_y3#$ -v $#run_cmd_key_v#$ -i $#dataset_path#$$#dataset_filename#$ -o tmp-output.tmp", 
-        "run_cmd_out1": "stdout.log", 
-        "run_cmd_out2": "", 
-        "run_correctness_output_files": [], 
-        "run_input_files": [
-          "kernels.cl"
-        ], 
-        "run_output_files": [
-          "tmp-output.tmp", 
-          "tmp-ck-timer.json"
-        ]
-      }
-    }, 
     "cmd1": {
       "dataset_tags": [
         "dataset", 
@@ -82,10 +57,10 @@
       "run_time": {
         "fine_grain_timer_file": "tmp-ck-timer.json", 
         "post_process_cmds": [
-           "python $#ck_take_from_{e4495a6270f52615}#$convert_timers_to_ck_format.py", 
-           "python $#ck_take_from_{e4495a6270f52615}#$thirdparty$#ck_host_os_sep#$checkPos.py tmp-output.tmp $#dataset_path#$livingRoom2.gt.freiburg > tmp-output-check-pos.tmp",
-           "python $#ck_take_from_{e4495a6270f52615}#$checkPos_ck.py"
-        ],
+          "python $#ck_take_from_{e4495a6270f52615}#$convert_timers_to_ck_format.py", 
+          "python $#ck_take_from_{e4495a6270f52615}#$thirdparty$#ck_host_os_sep#$checkPos.py tmp-output.tmp $#dataset_path#$livingRoom2.gt.freiburg > tmp-output-check-pos.tmp", 
+          "python $#ck_take_from_{e4495a6270f52615}#$checkPos_ck.py"
+        ], 
         "run_cmd_main": "$#BIN_FILE#$ -s 5.0 -p 0.34,0.5,0.24 -z 1 -c 2 -r 2 -k 481.2,480,320,240 -i $#dataset_path#$$#dataset_filename#$ -o tmp-output.tmp", 
         "run_cmd_out1": "stdout.log", 
         "run_cmd_out2": "", 
@@ -108,10 +83,10 @@
       "run_time": {
         "fine_grain_timer_file": "tmp-ck-timer.json", 
         "post_process_cmds": [
-           "python $#ck_take_from_{e4495a6270f52615}#$convert_timers_to_ck_format.py", 
-           "python $#ck_take_from_{e4495a6270f52615}#$thirdparty$#ck_host_os_sep#$checkPos.py tmp-output.tmp $#dataset_path#$livingRoom2.gt.freiburg > tmp-output-check-pos.tmp",
-           "python $#ck_take_from_{e4495a6270f52615}#$checkPos_ck.py"
-        ],
+          "python $#ck_take_from_{e4495a6270f52615}#$convert_timers_to_ck_format.py", 
+          "python $#ck_take_from_{e4495a6270f52615}#$thirdparty$#ck_host_os_sep#$checkPos.py tmp-output.tmp $#dataset_path#$livingRoom2.gt.freiburg > tmp-output-check-pos.tmp", 
+          "python $#ck_take_from_{e4495a6270f52615}#$checkPos_ck.py"
+        ], 
         "run_cmd_main": "$#BIN_FILE#$ -s 5.0 -p 0.485,0.5,0.55 -z 1 -c 2 -r 2 -k 481.2,480,320,240 -i $#dataset_path#$$#dataset_filename#$ -o tmp-output.tmp", 
         "run_cmd_out1": "stdout.log", 
         "run_cmd_out2": "", 
@@ -134,15 +109,43 @@
       "run_time": {
         "fine_grain_timer_file": "tmp-ck-timer.json", 
         "post_process_cmds": [
-           "python $#ck_take_from_{e4495a6270f52615}#$convert_timers_to_ck_format.py", 
-           "python $#ck_take_from_{e4495a6270f52615}#$thirdparty$#ck_host_os_sep#$checkPos.py tmp-output.tmp $#dataset_path#$livingRoom2.gt.freiburg > tmp-output-check-pos.tmp",
-           "python $#ck_take_from_{e4495a6270f52615}#$checkPos_ck.py"
-        ],
+          "python $#ck_take_from_{e4495a6270f52615}#$convert_timers_to_ck_format.py", 
+          "python $#ck_take_from_{e4495a6270f52615}#$thirdparty$#ck_host_os_sep#$checkPos.py tmp-output.tmp $#dataset_path#$livingRoom2.gt.freiburg > tmp-output-check-pos.tmp", 
+          "python $#ck_take_from_{e4495a6270f52615}#$checkPos_ck.py"
+        ], 
         "run_cmd_main": "$#BIN_FILE#$ -s 5.0 -p 0.2685,0.5,0.4 -z 1 -c 2 -r 2 -k 481.2,480,320,240 -i $#dataset_path#$$#dataset_filename#$ -o tmp-output.tmp", 
         "run_cmd_out1": "stdout.log", 
         "run_cmd_out2": "", 
         "run_correctness_output_files": [], 
         "run_input_files": [], 
+        "run_output_files": [
+          "tmp-output.tmp", 
+          "tmp-ck-timer.json"
+        ]
+      }
+    }, 
+    "cmd_dse": {
+      "dataset_tags": [
+        "dataset", 
+        "raw", 
+        "video", 
+        "slambench"
+      ], 
+      "ignore_return_code": "no", 
+      "run_time": {
+        "fine_grain_timer_file": "tmp-ck-timer.json", 
+        "post_process_cmds": [
+          "python $#ck_take_from_{e4495a6270f52615}#$convert_timers_to_ck_format.py", 
+          "python $#ck_take_from_{e4495a6270f52615}#$thirdparty$#ck_host_os_sep#$checkPos.py tmp-output.tmp $#dataset_path#$livingRoom2.gt.freiburg > tmp-output-check-pos.tmp", 
+          "python $#ck_take_from_{e4495a6270f52615}#$checkPos_ck.py"
+        ], 
+        "run_cmd_main": "$#BIN_FILE#$ -s 5.0 -p 0.34,0.5,0.24 -z 1 -c $#run_cmd_key_c#$ -r $#run_cmd_key_r#$ -l $#run_cmd_key_l#$ -m $#run_cmd_key_m#$ -k 481.2,480,320,240 -y $#run_cmd_key_y1#$,$#run_cmd_key_y2#$,$#run_cmd_key_y3#$ -v $#run_cmd_key_v#$ -i $#dataset_path#$$#dataset_filename#$ -o tmp-output.tmp", 
+        "run_cmd_out1": "stdout.log", 
+        "run_cmd_out2": "", 
+        "run_correctness_output_files": [], 
+        "run_input_files": [
+          "kernels.cl"
+        ], 
         "run_output_files": [
           "tmp-output.tmp", 
           "tmp-ck-timer.json"
@@ -160,10 +163,10 @@
       "run_time": {
         "fine_grain_timer_file": "tmp-ck-timer.json", 
         "post_process_cmds": [
-           "python $#ck_take_from_{e4495a6270f52615}#$convert_timers_to_ck_format.py", 
-           "python $#ck_take_from_{e4495a6270f52615}#$thirdparty$#ck_host_os_sep#$checkPos.py tmp-output.tmp $#dataset_path#$livingRoom2.gt.freiburg > tmp-output-check-pos.tmp",
-           "python $#ck_take_from_{e4495a6270f52615}#$checkPos_ck.py"
-        ],
+          "python $#ck_take_from_{e4495a6270f52615}#$convert_timers_to_ck_format.py", 
+          "python $#ck_take_from_{e4495a6270f52615}#$thirdparty$#ck_host_os_sep#$checkPos.py tmp-output.tmp $#dataset_path#$livingRoom2.gt.freiburg > tmp-output-check-pos.tmp", 
+          "python $#ck_take_from_{e4495a6270f52615}#$checkPos_ck.py"
+        ], 
         "run_cmd_main": "$#BIN_FILE#$ -s 4.8 -p 0.34,0.5,0.24 -z 1 -c 2 -r 1 -k 481.2,480,320,240 -i $#dataset_path#$$#dataset_filename#$ -o tmp-output.tmp", 
         "run_cmd_out1": "stdout.log", 
         "run_cmd_out2": "", 
@@ -186,10 +189,10 @@
       "run_time": {
         "fine_grain_timer_file": "tmp-ck-timer.json", 
         "post_process_cmds": [
-           "python $#ck_take_from_{e4495a6270f52615}#$convert_timers_to_ck_format.py", 
-           "python $#ck_take_from_{e4495a6270f52615}#$thirdparty$#ck_host_os_sep#$checkPos.py tmp-output.tmp $#dataset_path#$livingRoom2.gt.freiburg > tmp-output-check-pos.tmp",
-           "python $#ck_take_from_{e4495a6270f52615}#$checkPos_ck.py"
-        ],
+          "python $#ck_take_from_{e4495a6270f52615}#$convert_timers_to_ck_format.py", 
+          "python $#ck_take_from_{e4495a6270f52615}#$thirdparty$#ck_host_os_sep#$checkPos.py tmp-output.tmp $#dataset_path#$livingRoom2.gt.freiburg > tmp-output-check-pos.tmp", 
+          "python $#ck_take_from_{e4495a6270f52615}#$checkPos_ck.py"
+        ], 
         "run_cmd_main": "$#BIN_FILE#$ -s 4.8 -p 0.34,0.5,0.24 -z 4 -c 2 -r 1 -k 481.2,480,320,240 -i $#dataset_path#$$#dataset_filename#$ -o tmp-output.tmp", 
         "run_cmd_out1": "stdout.log", 
         "run_cmd_out2": "", 
@@ -202,8 +205,7 @@
       }
     }
   }, 
-  "run_vars": {
-  }, 
+  "run_vars": {}, 
   "source_files": [
     "$#ck_take_from_{e4495a6270f52615}#$winmisc.c", 
     "$#ck_take_from_{e4495a6270f52615}#$getoptwin.c", 
