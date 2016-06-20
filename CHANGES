@@ -1,3 +1,6 @@
+* 2016.06.20 FGG: * small improvements to support autotuning using latest mobile devices such as 
+                    Samsung Galaxy S7
+
 * 2016.04.14 FGG: * moving soft:lib.toon to ck-env repository for others to be able to reuse it 
 
 * 2016.03.26 FGG: * adding program static MILEPOST features
