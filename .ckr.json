@@ -7,6 +7,9 @@
     "repo_deps": [
       {
         "repo_uoa": "ck-autotuning"
+      },
+      {
+        "repo_uoa": "ck-math"
       }
     ], 
     "url": "https://github.com/ctuning/reproduce-pamela-project", 
