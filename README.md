@@ -15,7 +15,7 @@ Check [1](http://schedule.armtechcon.com/session/know-your-workloads-design-more
 [2](http://bit.ly/ck-date16), [3](http://arxiv.org/abs/1506.06256) 
 and [4](http://hal.inria.fr/hal-01054763) for our long-term vision. 
 You are very welcome to join our collaborative optimization effort 
-and participate in [https://github.com/ctuning/ck/wiki/Research-and-development-challenges](open challenges)!</b>
+and participate in our [open challenges](https://github.com/ctuning/ck/wiki/Research-and-development-challenges)!</b>
 
 Status
 ======
