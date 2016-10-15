@@ -9,12 +9,18 @@ and to reproduce and extend techniques from the UK Pamela project.
 
 <b>Note that we gradually discontinue support for such ad-hoc benchmarks. 
 Instead we have switched to a community-driven optimization of real applications 
-such as DNN and BLAS together with General Motors ([https://github.com/dividiti/ck-caffe CK-Caffe]), 
-ARM ([https://github.com/ctuning/ck-wa CK-WA project]) and others. 
-Check [http://schedule.armtechcon.com/session/know-your-workloads-design-more-efficient-systems 1], 
-[http://bit.ly/ck-date16 2], [http://arxiv.org/abs/1506.06256 3] and [http://hal.inria.fr/hal-01054763 4] 
-for our long-term vision. You are very welcome to join our community effort 
+such as DNN and BLAS together with General Motors ([CK-Caffe](https://github.com/dividiti/ck-caffe )), 
+ARM ([CK-WA project](https://github.com/ctuning/ck-wa)) and others. 
+Check [1(http://schedule.armtechcon.com/session/know-your-workloads-design-more-efficient-systems)], 
+[2](http://bit.ly/ck-date16), [3](http://arxiv.org/abs/1506.06256) 
+and [4](http://hal.inria.fr/hal-01054763) for our long-term vision. 
+You are very welcome to join our collaborative optimization effort 
 and participate in [[Research-and-development-challenges|open challenges]]!</b>
+
+Status
+======
+Should work but support discontinued for [CK-Caffe](http://github.com/dividiti/ck-caffe) 
+and [CK-WA](https://github.com/ctuning/ck-wa).
 
 Prerequisites
 =============
