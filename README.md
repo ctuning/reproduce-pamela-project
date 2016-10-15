@@ -19,8 +19,8 @@ and participate in our [open challenges](https://github.com/ctuning/ck/wiki/Rese
 
 Status
 ======
-Should work but support discontinued for [CK-Caffe](http://github.com/dividiti/ck-caffe) 
-and [CK-WA](https://github.com/ctuning/ck-wa).
+<i>Should work but support discontinued in favour [CK-Caffe](http://github.com/dividiti/ck-caffe) 
+and [CK-WA](https://github.com/ctuning/ck-wa) community-driven projects.</i>
 
 Prerequisites
 =============
