@@ -11,7 +11,7 @@ and to reproduce and extend techniques from the UK Pamela project.
 Instead we have switched to a community-driven optimization of real applications 
 such as DNN and BLAS together with General Motors ([CK-Caffe](https://github.com/dividiti/ck-caffe )), 
 ARM ([CK-WA project](https://github.com/ctuning/ck-wa)) and others. 
-Check [1](http://schedule.armtechcon.com/session/know-your-workloads-design-more-efficient-systems), 
+Check [1](https://github.com/ctuning/ck/wiki/Demo-ARM-TechCon'16), 
 [2](http://bit.ly/ck-date16), [3](http://arxiv.org/abs/1506.06256) 
 and [4](http://hal.inria.fr/hal-01054763) for our long-term vision. 
 You are very welcome to join our [collaborative optimization effort](http://cknowledge.org) 
