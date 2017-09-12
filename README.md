@@ -2,32 +2,41 @@ CK repository to reproduce SLAMBench from PAMELA project
 ========================================================
 
 Shared artifacts and workflows in the [http://github.com/ctuning/ck CK format] 
-to simplify execution of SLAMBench across diverse hardware and environments, 
+to simplify installation and execution of SLAMBench algorithms 
+across diverse hardware and environments, 
 connect it to CK-powered universal and multi-objective autotuning, crowd-tuning,
 predictive analytics and run-time adaptation plugins, 
 and to reproduce and extend techniques from the UK Pamela project.
 
-<b>Note that we gradually discontinue support for such ad-hoc benchmarks. 
-Instead we have switched to a community-driven optimization of real applications 
-such as DNN and BLAS together with General Motors ([CK-Caffe](https://github.com/dividiti/ck-caffe )), 
-ARM ([CK-WA project](https://github.com/ctuning/ck-wa)) and others. 
-Check [1](https://github.com/ctuning/ck/wiki/Demo-ARM-TechCon'16), 
-[2](http://bit.ly/ck-date16), [3](http://arxiv.org/abs/1506.06256) 
-and [4](http://hal.inria.fr/hal-01054763) for our long-term vision. 
-You are very welcome to join our [collaborative optimization effort](http://cknowledge.org) 
-and participate in our [open challenges](https://github.com/ctuning/ck/wiki/Research-and-development-challenges)!</b>
+This is a part of our long-term [open research initiative](http://cKnowledge.org)
+to collaboratively co-design real applications across the whole SW/HW stack:
 
-Status
-======
-<i>Should work but support discontinued in favor of [CK-Caffe](http://github.com/dividiti/ck-caffe) 
-and [CK-WA](https://github.com/ctuning/ck-wa) community-driven projects.</i>
+* https://github.com/dividiti/ck-caffe
+* https://github.com/ctuning/ck-tensorflow
+* https://github.com/ctuning/ck-caffe2
+
+* https://github.com/ctuning/ck-wa
+* https://github.com/ctuning/ck/wiki/Demo-ARM-TechCon'16
+
+
+* [Related publications](https://github.com/ctuning/ck/wiki/Publications)
+
+```
+@inproceedings{ck-date16,
+    title = {{Collective Knowledge}: towards {R\&D} sustainability},
+    author = {Fursin, Grigori and Lokhmotov, Anton and Plowman, Ed},
+    booktitle = {Proceedings of the Conference on Design, Automation and Test in Europe (DATE'16)},
+    year = {2016},
+    month = {March},
+    url = {https://www.researchgate.net/publication/304010295_Collective_Knowledge_Towards_RD_Sustainability}
+}
+```
+
+* [Open challenges](https://github.com/ctuning/ck/wiki/Research-and-development-challenges)!</b>
 
 Prerequisites
 =============
-* Collective Knowledge Framework (CK): http://github.com/ctuning/ck . 
-
-CK will automatically install SLAMBench with all dependencies and prepare
-experimental workflows.
+* Collective Knowledge Framework (CK): http://github.com/ctuning/ck
 
 Installation
 ============
@@ -47,3 +56,13 @@ from our shared Google drive:
 and then install it via
 
 $ ck add repo:reproduce-pamela-project-large-files --zip=ck-reproduce-pamela-2015-large-dataset.zip --quiet
+
+Running workflow
+================
+ck run program:slambench-1.1-cpu
+ck run program:slambench-1.1-cpu-openmp
+ck run program:slambench-1.1-cuda
+ck run program:slambench-1.1-opencl
+ck run program:slambench-1.1-opencl-dragon-board
+
+CK should automatically install missing dependencies, build SLAM and run it with plugged in data sets
