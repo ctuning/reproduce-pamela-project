@@ -2,16 +2,16 @@ CK repository to reproduce SLAMBench from PAMELA project
 ========================================================
 
 Shared research artifacts and workflows 
-in the [http://cKnowledge.org Collective Knowledge format (CK)] 
+in the [Collective Knowledge format (CK)](http://cKnowledge.org)
 to unify installation and execution of SLAMBench algorithms 
 from the [EPSRC Pamela project](http://apt.cs.manchester.ac.uk/projects/PAMELA)
 across diverse hardware and environments, 
 perform SW/HW co-design, crowdsource and reproduce experiments.
 
 Vision publication about how Collective Knowledge
-help develop sustainable research software and help
-research projects survive in a Cambrian AI/SW/HW chaos
-or when leading scientists leave:
+assist scientists develop sustainable research software 
+and help research projects survive in a Cambrian AI/SW/HW chaos
+or when leading developers leave:
 
 
 ```
