@@ -5,7 +5,7 @@ Shared research artifacts and workflows
 in the [Collective Knowledge format (CK)](http://cKnowledge.org)
 to unify installation and execution of SLAMBench algorithms 
 from the [EPSRC Pamela project](http://apt.cs.manchester.ac.uk/projects/PAMELA)
-across diverse hardware and environments, 
+across diverse hardware, environments and data sets, 
 perform SW/HW co-design, crowdsource and reproduce experiments.
 
 Vision publication about how Collective Knowledge
