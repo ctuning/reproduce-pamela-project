@@ -1,25 +1,18 @@
 CK repository to reproduce SLAMBench from PAMELA project
 ========================================================
 
-Shared artifacts and workflows in the [http://github.com/ctuning/ck CK format] 
-to simplify installation and execution of SLAMBench algorithms 
+Shared research artifacts and workflows 
+in the [http://cKnowledge.org Collective Knowledge format (CK)] 
+to unify installation and execution of SLAMBench algorithms 
+from the [EPSRC Pamela project](http://apt.cs.manchester.ac.uk/projects/PAMELA)
 across diverse hardware and environments, 
-connect it to CK-powered universal and multi-objective autotuning, crowd-tuning,
-predictive analytics and run-time adaptation plugins, 
-and to reproduce and extend techniques from the UK Pamela project.
+perform SW/HW co-design, crowdsource and reproduce experiments.
 
-This is a part of our long-term [open research initiative](http://cKnowledge.org)
-to collaboratively co-design real applications across the whole SW/HW stack:
+Vision publication about how Collective Knowledge
+help develop sustainable research software and help
+research projects survive in a Cambrian AI/SW/HW chaos
+or when leading scientists leave:
 
-* https://github.com/dividiti/ck-caffe
-* https://github.com/ctuning/ck-tensorflow
-* https://github.com/ctuning/ck-caffe2
-
-* https://github.com/ctuning/ck-wa
-* https://github.com/ctuning/ck/wiki/Demo-ARM-TechCon'16
-
-
-* [Related publications](https://github.com/ctuning/ck/wiki/Publications)
 
 ```
 @inproceedings{ck-date16,
@@ -32,7 +25,21 @@ to collaboratively co-design real applications across the whole SW/HW stack:
 }
 ```
 
-* [Open challenges](https://github.com/ctuning/ck/wiki/Research-and-development-challenges)!</b>
+* [Open challenges powered by CK](https://github.com/ctuning/ck/wiki/Research-and-development-challenges)
+
+Support
+=======
+The [non-profit cTuning foundation (France)](http://cTuning.org)
+and [dividiti Ltd (UK/US)](http://dividiti.com)
+help academic and industrial projects to use
+[Collective Knowledge framework (CK)](http://cKnowledge.org) and implement sustainable
+and portable research software, share artifacts and workflows as reusable and
+customizable components, crowdsource and reproduce experiments,
+enable [collaborative AI/SW/HW co-design from IoT to supercomputers](http://cKnowledge.org/ai)
+to trade-off speed, accuracy, energy, size and costs,
+accelerate knowledge discovery, and facilitate technology transfer.
+Contact [them](mailto:grigori.fursin@ctuning.org;anton@dividiti.com) 
+for further details.
 
 Prerequisites
 =============
@@ -41,28 +48,49 @@ Prerequisites
 Installation
 ============
 
+```
+$ (sudo) pip install ck
 $ ck pull repo:reproduce-pamela-project
+```
 
 Data set repositories
 =====================
 
+```
 $ ck pull repo:reproduce-pamela-project-small-dataset
+```
 
 To obtain very large data set (4Gb), download it as zip
 from our shared Google drive:
 
+```
 * https://drive.google.com/open?id=0B-wXENVfIO82S0lMQUZfVDVmc2c
+```
 
 and then install it via
 
+```
 $ ck add repo:reproduce-pamela-project-large-files --zip=ck-reproduce-pamela-2015-large-dataset.zip --quiet
+```
 
 Running workflow
 ================
-ck run program:slambench-1.1-cpu
-ck run program:slambench-1.1-cpu-openmp
-ck run program:slambench-1.1-cuda
-ck run program:slambench-1.1-opencl
-ck run program:slambench-1.1-opencl-dragon-board
 
-CK should automatically install missing dependencies, build SLAM and run it with plugged in data sets
+```
+$ ck compile program:slambench-1.1-cpu
+$ ck run program:slambench-1.1-cpu
+
+$ ck compile program:slambench-1.1-cpu-openmp
+$ ck run program:slambench-1.1-cpu-openmp
+
+$ ck compile program:slambench-1.1-cuda
+$ ck run program:slambench-1.1-cuda
+
+$ ck compile program:slambench-1.1-opencl
+$ ck run program:slambench-1.1-opencl
+
+$ ck compile program:slambench-1.1-opencl --target_os=android21-arm64
+$ ck run program:slambench-1.1-opencl-dragon-board --target_os=android21-arm64
+```
+
+CK should automatically install missing dependencies, build SLAM and run it with plugged in data sets.
