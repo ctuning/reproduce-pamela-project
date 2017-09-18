@@ -9,8 +9,8 @@ across diverse hardware, environments and data sets,
 perform SW/HW co-design, crowdsource and reproduce experiments.
 
 Vision publication about how Collective Knowledge
-assist scientists develop sustainable research software 
-and help research projects survive in a Cambrian AI/SW/HW chaos
+can assist scientists to develop sustainable research software 
+and help research projects to survive in a Cambrian AI/SW/HW chaos
 or when leading developers leave:
 
 
