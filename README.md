@@ -8,7 +8,7 @@ from the [EPSRC Pamela project](http://apt.cs.manchester.ac.uk/projects/PAMELA)
 across diverse hardware, environments and data sets, 
 perform SW/HW co-design, crowdsource and reproduce experiments.
 
-Vision publication about how Collective Knowledge
+The vision publication about how Collective Knowledge
 can assist scientists to develop sustainable research software 
 and help research projects to survive in a Cambrian AI/SW/HW chaos
 or when leading developers leave:
