@@ -51,7 +51,7 @@ The minimal installation requires:
 
 ### Linux/MacOS
 
-You can install CK in your local user space as following:
+You can install CK in your local user space as follows:
 
 ```
 $ git clone http://github.com/ctuning/ck
@@ -72,7 +72,7 @@ First you need to download and install a few dependencies from the following sit
 * Git: https://git-for-windows.github.io
 * Minimal Python: https://www.python.org/downloads/windows
 
-You can then install CK as following:
+You can then install CK as follows:
 ```
  $ pip install ck
 ```
