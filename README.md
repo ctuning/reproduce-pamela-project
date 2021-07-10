@@ -42,7 +42,7 @@ help academic and industrial projects to use
 [Collective Knowledge framework (CK)](http://cKnowledge.org) and implement sustainable
 and portable research software, share artifacts and workflows as reusable and
 customizable components, crowdsource and reproduce experiments,
-enable [collaborative AI/SW/HW co-design from IoT to supercomputers](http://cKnowledge.org/ai)
+enable [collaborative AI/SW/HW co-design from IoT to supercomputers](http://cKnowledge.io)
 to trade-off speed, accuracy, energy, size and costs,
 accelerate knowledge discovery, and facilitate technology transfer.
 Contact [them](mailto:grigori.fursin@ctuning.org;anton@dividiti.com) 

@@ -1,9 +1,10 @@
 {
-  "data_name": "Reproducing PAMELA project (slambench analysis and crowd-tuning) via CK", 
-  "data_alias": "reproduce-pamela-project", 
-  "data_uid": "208c21b837924601", 
-  "data_uoa": "reproduce-pamela-project", 
+  "data_alias": "reproduce-pamela-project",
+  "data_name": "Reproducing PAMELA project (slambench analysis and crowd-tuning) via CK",
+  "data_uid": "208c21b837924601",
+  "data_uoa": "reproduce-pamela-project",
   "dict": {
+    "desc": "Customizable CK workflows and portable CK packages for EU PAMELA project.",
     "repo_deps": [
       {
         "repo_uoa": "ck-autotuning"
@@ -11,8 +12,8 @@
       {
         "repo_uoa": "ck-math"
       }
-    ], 
-    "url": "https://github.com/ctuning/reproduce-pamela-project", 
-    "shared": "git"
+    ],
+    "shared": "git",
+    "url": "https://github.com/ctuning/reproduce-pamela-project"
   }
 }
